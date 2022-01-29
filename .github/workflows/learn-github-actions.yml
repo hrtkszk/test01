@@ -11,9 +11,3 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
       
- deploy:
-   runs-on: ubuntu-latest
-   steps:
-   - uses: actions/checkout@v2
-     with:
-       fetch-depth: 0
