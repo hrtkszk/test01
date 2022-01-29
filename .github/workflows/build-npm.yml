@@ -23,3 +23,9 @@ jobs:
       - run: npm test
       - name: ls lha
         run: ls -lha build/
+      - name: change directory permission
+        run: find build/ -type d -exec chmod 705 {} +
+      - name: change file permission
+        run: find build/ -type f -exec chmod 604 {} +
+      - name: confirm ls lha
+        run: ls -lha build/
