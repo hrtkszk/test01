@@ -29,3 +29,5 @@ jobs:
         run: find build/ -type f -exec chmod 604 {} +
       - name: confirm ls lha
         run: ls -lha build/
+      - name: confirm ls lha in static/js
+        run: ls -lha build/static/js
