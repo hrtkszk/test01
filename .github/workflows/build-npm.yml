@@ -30,13 +30,13 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
       - name: change directory permission
-        run: find build/ -type d -exec chmod 705 {} +
+        run: find web/ -type d -exec chmod 705 {} +
       - name: change file permission
-        run: find build/ -type f -exec chmod 604 {} +
+        run: find web/ -type f -exec chmod 604 {} +
       - name: confirm ls lha
-        run: ls -lha build/
+        run: ls -lha web/
       - name: confirm ls lha in static/js
-        run: ls -lha build/static/js
+        run: ls -lha web/static/js
 
       # 秘密鍵を設置
       - name: ssh key generate
