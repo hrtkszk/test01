@@ -13,6 +13,7 @@ connection = MySQLdb.connect(
     db='LAA1390446-windyobi22')
 cursor = connection.cursor()
 
+
 cursor.execute("SELECT * FROM test")
 
 print("Content-Type: text/html; charset=UTF-8\r\n")
