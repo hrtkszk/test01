@@ -1,2 +1,2 @@
 /web/
-/src/pythonMySQLTest.py
+/src/*.py
