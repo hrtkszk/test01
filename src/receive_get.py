@@ -7,6 +7,7 @@ import io
 import cgitb
 
 cgitb.enable()
+
 # 日本語を受信時にエラーにならないようにする為に必要。
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
  
