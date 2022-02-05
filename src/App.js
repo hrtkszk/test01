@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <form method="get" action="../receive_get.py">
+          <form method="get" action="../src/receive_get.py">
             <input type="text" name="your_name" />
             <input type="submit" />
           </form>
