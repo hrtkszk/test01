@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-function App() {
+class App extends React.Component {
   state = {
     sendMessage: '',
     receivedMessage: ''
@@ -54,27 +54,29 @@ function App() {
   //     </header>
   //   </div>
   // );
-  return (
-    <div className="App">
+  render() {
+    return (
       <div className="App">
-        <footer className="App-footer">
-          <input
-            id="sendMessage"
-            onChange={evt => this.onChange('sendMessage', evt.target.value)}
-            className="input"
-            placeholder='メッセージ'
-          />
-          <ButtonSend
-            title="Send"
-            onClick={this.sendMsg}
-          />
-        </footer>
+        <div className="App">
+          <footer className="App-footer">
+            <input
+              id="sendMessage"
+              onChange={evt => this.onChange('sendMessage', evt.target.value)}
+              className="input"
+              placeholder='メッセージ'
+            />
+            <ButtonSend
+              title="Send"
+              onClick={this.sendMsg}
+            />
+          </footer>
+        </div>
+        <div className="App-header">
+            {this.state.receivedMessage}
+        </div>
       </div>
-      <div className="App-header">
-          {this.state.receivedMessage}
-      </div>
-    </div>
-  )
+    )
+  }
 }
 
 
