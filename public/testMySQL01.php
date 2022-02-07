@@ -39,11 +39,9 @@ function testMain() {
     $sql  = "select * from test";
  
     $rset = execute( $conn, $sql );
+    echo $rset;
     return $rset;
 }
 ?>
  
 <!-- 検索結果をダンプする -->
-<pre>
-<?php var_dump( testMain() ); ?>
-</pre>
