@@ -1,5 +1,6 @@
 /*
 /web/static/js/*.map
+/web/static/css/*.map
 /src/*.css
 /src/*.js
 /src/*.svg
