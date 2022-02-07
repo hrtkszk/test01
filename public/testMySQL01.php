@@ -44,6 +44,6 @@ function testMain() {
 ?>
  
 <!-- 検索結果をダンプする -->
-&gt;pre>
+<pre>
 <?php var_dump( testMain() ); ?>
-</pre%lt;
+</pre>
