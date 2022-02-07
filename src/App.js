@@ -20,10 +20,11 @@ class App extends React.Component {
       body: JSON.stringify({"text":this.state.sendMessage})
     }
     fetch("receive_get.php",requestOptions)
-    .then((response)=> response.json())
-    .then((responseJson) =>{
+    .then(response=> response.json())
+    .then(responseJson =>{
       console.log(responseJson)
       //this.componentDidMount()
+      this.setState({receivedMessage:responseJson.message})
       this.setState({sendMessage:""})
       console.log(this.state.sendMessage)
       //this.render()
