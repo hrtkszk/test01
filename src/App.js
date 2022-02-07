@@ -26,7 +26,7 @@ class App extends React.Component {
       //this.componentDidMount()
       this.setState({receivedMessage:responseJson.message})
       this.setState({sendMessage:""})
-      console.log(this.state.sendMessage)
+      //console.log(this.state.sendMessage)
       //this.render()
     })
   }

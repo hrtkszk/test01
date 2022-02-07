@@ -33,8 +33,8 @@ jobs:
         run: find web/ -type d -exec chmod 705 {} +
       - name: change file permission
         run: find web/ -type f -exec chmod 604 {} +
-      - name: change python file permission
-        run: find src/ -name *.py -exec chmod 700 {} +
+      - name: change php file permission
+        run: find src/ -name *.php -exec chmod 700 {} +
       - name: confirm ls lha
         run: ls -lha web/
       - name: confirm ls lha
