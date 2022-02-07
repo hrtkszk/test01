@@ -47,6 +47,3 @@ function testMain() {
     echo $rset;
     return $rset;
 }
-?>
- 
-<!-- 検索結果をダンプする -->
