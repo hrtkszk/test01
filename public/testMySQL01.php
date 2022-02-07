@@ -12,6 +12,11 @@ function getConnection() {
     //DBに接続
     //-------------------
     $conn = mysql_connect( $server, $user, $pass );
+    if (!$conn) {
+        echo (mysql_error());
+    } else {
+        echo ("connection success");
+    }
     mysql_set_charset( 'utf8', $conn );
  
     //-------------------
