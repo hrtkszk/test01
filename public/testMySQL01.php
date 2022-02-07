@@ -44,6 +44,6 @@ function testMain() {
     $sql  = "select * from test";
  
     $rset = execute( $conn, $sql );
-    echo $rset;
+    print($rset);
     return $rset;
 }
