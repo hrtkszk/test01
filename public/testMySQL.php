@@ -16,3 +16,4 @@ if (!$link) {
     echo ("success");
 }
 mysql_close($link);
+?>
