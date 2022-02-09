@@ -10,10 +10,6 @@ $database = "LAA1395778-test01";                      // 実際の接続値に�
 //DBに接続
 //-------------------
 $link = mysql_connect( $server, $user, $pass );
-if (!$link) {
-    echo (mysql_error());
-} else {
-    echo ("success");
-}
+echo ("success");
 mysql_close($link);
 ?>
