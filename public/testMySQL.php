@@ -1,4 +1,6 @@
 <?php
+ini_set("display_errors", On);
+error_reporting(E_ALL);
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Headers: Content-Type');
 $server   = "mysql201.phy.lolipop.lan";              // 実際の接続値に置き換える
