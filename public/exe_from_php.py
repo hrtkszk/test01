@@ -12,7 +12,7 @@ connection = MySQLdb.connect(
     db='LAA1395778-test01')
 cursor = connection.cursor()
 
-cursor.execute(f"SELECT * FROM test WHERE id={sys.argv[0]}")
+cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[0]}'")
 
 for row in cursor:
   print (row)
