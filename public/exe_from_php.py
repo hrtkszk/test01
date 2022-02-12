@@ -3,7 +3,6 @@
 # MySQLdbのインポート
 import MySQLdb
 
-
 # データベースへの接続とカーソルの生成
 connection = MySQLdb.connect(
     host='mysql201.phy.lolipop.lan',
