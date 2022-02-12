@@ -2,6 +2,7 @@
 # coding:utf-8
 # MySQLdbのインポート
 import MySQLdb
+import sys
 
 # データベースへの接続とカーソルの生成
 connection = MySQLdb.connect(
@@ -11,7 +12,7 @@ connection = MySQLdb.connect(
     db='LAA1395778-test01')
 cursor = connection.cursor()
 
-cursor.execute("SELECT * FROM test")
+cursor.execute(f"SELECT * FROM test WHERE id={sys.argv[0]}")
 
 for row in cursor:
   print (row)
