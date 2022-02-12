@@ -5,7 +5,7 @@ import ButtonSend from './ButtonSend';
 class App extends React.Component {
   state = {
     sendMessage: '',
-    receivedMessage: ''
+    pythonout: ''
   }
   onChange = (key, value) => {
     this.setState({
@@ -24,7 +24,7 @@ class App extends React.Component {
     .then(responseJson =>{
       console.log(responseJson)
       //this.componentDidMount()
-      this.setState({receivedMessage:responseJson.message})
+      this.setState({pythonout:responseJson.pythonout})
       this.setState({sendMessage:""})
       //console.log(this.state.sendMessage)
       //this.render()
