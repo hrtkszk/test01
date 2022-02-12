@@ -13,8 +13,7 @@ if(empty($_POST['text'])) {
         [
            "error" => true,
            "message" => "Error: 入力してください。",
-           "python out1" => "python out1:".$output[0],
-           "python out2" => "python out1:".$output[1],
+           "python out1" => "python out1:".$output,
         ]
     ); 
 } else {
@@ -22,8 +21,7 @@ if(empty($_POST['text'])) {
         [
            "error" => false,
            "message" => 'Success: 入力されたテキスト→'.$_POST['text'],
-           "python out1" => "python out1:".$output[0],
-           "python out2" => "python out1:".$output[1],
+           "python out1" => "python out1:".$output,
         ]
     ); 
 }
