@@ -73,7 +73,7 @@ class App extends React.Component {
           </footer>
         </div>
         <div className="App-header">
-            {this.state.receivedMessage}
+            {this.state.pythonout}
         </div>
       </div>
     )
