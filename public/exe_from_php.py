@@ -22,8 +22,3 @@ connection.commit()
 
 # 接続を閉じる
 connection.close()
-
-
-
-print("1line")
-print("2line")
