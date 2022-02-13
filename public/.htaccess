@@ -6,7 +6,6 @@ AuthUserFile /home/users/1/punyu.jp-sunny-amami-0160/web/.htpasswd
 AuthType Basic
 require valid-user
 
-
 RewriteEngine On
 RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
