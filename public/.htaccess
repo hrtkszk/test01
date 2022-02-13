@@ -1,11 +1,13 @@
+<Files ~ “^\.(htaccess|htpasswd)$”>
 Deny from all
-
+</Files>
 AuthType Basic
-AuthName “Please enter your ID and password”
 AuthUserFile /home/users/1/punyu.jp-sunny-amami-0160/web/.htpasswd
+AuthName “IDとパスワードを入力してください”
 AuthType Basic
 require valid-user
 
 RewriteEngine On
 RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
+
