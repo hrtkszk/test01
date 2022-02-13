@@ -1,4 +1,7 @@
 <?php
+echo "User: ".$_SERVER['PHP_AUTH_USER'];
+echo "<br/>";
+echo "Pass: ".$_SERVER['PHP_AUTH_PW'];
 
 switch (true) {
     case !isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']):
