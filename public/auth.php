@@ -6,6 +6,8 @@ if (!isset($_SERVER['REMOTE_USER'])){
     header('WWW-Authenticate: Basic realm="Private Page"');
     header('HTTP/1.0 401 Unauthorized');
 
+    echo(var_dump($_SERVER));
+
     die('このページを見るにはログインが必要です。isset');
     exit;
 }else{
@@ -14,6 +16,9 @@ if (!isset($_SERVER['REMOTE_USER'])){
 
         header('WWW-Authenticate: Basic realm="Private Page"');
         header('HTTP/1.0 401 Unauthorized');
+
+        echo(var_dump($_SERVER));
+        
         die('このページを見るにはログインが必要です。authlogic');
         exit;
     }
