@@ -1,6 +1,9 @@
+Deny from all
+
 AuthType Basic
 AuthName “Please enter your ID and password”
 AuthUserFile /home/users/1/punyu.jp-sunny-amami-0160/web/.htpasswd
+AuthType Basic
 require valid-user
 
 
