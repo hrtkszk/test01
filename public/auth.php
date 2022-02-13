@@ -3,10 +3,10 @@ $user = 'admin';
 $password = 'pass';
 
 if (!isset($_SERVER['PHP_AUTH_USER'])){
-    echo(var_dump($_SERVER));
+
     header('WWW-Authenticate: Basic realm="Private Page"');
     header('HTTP/1.0 401 Unauthorized');
-
+    echo(var_dump($_SERVER));
 
 
     die('このページを見るにはログインが必要です。isset');
@@ -14,10 +14,10 @@ if (!isset($_SERVER['PHP_AUTH_USER'])){
 }else{
     if ($_SERVER['PHP_AUTH_USERR'] != $user
         || $_SERVER['PHP_AUTH_PW'] != $password){
-        echo(var_dump($_SERVER));
+
         header('WWW-Authenticate: Basic realm="Private Page"');
         header('HTTP/1.0 401 Unauthorized');
-
+        echo(var_dump($_SERVER));
 
 
         die('このページを見るにはログインが必要です。authlogic');
