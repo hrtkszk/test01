@@ -2,7 +2,7 @@
 $user = 'admin';
 $password = 'pass';
 
-if (!isset($_SERVER['REMOTE_USER'])){
+if (!isset($_SERVER['REDIRECT_REMOTE_USER'])){
     header('WWW-Authenticate: Basic realm="Private Page"');
     header('HTTP/1.0 401 Unauthorized');
 
@@ -11,14 +11,14 @@ if (!isset($_SERVER['REMOTE_USER'])){
     die('このページを見るにはログインが必要です。isset');
     exit;
 }else{
-    if ($_SERVER['REMOTE_USER'] != $user
-        || $_SERVER['REMOTE_PW'] != $password){
+    if ($_SERVER['REDIRECT_REMOTE_USER'] != $user
+        || $_SERVER['REDIRECT_REMOTE_PW'] != $password){
 
         header('WWW-Authenticate: Basic realm="Private Page"');
         header('HTTP/1.0 401 Unauthorized');
 
         echo(var_dump($_SERVER));
-        
+
         die('このページを見るにはログインが必要です。authlogic');
         exit;
     }
