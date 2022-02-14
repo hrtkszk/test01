@@ -1,84 +1,89 @@
 import './App.css';
 import React from 'react';
-import ButtonSend from './ButtonSend';
+//import ButtonSend from './ButtonSend';
+import Router from './Router'
+import UserContext from './UserContext'
 
 class App extends React.Component {
   state = {
-    sendMessage: '',
-    pythonout: ''
+    currentUser: {},
+    isLoaded: false
   }
-  onChange = (key, value) => {
-    this.setState({
-      [key]: value
-    })
+  componentDidMount() {
+    this.updateCurrentUser()
   }
-
-  sendMsg = () => {
-    const requestOptions ={
-      method: 'POST',
-      headers:{'Content-Type': 'application/json'},
-      body: JSON.stringify({"text":this.state.sendMessage})
+  updateCurrentUser = async (user) => {
+    if (user) {
+      this.setState({ currentUser: user })
+      return
     }
-    fetch("receive_get.php",requestOptions)
-    .then(response=> response.json())
-    .then(responseJson =>{
-      console.log(responseJson)
-      //this.componentDidMount()
-      this.setState({pythonout:responseJson.pythonout})
-      this.setState({sendMessage:""})
-      //console.log(this.state.sendMessage)
-      //this.render()
-    })
+    try {
+      //const user = await getCurrentUserSession()
+      this.setState({ currentUser: user, isLoaded: true })
+    } catch (err) {
+      this.setState({ currentUser: null, isLoaded: true })
+    }
   }
-  // return (
-  // <div className="App">
-  //   <header className="App-header">
-  //   <h1>ログイン</h1>
-  //     <div>
-  //       <form method="get" action="../src/receive_get.py">
-  //         <input type="text" name="your_name" />
-  //         <input type="submit" />
-  //       </form>
-  //     </div>
-  //   </header>
-  // </div>
-  // )
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <div>
-  //         <form method="post" action="receive_get.php">
-  //           <input type="text" name="message" placeholder="メッセージ" />
-  //           <input type="submit" />
-  //         </form>
-  //       </div>
-  //     </header>
-  //   </div>
-  // );
   render() {
     return (
-      <div className="App">
+      <UserContext.Provider value={{
+        user: this.state.currentUser,
+        updateCurrentUser: this.updateCurrentUser,
+        isLoaded: this.state.isLoaded
+      }}>
         <div className="App">
-          <footer className="App-footer">
-            <input
-              id="sendMessage"
-              onChange={evt => this.onChange('sendMessage', evt.target.value)}
-              className="input"
-              placeholder='メッセージ'
-            />
-            <ButtonSend
-              title="Send"
-              onClick={this.sendMsg}
-            />
-          </footer>
+          <Router />
         </div>
-        <div className="App-header">
-            {this.state.pythonout}
-        </div>
-      </div>
-    )
+      </UserContext.Provider>
+    );
   }
 }
+  // state = {
+  //   sendMessage: '',
+  //   pythonout: ''
+  // }
+  // onChange = (key, value) => {
+  //   this.setState({
+  //     [key]: value
+  //   })
+  // }
 
+  // sendMsg = () => {
+  //   const requestOptions ={
+  //     method: 'POST',
+  //     headers:{'Content-Type': 'application/json'},
+  //     body: JSON.stringify({"text":this.state.sendMessage})
+  //   }
+  //   fetch("receive_get.php",requestOptions)
+  //   .then(response=> response.json())
+  //   .then(responseJson =>{
+  //     console.log(responseJson)
+  //     this.setState({pythonout:responseJson.pythonout})
+  //     this.setState({sendMessage:""})
+  //   })
+  // }
+  // render() {
+  //   return (
+  //     <div className="App">
+  //       <div className="App">
+  //         <footer className="App-footer">
+  //           <input
+  //             id="sendMessage"
+  //             onChange={evt => this.onChange('sendMessage', evt.target.value)}
+  //             className="input"
+  //             placeholder='メッセージ'
+  //           />
+  //           <ButtonSend
+  //             title="Send"
+  //             onClick={this.sendMsg}
+  //           />
+  //         </footer>
+  //       </div>
+  //       <div className="App-header">
+  //           {this.state.pythonout}
+  //       </div>
+  //     </div>
+  //   )
+  // }
 
 export default App;
