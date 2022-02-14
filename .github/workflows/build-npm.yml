@@ -4,7 +4,7 @@ on:
   push:
     branches: main, add-react-router-and-auth
   pull_request:
-    branches: [ main ]
+    branches: main, add-react-router-and-auth
 
 jobs:
   build:
