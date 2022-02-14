@@ -22,7 +22,7 @@ class SignUp extends React.Component {
         //   email: this.state.email,
         //   password: this.state.password,
         // })
-        console.log('Signup success. Result: ', res)
+        //console.log('Signup success. Result: ', res)
       } catch (e) {
         console.log('Signup fail. Error: ', e)
       }
