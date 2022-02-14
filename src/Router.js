@@ -5,7 +5,7 @@ import {
   Navigate,
   BrowserRouter as Router
 } from 'react-router-dom'
-import UserContext from './UserContext'
+//import UserContext from './UserContext'
 import Header from './Header'
 
 import Authenticator from './Authenticator'

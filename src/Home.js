@@ -15,7 +15,7 @@ class Home extends React.Component {
   static contextType = UserContext
 
   addTTOP = () => {
-    const { user } = this.context
+    // const { user } = this.context
     // Auth.setupTOTP(user).then((code) => {
     //   const authCode = "otpauth://totp/AWSCognito:"+ user.username + "?secret=" + code + "&issuer=AWSCognito";
     //   this.setState({
@@ -25,7 +25,7 @@ class Home extends React.Component {
     // });
   }
   setPreferredMFA = (authType) => {
-    const { user } = this.context
+    // const { user } = this.context
     // Auth.verifyTotpToken(user, this.state.challengeAnswer).then(() => {
     //   Auth.setPreferredMFA(user, authType)
     //     .then(data => console.log('data from verify...: ', data))

@@ -18,11 +18,11 @@ class Message extends React.Component {
   }
   sendMsg = () => {
     const { user } = this.context
-    const requestOptions ={
-      method: 'POST',
-      headers:{'Content-Type': 'application/json'},
-      body: JSON.stringify({"id":user.username,"sendTo":"bbbb","message":this.state.sendMessage,"image":this.state.image})
-    }
+    // const requestOptions ={
+    //   method: 'POST',
+    //   headers:{'Content-Type': 'application/json'},
+    //   body: JSON.stringify({"id":user.username,"sendTo":"bbbb","message":this.state.sendMessage,"image":this.state.image})
+    // }
     console.log(user.username)
     // fetch("https://skbwb0u423.execute-api.ap-northeast-1.amazonaws.com/dev_amp_db",requestOptions)
     // .then((response)=> response.json())
@@ -39,15 +39,15 @@ class Message extends React.Component {
   componentDidMount() {
     const { user, isLoaded } = this.context
     console.log(this.context)
-    if (isLoaded == false) {
+    if (isLoaded === false) {
       console.log(this.context)
       window.location.href = "/"
     } else {
-      const requestOptions ={
-        method: 'POST',
-        headers:{'Content-Type': 'application/json'},
-        body: JSON.stringify({"id":user.username})
-      }
+      // const requestOptions ={
+      //   method: 'POST',
+      //   headers:{'Content-Type': 'application/json'},
+      //   body: JSON.stringify({"id":user.username})
+      // }
       console.log(user.username)
       // fetch("https://769qg6p65h.execute-api.ap-northeast-1.amazonaws.com/dbread",requestOptions)
       // .then(response=> response.json())
@@ -64,7 +64,7 @@ class Message extends React.Component {
 
   render() {
     console.log(this.state.Messages)
-    if (this.state.Messages == []) {
+    if (this.state.Messages === []) {
       return (
         <div className="App">
           <footer className="App-footer">

@@ -20,8 +20,8 @@ class SignIn extends React.Component {
     })
   }
   signIn = () => {
-    const { history } = this.props
-    const { updateCurrentUser } = this.context
+    // const { history } = this.props
+    // const { updateCurrentUser } = this.context
     // Auth.signIn(this.state.username, this.state.password)
     //   .then(user => {
     //     if (!user.signInUserSession) {
@@ -38,7 +38,7 @@ class SignIn extends React.Component {
     //   })
   }
   confirmSignIn = () => {
-    const { history } = this.props
+    // const { history } = this.props
     // Auth.confirmSignIn(this.state.user, this.state.authCode, this.state.user.challengeName)
     //   .then(user => {
     //     //history.push('/')
