@@ -6,6 +6,7 @@ import UserContext from './UserContext'
 // import Container from './Container'
 // import Button from './Button'
 import './Message.css';
+import ButtonSend from './ButtonSend';
 
 class Home extends React.Component {
   state = {
