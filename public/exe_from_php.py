@@ -20,7 +20,8 @@ cursor = connection.cursor()
 
 cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[1]}'")
 data = cursor.fetchall()
-print(json.dumps(data, indent=4))
+print(data)
+#print(json.dumps(data, indent=4))
 # for row in cursor:
 #   print (row)
 
