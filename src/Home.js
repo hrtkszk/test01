@@ -24,7 +24,7 @@ class Home extends React.Component {
       [key]: value
     })
   }
-  addTTOP = () => {
+  // addTTOP = () => {
     // const { user } = this.context
     // Auth.setupTOTP(user).then((code) => {
     //   const authCode = "otpauth://totp/AWSCognito:"+ user.username + "?secret=" + code + "&issuer=AWSCognito";
@@ -33,15 +33,15 @@ class Home extends React.Component {
     //     showPreferred: true
     //   })
     // });
-  }
-  setPreferredMFA = (authType) => {
+  // }
+  // setPreferredMFA = (authType) => {
     // const { user } = this.context
     // Auth.verifyTotpToken(user, this.state.challengeAnswer).then(() => {
     //   Auth.setPreferredMFA(user, authType)
     //     .then(data => console.log('data from verify...: ', data))
     //     .catch(err => console.log('error: ', err))
     // });
-  }
+  // }
 
   sendMsg = () => {
     const { user } = this.context
@@ -61,7 +61,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const isAuthenticated = this.context.user && this.context.user.username ? true : false
+    // const isAuthenticated = this.context.user && this.context.user.username ? true : false
     if (this.state.Messages === []) {
       return (
         <div className="App">
@@ -160,28 +160,28 @@ class Home extends React.Component {
     // )
   }
 
-const styles = {
-  buttonContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  },
-  button: {
-    cursor: 'pointer',
-    margin: 4,
-    border: '1px solid #ddd',
-    width: 225,
-    ':hover': {
-      backgroundColor: "rgba(0, 0, 0, .1)"
-    }
-  },
-  input: {
-    padding: 8,
-    height: 40,
-    width: 225,
-    border: '1px solid #ddd'
-  }
-}
+// const styles = {
+//   buttonContainer: {
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center'
+//   },
+//   button: {
+//     cursor: 'pointer',
+//     margin: 4,
+//     border: '1px solid #ddd',
+//     width: 225,
+//     ':hover': {
+//       backgroundColor: "rgba(0, 0, 0, .1)"
+//     }
+//   },
+//   input: {
+//     padding: 8,
+//     height: 40,
+//     width: 225,
+//     border: '1px solid #ddd'
+//   }
+// }
 
 
-export default Home
+// export default Home
