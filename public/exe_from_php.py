@@ -6,10 +6,10 @@ import sys
 
 # データベースへの接続とカーソルの生成
 connection = MySQLdb.connect(
-    host='mysql201.phy.lolipop.lan',
-    user='LAA1395778',
-    passwd='test01test01',
-    db='LAA1395778-test01')
+    host='mysql202.phy.lolipop.lan',
+    user='LAA1400403',
+    passwd='test',
+    db='LAA1400403-test20220219')
 cursor = connection.cursor()
 
 cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[0]}'")
