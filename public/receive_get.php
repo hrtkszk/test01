@@ -6,8 +6,9 @@ $_POST = json_decode($rest_json, true); // JSON文字列をデコード
 $command="python3 exe_from_php.py ".$_POST['id'];
 exec($command,$output);
 
+$outputarray=array();
 foreach ($output as &$eachoutput) {
-    $outputarray=array_push($outputarray,json_encode($eachoutput));
+    array_push($outputarray,json_encode($eachoutput));
 }
 
 
