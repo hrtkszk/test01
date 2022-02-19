@@ -5,6 +5,7 @@ $rest_json = file_get_contents("php://input"); // JSONでPOSTされたデータ�
 $_POST = json_decode($rest_json, true); // JSON文字列をデコード
 $command="python3 exe_from_php.py ".$_POST['id'];
 exec($command,$output);
+json_encode($output);
 
 if(empty($_POST['id'])) {
     echo json_encode(
