@@ -10,12 +10,12 @@ import ButtonSend from './ButtonSend';
 
 class Home extends React.Component {
   state = {
-    qrCode: '',
-    challengeAnswer: '',
-    showPreferred: false,
+    // qrCode: '',
+    // challengeAnswer: '',
+    // showPreferred: false,
     Messages: [],
     sendMessage: '',
-    image:'noImage'
+    // image:'noImage'
   }
   static contextType = UserContext
   onChange = (key, value) => {
@@ -44,11 +44,11 @@ class Home extends React.Component {
   // }
 
   sendMsg = () => {
-    const { user } = this.context
+    // const { user } = this.context
     const requestOptions ={
       method: 'POST',
       headers:{'Content-Type': 'application/json'},
-      body: JSON.stringify({"id":"1234"})
+      body: JSON.stringify({"id":this.state.sendMessage})
     }
     // console.log(user.username)
     fetch("receive_get.php",requestOptions)
