@@ -1,5 +1,3 @@
 /*
-/web/static/js/*.map
-/web/static/css/*.map
 /web/.htaccess
 /web/.htpasswd
