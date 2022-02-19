@@ -6,18 +6,18 @@ $_POST = json_decode($rest_json, true); // JSON文字列をデコード
 $command="python3 exe_from_php.py ".$_POST['id'];
 exec($command,$output);
 
-$outputarray=array();
-foreach ($output as &$eachoutput) {
-    array_push($outputarray,json_encode($eachoutput));
-}
-
+// $outputarray=array();
+// foreach ($output as &$eachoutput) {
+//     array_push($outputarray,json_encode($eachoutput));
+// }
+$output=json_encode($output[0]);
 
 if(empty($_POST['id'])) {
     echo json_encode(
         [
            "error" => true,
            "message" => "Error: 入力してください。",
-           "pythonout" => $outputarray,
+           "pythonout" => $output,
         ]
     ); 
 } else {
