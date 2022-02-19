@@ -19,6 +19,7 @@ if(empty($_POST['id'])) {
            "error" => true,
            "message" => "Error: 入力してください。",
            "pythonout" => $output2,
+           "pythonouttype" => gettype($output[0]),
         ]
     ); 
 } else {
@@ -27,6 +28,7 @@ if(empty($_POST['id'])) {
            "error" => false,
            "message" => 'Success: 入力されたテキスト→'.$_POST['id'],
            "pythonout" => $output2,
+           "pythonouttype" => gettype($output[0]),
         ]
     ); 
 }
