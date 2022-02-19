@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Headers: Content-Type');
 $rest_json = file_get_contents("php://input"); // JSONでPOSTされたデータを取り出す
 $_POST = json_decode($rest_json, true); // JSON文字列をデコード
-$command="python3 exe_from_php.py ".$_POST['text'];
+$command="python3 exe_from_php.py ".$_POST['id'];
 exec($command,$output);
 
 if(empty($_POST['text'])) {
@@ -18,7 +18,7 @@ if(empty($_POST['text'])) {
     echo json_encode(
         [
            "error" => false,
-           "message" => 'Success: 入力されたテキスト→'.$_POST['text'],
+           "message" => 'Success: 入力されたテキスト→'.$_POST['id'],
            "pythonout" => $output[0],
         ]
     ); 
