@@ -3,7 +3,7 @@ import React from 'react'
 //import QRCode from 'qrcode.react'
 // import { css } from 'glamor'
 import UserContext from './UserContext'
-// import Container from './Container'
+import Container from './Container'
 // import Button from './Button'
 import './Message.css';
 import ButtonSend from './ButtonSend';
@@ -64,6 +64,7 @@ class Home extends React.Component {
     // const isAuthenticated = this.context.user && this.context.user.username ? true : false
     if (this.state.Messages === []) {
       return (
+        <Container>
         <div className="App">
           <h1>Welcome</h1>
           <footer className="App-footer">
@@ -79,9 +80,11 @@ class Home extends React.Component {
               />
           </footer>
         </div>
+        </Container>
       )
     } else {
         return (
+          <Container>
           <div className="App">
             <h1>Welcome</h1>
             <div className="App-header">
@@ -106,6 +109,7 @@ class Home extends React.Component {
                 </footer>
             </div>
           </div>
+          </Container>
         )
       }
     }
@@ -184,4 +188,4 @@ class Home extends React.Component {
 // }
 
 
-// export default Home
+export default Home
