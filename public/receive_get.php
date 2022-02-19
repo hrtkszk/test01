@@ -20,6 +20,9 @@ if(empty($_POST['id'])) {
            "message" => "Error: 入力してください。",
            "pythonout" => $output2,
            "pythonouttype" => gettype($output[0]),
+           "pythonout0" => $output[0],
+           "pythonout1" => $output1,
+           "json_encode_type" => gettype($output2),
         ]
     ); 
 } else {
@@ -29,6 +32,9 @@ if(empty($_POST['id'])) {
            "message" => 'Success: 入力されたテキスト→'.$_POST['id'],
            "pythonout" => $output2,
            "pythonouttype" => gettype($output[0]),
+           "pythonout0" => $output[0],
+           "pythonout1" => $output1,
+           "json_encode_type" => gettype($output2),
         ]
     ); 
 }
