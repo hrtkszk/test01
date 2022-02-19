@@ -12,14 +12,15 @@ connection = MySQLdb.connect(
     passwd='test',
     db='LAA1400403-test20220219')
 
-with connection.cursor(MySQLdb.cursors.DictCursor) as cursor:
-    cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[1]}'")
-    data = cursor.fetchall()
+# with connection.cursor(MySQLdb.cursors.DictCursor) as cursor:
+#     cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[1]}'")
+#     data = cursor.fetchall()
+# print(json.dumps(data, indent=4))
+cursor = connection.cursor()
+
+cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[1]}'")
+data = cursor.fetchall()
 print(json.dumps(data, indent=4))
-#cursor = connection.cursor()
-
-#cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[1]}'")
-
 # for row in cursor:
 #   print (row)
 
