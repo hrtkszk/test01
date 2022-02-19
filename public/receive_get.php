@@ -10,14 +10,14 @@ exec($command,$output);
 // foreach ($output as &$eachoutput) {
 //     array_push($outputarray,json_encode($eachoutput));
 // }
-$output=json_encode($output[0]);
+$output1=json_encode($output[0]);
 
 if(empty($_POST['id'])) {
     echo json_encode(
         [
            "error" => true,
            "message" => "Error: 入力してください。",
-           "pythonout" => $output,
+           "pythonout" => $output1,
         ]
     ); 
 } else {
@@ -25,7 +25,7 @@ if(empty($_POST['id'])) {
         [
            "error" => false,
            "message" => 'Success: 入力されたテキスト→'.$_POST['id'],
-           "pythonout" => $outputarray,
+           "pythonout" => $output1,
         ]
     ); 
 }
