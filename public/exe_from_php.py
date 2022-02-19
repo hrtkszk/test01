@@ -3,7 +3,6 @@
 # MySQLdbのインポート
 import MySQLdb
 import sys
-import json
 
 # データベースへの接続とカーソルの生成
 connection = MySQLdb.connect(
@@ -12,18 +11,12 @@ connection = MySQLdb.connect(
     passwd='test',
     db='LAA1400403-test20220219')
 
-# with connection.cursor(MySQLdb.cursors.DictCursor) as cursor:
-#     cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[1]}'")
-#     data = cursor.fetchall()
-# print(json.dumps(data, indent=4))
-cursor = connection.cursor()
+cursor = connection.cursor(MySQLdb.cursors.DictCursor)
 
 cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[1]}'")
-data = cursor.fetchall()
-print(data)
-#print(json.dumps(data, indent=4))
-# for row in cursor:
-#   print (row)
+
+for row in cursor:
+   print (row)
 
 # 保存を実行
 connection.commit()
