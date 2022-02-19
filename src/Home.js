@@ -50,7 +50,7 @@ class Home extends React.Component {
       headers:{'Content-Type': 'application/json'},
       body: JSON.stringify({"id":"1234"})
     }
-    console.log(user.username)
+    // console.log(user.username)
     fetch("receive_get.php",requestOptions)
     .then((response)=> response.json())
     .then(result =>{
