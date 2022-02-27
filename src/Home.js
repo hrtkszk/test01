@@ -58,7 +58,6 @@ class Home extends React.Component {
       console.log(result)
       this.setState({Messages:result.pythonout9})
     })
-
   }
 
   render() {
@@ -89,12 +88,7 @@ class Home extends React.Component {
           <div className="App">
             <h1>Welcome</h1>
             <div className="App-header">
-              {this.state.Messages}
-              {/* <ul>
-                {this.state.Messages.map((Message, i) => {
-                  return <li key={Message.message}>{Message.message}</li>;
-                })}
-              </ul> */}
+            {this.state.Messages}
             </div>
             <div className="App">
                 <footer className="App-footer">
@@ -115,6 +109,12 @@ class Home extends React.Component {
         )
       }
     }
+
+  //   <ul>
+  //   {this.state.Messages.map((Message, i) => {
+  //     return <li key={Message.message}>{Message.message}</li>;
+  //   })}
+  // </ul>
     // return (
     //   <Container>
     //     <h1>Welcome</h1>
