@@ -6,30 +6,13 @@ $_POST = json_decode($rest_json, true); // JSON文字列をデコード
 $command="python3 exe_from_php.py ".$_POST['id'];
 exec($command,$output);
 
-$output0=str_replace("'",'"',$output[0]);
-if (is_array($output0) === true) {
-	$message0 = 'JSONです';
-} else {
-    $message0 = 'JSONではありません';
-}
+$output2 = array_combine($output[0],$output[1])
 
 // $outputarray=array();
 // foreach ($output as &$eachoutput) {
 //     array_push($outputarray,json_encode($eachoutput));
 // }
-$output1=trim($output0,'"');
-if (is_array($output1) === true) {
-	$message1 = 'JSONです';
-} else {
-    $message1 = 'JSONではありません';
-}
 
-$output2=json_encode($output1);
-if (is_array($output2) === true) {
-	$message2 = 'JSONです';
-} else {
-    $message2 = 'JSONではありません';
-}
 
 $output3=str_replace("': ",'=',$output[0]);
 $output4=str_replace(", '",'&',$output3);
@@ -65,21 +48,16 @@ if(empty($_POST['id'])) {
         [
            "error" => true,
            "message" => "Error: 入力してください。",
-           "pythonout" => $output[0],
-           "pythonout_type" => gettype($output[0]),
-           "pythonout0" => $output0,
-           "pythonout0_is_array" => $message0,
-           "pythonout0_type" => gettype($output0),
-           "pythonout1" => $output1,
-           "pythonout1_is_array" => $message1,
-           "pythonout1_type" => gettype($output1),
+           "pythonout0" => $output[0],
+           "pythonout0_type" => gettype($output[0]),
+           "pythonout1" => $output[1],
+           "pythonout1_type" => gettype($output[1]),
            "pythonout2" => $output2,
-           "pythonout2_is_array" => $message2,
            "pythonout2_type" => gettype($output2),
-           "pythonout9" => $output9,
-           "pythonout9_is_array" => $message9,
-           "pythonout9_type" => gettype($output9),
-           "pythonout9_ID" => $output9['ID'],
+        //    "pythonout9" => $output9,
+        //    "pythonout9_is_array" => $message9,
+        //    "pythonout9_type" => gettype($output9),
+        //    "pythonout9_ID" => $output9['ID'],
         ]
     ); 
 } else {
@@ -87,21 +65,16 @@ if(empty($_POST['id'])) {
         [
            "error" => false,
            "message" => 'Success: 入力されたテキスト→'.$_POST['id'],
-           "pythonout" => $output[0],
-           "pythonout_type" => gettype($output[0]),
-           "pythonout0" => $output0,
-           "pythonout0_is_array" => $message0,
-           "pythonout0_type" => gettype($output0),
-           "pythonout1" => $output1,
-           "pythonout1_is_array" => $message1,
-           "pythonout1_type" => gettype($output1),
+           "pythonout0" => $output[0],
+           "pythonout0_type" => gettype($output[0]),
+           "pythonout1" => $output[1],
+           "pythonout1_type" => gettype($output[1]),
            "pythonout2" => $output2,
-           "pythonout2_is_array" => $message2,
            "pythonout2_type" => gettype($output2),
-           "pythonout9" => $output9,
-           "pythonout9_is_array" => $message9,
-           "pythonout9_type" => gettype($output9),
-           "pythonout9_ID" => $output9['ID'],
+        //    "pythonout9" => $output9,
+        //    "pythonout9_is_array" => $message9,
+        //    "pythonout9_type" => gettype($output9),
+        //    "pythonout9_ID" => $output9['ID'],
         ]
     ); 
 }
