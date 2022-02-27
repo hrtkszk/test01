@@ -5,32 +5,75 @@ $rest_json = file_get_contents("php://input"); // JSONでPOSTされたデータ�
 $_POST = json_decode($rest_json, true); // JSON文字列をデコード
 $command="python3 exe_from_php.py ".$_POST['id'];
 exec($command,$output);
-$output1=trim($output[0],'"');
+
+$output0=str_replace("'",'"',$output[0]);
+if (is_array($output0) === true) {
+	$message0 = 'JSONです';
+} else {
+    $message0 = 'JSONではありません';
+}
 
 // $outputarray=array();
 // foreach ($output as &$eachoutput) {
 //     array_push($outputarray,json_encode($eachoutput));
 // }
-$output2=json_encode($output1);
+$output1=trim($output0,'"');
+if (is_array($output1) === true) {
+	$message1 = 'JSONです';
+} else {
+    $message1 = 'JSONではありません';
+}
 
-$json = json_decode($output2);
-if (is_array($json) === true) {
+$output2=json_encode($output1);
+if (is_array($output2) === true) {
 	$message2 = 'JSONです';
 } else {
     $message2 = 'JSONではありません';
 }
+
+$output3=str_replace(":",'=>',$output[0]);
+$output4=trim($output3,'"');
+$output5=json_encode($output4);
+if (is_array($output5) === true) {
+	$message5 = 'JSONです';
+} else {
+    $message5 = 'JSONではありません';
+}
+
+
+// $pieces = explode(":", $output1);
+// $keywords = preg_split("/[\s,]+/", "hypertext language, programming");
+
+// $json = json_decode($output2);
+// $json1 = array('foo' => 'bar', 'baz' => 'long');
+// $json2 = json_encode($json1);
+// if (is_array($json1) === true) {
+// 	$message2 = 'JSONです';
+// } else {
+//     $message2 = 'JSONではありません';
+// }
+
+
 
 if(empty($_POST['id'])) {
     echo json_encode(
         [
            "error" => true,
            "message" => "Error: 入力してください。",
-           "message2" => $message2,
-           "pythonout" => $output2,
-           "pythonouttype" => gettype($output[0]),
-           "pythonout0" => $output[0],
+           "pythonout" => $output[0],
+           "pythonout_type" => gettype($output[0]),
+           "pythonout0" => $output0,
+           "pythonout0_is_array" => $message0,
+           "pythonout0_type" => gettype($output0),
            "pythonout1" => $output1,
-           "json_encode_type" => gettype($output2),
+           "pythonout1_is_array" => $message1,
+           "pythonout1_type" => gettype($output1),
+           "pythonout2" => $output2,
+           "pythonout2_is_array" => $message2,
+           "pythonout2_type" => gettype($output2),
+           "pythonout5" => $output5,
+           "pythonout5_is_array" => $message5,
+           "pythonout5_type" => gettype($output5),
         ]
     ); 
 } else {
@@ -38,12 +81,20 @@ if(empty($_POST['id'])) {
         [
            "error" => false,
            "message" => 'Success: 入力されたテキスト→'.$_POST['id'],
-           "message2" => $message2,
-           "pythonout" => $output2,
-           "pythonouttype" => gettype($output[0]),
-           "pythonout0" => $output[0],
+           "pythonout" => $output[0],
+           "pythonout_type" => gettype($output[0]),
+           "pythonout0" => $output0,
+           "pythonout0_is_array" => $message0,
+           "pythonout0_type" => gettype($output0),
            "pythonout1" => $output1,
-           "json_encode_type" => gettype($output2),
+           "pythonout1_is_array" => $message1,
+           "pythonout1_type" => gettype($output1),
+           "pythonout2" => $output2,
+           "pythonout2_is_array" => $message2,
+           "pythonout2_type" => gettype($output2),
+           "pythonout5" => $output5,
+           "pythonout5_is_array" => $message5,
+           "pythonout5_type" => gettype($output5),
         ]
     ); 
 }
