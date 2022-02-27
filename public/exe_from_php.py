@@ -11,9 +11,17 @@ connection = MySQLdb.connect(
     passwd='test',
     db='LAA1400403-test20220219')
 
-cursor = connection.cursor(MySQLdb.cursors.DictCursor)
+# cursor = connection.cursor(MySQLdb.cursors.DictCursor)
+cursor = connection.cursor()
+
+
+
 
 cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[1]}'")
+
+num_fields = len(cursor.description)
+field_names = [i[0] for i in cursor.description]
+print(field_names)
 
 for row in cursor:
    print (row)
