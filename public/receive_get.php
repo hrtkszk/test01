@@ -31,17 +31,18 @@ if (is_array($output2) === true) {
     $message2 = 'JSONではありません';
 }
 
-$output3=str_replace(", '",'&',$output[0]);
-$output4=str_replace("': ",'=',$output3);
-$output5=trim($output4,'"');
-$output6=trim($output5,"{'");
-$output7=trim($output6,'}');
+$output3=str_replace("'",'',$output[0]);
+$output4=str_replace(", ",'&',$output3);
+$output5=str_replace(": ",'=',$output4);
+$output6=trim($output5,'"');
+$output7=trim($output6,"{'");
+$output8=trim($output7,'}');
 parse_str($output7, $output8);
-$output9 = json_encode($output8);
-if (is_array($output9) === true) {
-	$message9 = 'JSONです';
+// $output9 = json_encode($output8);
+if (is_array($output8) === true) {
+	$message8 = 'JSONです';
 } else {
-    $message9 = 'JSONではありません';
+    $message8 = 'JSONではありません';
 }
 
 
@@ -75,9 +76,9 @@ if(empty($_POST['id'])) {
            "pythonout2" => $output2,
            "pythonout2_is_array" => $message2,
            "pythonout2_type" => gettype($output2),
-           "pythonout9" => $output9,
-           "pythonout9_is_array" => $message9,
-           "pythonout9_type" => gettype($output9),
+           "pythonout8" => $output8,
+           "pythonout8_is_array" => $message8,
+           "pythonout8_type" => gettype($output8),
         ]
     ); 
 } else {
@@ -96,9 +97,9 @@ if(empty($_POST['id'])) {
            "pythonout2" => $output2,
            "pythonout2_is_array" => $message2,
            "pythonout2_type" => gettype($output2),
-           "pythonout9" => $output9,
-           "pythonout9_is_array" => $message9,
-           "pythonout9_type" => gettype($output9),
+           "pythonout8" => $output8,
+           "pythonout8_is_array" => $message8,
+           "pythonout8_type" => gettype($output8),
         ]
     ); 
 }
