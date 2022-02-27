@@ -31,11 +31,11 @@ if (is_array($output2) === true) {
     $message2 = 'JSONではありません';
 }
 
-$output3=str_replace("'",'',$output[0]);
-$output4=str_replace(", ",'&',$output3);
-$output5=str_replace(": ",'=',$output4);
+$output3=str_replace("': ",'=',$output[0]);
+$output4=str_replace(", '",'&',$output3);
+$output5=str_replace("'",'',$output4);
 $output6=trim($output5,'"');
-$output7=trim($output6,"{'");
+$output7=trim($output6,"{");
 $output8=trim($output7,'}');
 parse_str($output7, $output8);
 // $output9 = json_encode($output8);
