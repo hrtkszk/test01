@@ -56,7 +56,7 @@ class Home extends React.Component {
     .then((response)=> response.json())
     .then(result =>{
       console.log(result)
-      this.setState({Messages:result.pythonout})
+      this.setState({Messages:result.pythonout9})
     })
 
   }
