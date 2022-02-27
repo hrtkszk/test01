@@ -34,7 +34,7 @@ if (is_array($output2) === true) {
 $output3=str_replace(", '",'&',$output[0]);
 $output4=str_replace("': ",'=',$output3);
 $output5=trim($output4,'"');
-$output6=trim($output5,'{');
+$output6=trim($output5,"{'");
 $output7=trim($output6,'}');
 parse_str($output7, $output8);
 if (is_array($output8) === true) {
