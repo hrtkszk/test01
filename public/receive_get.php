@@ -79,6 +79,7 @@ if(empty($_POST['id'])) {
            "pythonout9" => $output9,
            "pythonout9_is_array" => $message9,
            "pythonout9_type" => gettype($output9),
+           "pythonout9_ID" => $output9['ID'],
         ]
     ); 
 } else {
@@ -100,6 +101,7 @@ if(empty($_POST['id'])) {
            "pythonout9" => $output9,
            "pythonout9_is_array" => $message9,
            "pythonout9_type" => gettype($output9),
+           "pythonout9_ID" => $output9['ID'],
         ]
     ); 
 }
