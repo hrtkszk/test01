@@ -57,6 +57,7 @@ class Home extends React.Component {
     .then(result =>{
       console.log(result)
       this.setState({Messages:result.pythonout2})
+      console.log(this.state.Messages)
     })
   }
 
@@ -88,11 +89,6 @@ class Home extends React.Component {
           <div className="App">
             <h1>Welcome</h1>
             <div className="App-header">
-              <ul>
-                {this.state.Messages.map((Message, i) => {
-                  return <li key={Message.ID}>{Message.ID}</li>;
-                })}
-              </ul>
             </div>
             <div className="App">
                 <footer className="App-footer">
