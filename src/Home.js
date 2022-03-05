@@ -88,7 +88,7 @@ class Home extends React.Component {
           <div className="App">
             <h1>Welcome</h1>
             <div className="App-header">
-
+            {this.state.Messages.message}
             </div>
             <div className="App">
                 <footer className="App-footer">
