@@ -10,8 +10,8 @@ $output[0]=trim($output[0],"\"['");
 $output[0]=trim($output[0],"']\"");
 $output0=explode("', '",$output[0]);
 
-$output[1]=trim($output[1],"\"(");
-$output[1]=trim($output[1],")\"");
+$output[1]=trim($output[1],"\"[");
+$output[1]=trim($output[1],"]\"");
 $output1=explode(", ",$output[1]);
 
 $output2 = array_combine($output0,$output1);
@@ -56,10 +56,10 @@ if(empty($_POST['id'])) {
         [
            "error" => true,
            "message" => "Error: 入力してください。",
-           "pythonout0" => $output[0],
+           "pythonout_0" => $output[0],
            "pythonout0" => $output0,
            "pythonout0_type" => gettype($output0),
-           "pythonout1" => $output[1],
+           "pythonout_1" => $output[1],
            "pythonout1" => $output1,
            "pythonout1_type" => gettype($output1),
            "pythonout2" => $output2,
@@ -75,10 +75,10 @@ if(empty($_POST['id'])) {
         [
            "error" => false,
            "message" => 'Success: 入力されたテキスト→'.$_POST['id'],
-           "pythonout0" => $output[0],
+           "pythonout_0" => $output[0],
            "pythonout0" => $output0,
            "pythonout0_type" => gettype($output0),
-           "pythonout1" => $output[1],
+           "pythonout_1" => $output[1],
            "pythonout1" => $output1,
            "pythonout1_type" => gettype($output1),
            "pythonout2" => $output2,

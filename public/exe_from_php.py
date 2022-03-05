@@ -3,6 +3,7 @@
 # MySQLdbのインポート
 import MySQLdb
 import sys
+import datetime
 
 # データベースへの接続とカーソルの生成
 connection = MySQLdb.connect(
@@ -24,7 +25,16 @@ field_names = [i[0] for i in cursor.description]
 print(field_names)
 
 for row in cursor:
-   print (row)
+    i = 0
+    row1 = list()
+    for item in row:
+        if str(type(item)) == "<class 'datetime.datetime'>":
+             row1.append(str(item.strftime("%Y/%m/%d %H:%M:%S")))
+        else:
+             row1.append(item)
+        #row1.append(item)
+        i = i + 1
+    print (row1)
 
 # 保存を実行
 connection.commit()
