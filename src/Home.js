@@ -90,7 +90,7 @@ class Home extends React.Component {
             <div className="App-header">
               <ul>
                 {this.state.Messages.map((Message, i) => {
-                  <li key={Message.message}>{Message.message}</li>;
+                  return <li key={Message.ID}>{Message.ID}</li>;
                 })}
               </ul>
             </div>
