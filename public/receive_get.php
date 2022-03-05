@@ -15,7 +15,7 @@ $output[1]=trim($output[1],"]\"");
 $output1=explode(", ",$output[1]);
 
 $output2 = array_combine($output0,$output1);
-$output2 = json_encode($output2,JSON_UNESCAPED_UNICODE);
+// $output2 = json_encode($output2,JSON_UNESCAPED_UNICODE);
 
 // $outputarray=array();
 // foreach ($output as &$eachoutput) {
