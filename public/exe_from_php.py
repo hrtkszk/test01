@@ -7,9 +7,9 @@ import sys
 # データベースへの接続とカーソルの生成
 connection = MySQLdb.connect(
     host='mysql202.phy.lolipop.lan',
-    user='LAA1400403',
-    passwd='test',
-    db='LAA1400403-test20220219')
+    user='LAA1405090',
+    passwd='1234abcd',
+    db='LAA1405090-test')
 
 # cursor = connection.cursor(MySQLdb.cursors.DictCursor)
 cursor = connection.cursor()
