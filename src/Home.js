@@ -88,7 +88,11 @@ class Home extends React.Component {
           <div className="App">
             <h1>Welcome</h1>
             <div className="App-header">
-            {this.state.Messages.message}
+              <ul>
+                {this.state.Messages.map((Message, i) => {
+                  return <li key={Message.message}>{Message.message}</li>;
+                })}
+              </ul>
             </div>
             <div className="App">
                 <footer className="App-footer">
