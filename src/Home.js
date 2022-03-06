@@ -44,6 +44,7 @@ class Home extends React.Component {
   // }
 
   sendMsg = () => {
+    this.setState({Messages:[]})
     // const { user } = this.context
     const requestOptions ={
       method: 'POST',
