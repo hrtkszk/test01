@@ -3,9 +3,10 @@ header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Headers: Content-Type');
 $rest_json = file_get_contents("php://input"); // JSONでPOSTされたデータを取り出す
 $_POST = json_decode($rest_json, true); // JSON文字列をデコード
-$command="python3 exe_from_php.py ".$_POST['id'];
-exec($command,$output);
+$command="python3 exe_from_php.py ".$_POST['id']; //pythonに引数を渡す
+exec($command,$output); //python実行と、返り数受け取り
 
+// pythonからの返り数のうち、SQLのヘッダーの受け取りと、文字列から配列変換(pythonの出力1行目)
 $output[0]=trim($output[0],"\"['");
 $output[0]=trim($output[0],"']\"");
 $output0=explode("', '",$output[0]);
@@ -13,6 +14,7 @@ $output0=explode("', '",$output[0]);
 $output2=array();
 $it = 0;
 
+// pythonからの返り数のうち、SQLの受け取りと、文字列から配列変換(pythonの残りの行全て)
 foreach ($output as $value) {
     $value=trim($value,"\"[");
     $value=trim($value,"]\"");
@@ -22,62 +24,17 @@ foreach ($output as $value) {
     $output2 = $output2 + array("$it" => $output1);
     $it = $it + 1;
 }
+// 配列1行目の削除と、配列詰め
+unset($output2[0]);
+$output2 = array_values($output2);
 
-
-// $output2 = json_encode($output2,JSON_UNESCAPED_UNICODE);
-
-// $outputarray=array();
-// foreach ($output as &$eachoutput) {
-//     array_push($outputarray,json_encode($eachoutput));
-// }
-
-
-$output3=str_replace("': ",'=',$output[0]);
-$output4=str_replace(", '",'&',$output3);
-$output5=str_replace("'",'',$output4);
-$output6=trim($output5,'"');
-$output7=trim($output6,"{");
-$output8=trim($output7,"}");
-parse_str($output8, $output9);
-// $output9 = json_encode($output8);
-if (is_array($output9) === true) {
-	$message9 = 'JSONです';
-} else {
-    $message9 = 'JSONではありません';
-}
-
-
-// $pieces = explode(":", $output1);
-// $keywords = preg_split("/[\s,]+/", "hypertext language, programming");
-
-// $json = json_decode($output2);
-// $json1 = array('foo' => 'bar', 'baz' => 'long');
-// $json2 = json_encode($json1);
-// if (is_array($json1) === true) {
-// 	$message2 = 'JSONです';
-// } else {
-//     $message2 = 'JSONではありません';
-// }
-
-
-
+//配列のJSON変換と、echoでのサーバーサイド出力。
 if(empty($_POST['id'])) {
     echo json_encode(
         [
            "error" => true,
            "message" => "Error: 入力してください。",
-           "pythonout_0" => $output[0],
-           "pythonout0" => $output0,
-           "pythonout0_type" => gettype($output0),
-           "pythonout_1" => $output[1],
-           "pythonout1" => $output1,
-           "pythonout1_type" => gettype($output1),
            "pythonout2" => $output2,
-           "pythonout2_type" => gettype($output2),
-        //    "pythonout9" => $output9,
-        //    "pythonout9_is_array" => $message9,
-        //    "pythonout9_type" => gettype($output9),
-        //    "pythonout9_ID" => $output9['ID'],
         ]
     ); 
 } else {
@@ -85,18 +42,7 @@ if(empty($_POST['id'])) {
         [
            "error" => false,
            "message" => 'Success: 入力されたテキスト→'.$_POST['id'],
-           "pythonout_0" => $output[0],
-           "pythonout0" => $output0,
-           "pythonout0_type" => gettype($output0),
-           "pythonout_1" => $output[1],
-           "pythonout1" => $output1,
-           "pythonout1_type" => gettype($output1),
            "pythonout2" => $output2,
-           "pythonout2_type" => gettype($output2),
-        //    "pythonout9" => $output9,
-        //    "pythonout9_is_array" => $message9,
-        //    "pythonout9_type" => gettype($output9),
-        //    "pythonout9_ID" => $output9['ID'],
         ]
     ); 
 }
