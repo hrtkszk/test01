@@ -15,25 +15,22 @@ connection = MySQLdb.connect(
 # cursor = connection.cursor(MySQLdb.cursors.DictCursor)
 cursor = connection.cursor()
 
-
-
-
 cursor.execute(f"SELECT * FROM test WHERE id='{sys.argv[1]}'")
 
-num_fields = len(cursor.description)
+# num_fields = len(cursor.description)
 field_names = [i[0] for i in cursor.description]
 print(field_names)
 
 for row in cursor:
-    i = 0
     row1 = list()
     for item in row:
         if str(type(item)) == "<class 'datetime.datetime'>":
-             row1.append(str(item.strftime("%Y/%m/%d %H:%M:%S")))
+            row1.append(str(item.strftime("%Y/%m/%d %H:%M:%S")))
+        elif str(type(item)) == "<class 'str'>":
+            item = item.replace("'","’")
+            row1.append(item.replace(', ', '，'))
         else:
-             row1.append(item)
-        #row1.append(item)
-        i = i + 1
+            row1.append(item)
     print (row1)
 
 # 保存を実行

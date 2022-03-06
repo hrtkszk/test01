@@ -10,11 +10,20 @@ $output[0]=trim($output[0],"\"['");
 $output[0]=trim($output[0],"']\"");
 $output0=explode("', '",$output[0]);
 
-$output[1]=trim($output[1],"\"[");
-$output[1]=trim($output[1],"]\"");
-$output1=explode(", ",$output[1]);
+$output2=array();
+$it = 0;
 
-$output2 = array_combine($output0,$output1);
+foreach ($output as $value) {
+    $value=trim($value,"\"[");
+    $value=trim($value,"]\"");
+    $value=str_replace("'",'',$value);
+    $value1=explode(", ",$value);
+    $output1 = array_combine($output0,$value1);
+    $output2 = $output2 + array("$it" => $output1);
+    $it = $it + 1;
+}
+
+
 // $output2 = json_encode($output2,JSON_UNESCAPED_UNICODE);
 
 // $outputarray=array();
