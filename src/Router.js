@@ -3,7 +3,7 @@ import {
   Routes,
   Route,
   Navigate,
-  BrowserRouter as Router
+  BrowserRouter
 } from 'react-router-dom'
 // import UserContext from './UserContext'
 import Header from './Header'
@@ -27,8 +27,8 @@ function useAuth() {
   return true;
 }
 
-const Routeres = () => (
-  <Router>
+const Router = () => (
+  <BrowserRouter>
     <div>
       <Header />
       <Routes>
@@ -75,13 +75,13 @@ const Routeres = () => (
           path="*"
           element={
             <main style={{ padding: "1rem" }}>
-              <p>There's nothing here!</p>
+              <p>404 Page Not Found</p>
             </main>
           }
         />
       </Routes>
     </div>
-  </Router>
+  </BrowserRouter>
 )
 
-export default Routeres
+export default Router

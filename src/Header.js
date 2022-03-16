@@ -14,7 +14,7 @@ class Header extends React.Component {
       <div {...css(styles.container)}>
         <div {...css(styles.navContainer)}>
           {
-            isLoaded ? isAuthenticated ? (
+            // isLoaded ? isAuthenticated ? (
               <>
                 <Link to='/profilesearch' {...css(styles.link)}>
                   <p {...css(styles.navItem)}>検索</p>
@@ -35,12 +35,13 @@ class Header extends React.Component {
                   title="ログオフ"
                   onClick={signOut}
                 />
-              </>
-            ) : (
+              {/* </> */}
+            {/* ) : ( */}
               <Link to='/auth' {...css(styles.link)}>
                 <p {...css(styles.navItem)}>テストサイト名</p>
               </Link>
-            ) : null
+            {/* ) : null */}
+              </>
           }
 
         </div>

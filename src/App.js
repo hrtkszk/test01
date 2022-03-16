@@ -2,39 +2,39 @@ import './App.css';
 import React from 'react';
 //import ButtonSend from './ButtonSend';
 import Router from './Router'
-import UserContext from './UserContext'
+// import UserContext from './UserContext'
 
 class App extends React.Component {
-  state = {
-    currentUser: {},
-    isLoaded: false
-  }
-  componentDidMount() {
-    this.updateCurrentUser()
-  }
-  updateCurrentUser = async (user) => {
-    if (user) {
-      this.setState({ currentUser: user })
-      return
-    }
-    try {
-      //const user = await getCurrentUserSession()
-      this.setState({ currentUser: user, isLoaded: true })
-    } catch (err) {
-      this.setState({ currentUser: null, isLoaded: true })
-    }
-  }
+  // state = {
+  //   currentUser: {},
+  //   isLoaded: false
+  // }
+  // componentDidMount() {
+  //   this.updateCurrentUser()
+  // }
+  // updateCurrentUser = async (user) => {
+  //   if (user) {
+  //     this.setState({ currentUser: user })
+  //     return
+  //   }
+  //   try {
+  //     //const user = await getCurrentUserSession()
+  //     this.setState({ currentUser: user, isLoaded: true })
+  //   } catch (err) {
+  //     this.setState({ currentUser: null, isLoaded: true })
+  //   }
+  // }
   render() {
     return (
-      <UserContext.Provider value={{
-        user: this.state.currentUser,
-        updateCurrentUser: this.updateCurrentUser,
-        isLoaded: this.state.isLoaded
-      }}>
+      // <UserContext.Provider value={{
+      //   user: this.state.currentUser,
+      //   updateCurrentUser: this.updateCurrentUser,
+      //   isLoaded: this.state.isLoaded
+      // }}>
         <div className="App">
           <Router />
         </div>
-      </UserContext.Provider>
+      // </UserContext.Provider>
     );
   }
 }
