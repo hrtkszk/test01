@@ -20,8 +20,9 @@ import Boshu from './Boshu'
 import NoMatch from './NoMatch'
 
 function PrivateRoute({ children }) {
-  const auth = useAuth();
-  return auth ?  children  : <Navigate to='/auth' />;
+  // const auth = useAuth();
+  // return auth ?  children  : <Navigate to='/auth' />;
+  return children;
 }
 
 function useAuth() {
