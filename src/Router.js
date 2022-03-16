@@ -2,7 +2,7 @@ import React from 'react'
 import {
   Routes,
   Route,
-  Navigate,
+  // Navigate,
   BrowserRouter
 } from 'react-router-dom'
 // import UserContext from './UserContext'
@@ -25,9 +25,9 @@ function PrivateRoute({ children }) {
   return children;
 }
 
-function useAuth() {
-  return true;
-}
+// function useAuth() {
+//   return true;
+// }
 
 const Router = () => (
   <BrowserRouter>
