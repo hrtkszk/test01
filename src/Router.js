@@ -17,6 +17,7 @@ import SignUpConfirmation from './SignUpConfirmation'
 import ForgotPasswordConfirmation from './ForgotPasswordConfirmation'
 import ProfileSearch from './ProfileSearch'
 import Boshu from './Boshu'
+import NoMatch from './NoMatch'
 
 function PrivateRoute({ children }) {
   const auth = useAuth();
@@ -35,6 +36,7 @@ const Router = () => (
         <Route path='/auth' element={<Authenticator />} />
         <Route path='/suc' element={<SignUpConfirmation />} />
         <Route path='/fpc' element={<ForgotPasswordConfirmation />} />
+        <Route path="*" element={<NoMatch />} />
         <Route path='/' element={<Home />} />
         <Route path='/profilesearch'
           element={
@@ -69,14 +71,6 @@ const Router = () => (
             <PrivateRoute>
               <Profile />
             </PrivateRoute>
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: "1rem" }}>
-              <p>404 Page Not Found</p>
-            </main>
           }
         />
       </Routes>
