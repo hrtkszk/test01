@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'glamor'
 import Container from './Container'
-import UserContext from './UserContext'
+// import UserContext from './UserContext'
 
 class Private extends React.Component {
   state = {
@@ -9,7 +9,7 @@ class Private extends React.Component {
     receiverID: ''
   }
 
-  static contextType = UserContext
+  // static contextType = UserContext
 
   sendMsg = () => {
     // var docClient = new AWS.DynamoDB.DocumentClient();

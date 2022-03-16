@@ -1,7 +1,7 @@
 import './Message.css';
 import React from 'react';
 import ButtonSend from './ButtonSend';
-import UserContext from './UserContext'
+// import UserContext from './UserContext'
 
 class Message extends React.Component {
   state = {
@@ -9,7 +9,7 @@ class Message extends React.Component {
     sendMessage: '',
     image:'noImage'
   }
-  static contextType = UserContext
+  // static contextType = UserContext
   onChange = (key, value) => {
     //this.props.updateErrorMessage(null)
     this.setState({
@@ -17,13 +17,13 @@ class Message extends React.Component {
     })
   }
   sendMsg = () => {
-    const { user } = this.context
+    // const { user } = this.context
     // const requestOptions ={
     //   method: 'POST',
     //   headers:{'Content-Type': 'application/json'},
     //   body: JSON.stringify({"id":user.username,"sendTo":"bbbb","message":this.state.sendMessage,"image":this.state.image})
     // }
-    console.log(user.username)
+    // console.log(user.username)
     // fetch("https://skbwb0u423.execute-api.ap-northeast-1.amazonaws.com/dev_amp_db",requestOptions)
     // .then((response)=> response.json())
     // .then((responseJson) =>{
@@ -37,25 +37,25 @@ class Message extends React.Component {
   }
   
   componentDidMount() {
-    const { user, isLoaded } = this.context
-    console.log(this.context)
-    if (isLoaded === false) {
-      console.log(this.context)
-      window.location.href = "/"
-    } else {
+    // const { user, isLoaded } = this.context
+    // console.log(this.context)
+    // if (isLoaded === false) {
+    //   console.log(this.context)
+    //   window.location.href = "/"
+    // } else {
       // const requestOptions ={
       //   method: 'POST',
       //   headers:{'Content-Type': 'application/json'},
       //   body: JSON.stringify({"id":user.username})
       // }
-      console.log(user.username)
+      // console.log(user.username)
       // fetch("https://769qg6p65h.execute-api.ap-northeast-1.amazonaws.com/dbread",requestOptions)
       // .then(response=> response.json())
       // .then(result =>{
       //   console.log(result)
       //   this.setState({Messages:result.body})
       // })
-    }
+    // }
     //this.interval = setInterval(()=>this.componentDidMount(), 30000);
   }
   componentWillUnmount() {

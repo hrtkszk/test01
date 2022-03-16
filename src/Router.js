@@ -20,7 +20,7 @@ import Boshu from './Boshu'
 
 function PrivateRoute({ children }) {
   const auth = useAuth();
-  return auth ? children : <Navigate to='/auth' />;
+  return auth ? <Navigate to='/auth' /> : children ;
 }
 
 function useAuth() {

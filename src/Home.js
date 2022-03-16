@@ -2,7 +2,7 @@ import React from 'react'
 // import { Auth } from 'aws-amplify'
 //import QRCode from 'qrcode.react'
 // import { css } from 'glamor'
-import UserContext from './UserContext'
+// import UserContext from './UserContext'
 import Container from './Container'
 // import Button from './Button'
 import './Message.css';
@@ -17,7 +17,7 @@ class Home extends React.Component {
     sendMessage: '',
     // image:'noImage'
   }
-  static contextType = UserContext
+  // static contextType = UserContext
   onChange = (key, value) => {
     //this.props.updateErrorMessage(null)
     this.setState({

@@ -1,35 +1,35 @@
 import React from 'react'
 //import { css } from 'glamor'
 import Container from './Container'
-import UserContext from './UserContext'
+// import UserContext from './UserContext'
 
 class Private extends React.Component {
   state = {
     MessageList: []
   }
 
-  static contextType = UserContext
+  // static contextType = UserContext
 
   componentDidMount() {
-    const { user, isLoaded } = this.context
-    console.log(this.context)
-    if (isLoaded === false) {
-      console.log(this.context)
-      window.location.href = "/"
-    } else {
+    // const { user, isLoaded } = this.context
+    // console.log(this.context)
+    // if (isLoaded === false) {
+    //   console.log(this.context)
+    //   window.location.href = "/"
+    // } else {
       // const requestOptions ={
       //   method: 'POST',
       //   headers:{'Content-Type': 'application/json'},
       //   body: JSON.stringify({"id":user.username})
       // }
-      console.log(user.username)
+      // console.log(user.username)
       // fetch("https://j0xl3jx013.execute-api.ap-northeast-1.amazonaws.com/dev",requestOptions)
       // .then(response=> response.json())
       // .then(result =>{
       //   console.log(result)
       //   this.setState({MessageList:result.body})
       // })
-    }
+    // }
     //this.interval = setInterval(()=>this.componentDidMount(), 30000);
   }
 
@@ -50,11 +50,11 @@ class Private extends React.Component {
           <h1>メッセージリスト</h1>
           <div className="App">
             <div className="App-header">
-              <ul>
+              {/* <ul>
                 {this.state.MessageList.map((Message, i) => {
                   return <li key={Message.sendTo}>{Message.nickname}{Message.age}{Message.latestMessage}{Message.date}</li>;
                 })}
-              </ul>
+              </ul> */}
             </div>
           </div>
         </Container>

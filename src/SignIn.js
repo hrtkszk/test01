@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'glamor'
 // import { Auth } from 'aws-amplify'
-import UserContext from './UserContext'
+// import UserContext from './UserContext'
 
 
 class SignIn extends React.Component {
@@ -12,7 +12,7 @@ class SignIn extends React.Component {
     user: {},
     authCode: ''
   }
-  static contextType = UserContext
+  // static contextType = UserContext
   onChange = (key, value) => {
     this.props.updateErrorMessage(null)
     this.setState({
