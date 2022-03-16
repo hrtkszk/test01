@@ -21,7 +21,7 @@ import NoMatch from './NoMatch'
 
 function PrivateRoute({ children }) {
   const auth = useAuth();
-  return auth ? <Navigate to='/auth' /> : children ;
+  return auth ?  children  : <Navigate to='/auth' />;
 }
 
 function useAuth() {
@@ -36,7 +36,6 @@ const Router = () => (
         <Route path='/auth' element={<Authenticator />} />
         <Route path='/suc' element={<SignUpConfirmation />} />
         <Route path='/fpc' element={<ForgotPasswordConfirmation />} />
-        <Route path="*" element={<NoMatch />} />
         <Route path='/' element={<Home />} />
         <Route path='/profilesearch'
           element={
@@ -73,6 +72,7 @@ const Router = () => (
             </PrivateRoute>
           }
         />
+        <Route path='*' element={<NoMatch />} />
       </Routes>
     </div>
   </BrowserRouter>
