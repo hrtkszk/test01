@@ -1,15 +1,15 @@
 import React from 'react'
 import { css } from 'glamor'
 import { Link } from 'react-router-dom'
-import UserContext from './UserContext'
+// import UserContext from './UserContext'
 import ButtonSignOut from './ButtonSignOut'
 // import { Auth } from 'aws-amplify'
 
 class Header extends React.Component {
-  static contextType = UserContext
+  // static contextType = UserContext
   render() {
-    const isAuthenticated = this.context.user && this.context.user.username ? true : false
-    const isLoaded = this.context.isLoaded
+    // const isAuthenticated = this.context.user && this.context.user.username ? true : false
+    // const isLoaded = this.context.isLoaded
     return (
       <div {...css(styles.container)}>
         <div {...css(styles.navContainer)}>
