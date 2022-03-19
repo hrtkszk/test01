@@ -32,7 +32,7 @@ function PrivateRoute({ children }) {
 const App = () => (
   <BrowserRouter>
     <div className="App">
-      <Header />
+
       <Routes>
         <Route path='/auth' element={<Authenticator />} />
         <Route path='/suc' element={<SignUpConfirmation />} />
@@ -75,6 +75,7 @@ const App = () => (
         />
         <Route path='*' element={<NoMatch />} />
       </Routes>
+      <Header />
       </div>
   </BrowserRouter>
 )
