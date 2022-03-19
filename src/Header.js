@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from 'glamor'
 import { Link } from 'react-router-dom'
 // import UserContext from './UserContext'
-import ButtonSignOut from './ButtonSignOut'
+import ButtonSignOut from './page/ButtonSignOut'
 // import { Auth } from 'aws-amplify'
 
 class Header extends React.Component {

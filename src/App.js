@@ -6,17 +6,17 @@ import {
   BrowserRouter
 } from 'react-router-dom'
 // import UserContext from './UserContext'
-import Header from './Header'
 
-import Authenticator from './Authenticator'
-import Home from './Home'
+import Header from './Header'
+import Authenticator from './auth/Authenticator'
+import Home from './page/Home'
 import MessageList from './MessageList'
-import Message from './Message'
+import Message from './page/Message'
 import Profile from './Profile'
-import SignUpConfirmation from './SignUpConfirmation'
-import ForgotPasswordConfirmation from './ForgotPasswordConfirmation'
+import SignUpConfirmation from './auth/SignUpConfirmation'
+import ForgotPasswordConfirmation from './auth/ForgotPasswordConfirmation'
 import ProfileSearch from './ProfileSearch'
-import Boshu from './Boshu'
+import Boshu from './page/Boshu'
 import NoMatch from './NoMatch'
 
 function PrivateRoute({ children }) {

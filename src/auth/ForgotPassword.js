@@ -1,19 +1,14 @@
 import React from 'react'
 import { css } from 'glamor'
 // import { Auth } from 'aws-amplify'
-import UserContext from './UserContext'
-// import {
-//   useNavigate,
-//   BrowserRouter as Router
-// } from 'react-router-dom'
-// let navigate = useNavigate()
-// let from = location.state?.from?.pathname || "/"
+import UserContext from '../UserContext'
 
 class ForgotPassword extends React.Component {
   state = {
     username: '',
     confirmationCode: '',
-    password: ''
+    password: '',
+    showConfirmation: false
   }
   static contextType = UserContext
   onChange = (key, value) => {
@@ -22,41 +17,60 @@ class ForgotPassword extends React.Component {
       [key]: value
     })
   }
-
+  forgotPassword = () => {
+    // Auth.forgotPassword(this.state.username)
+    //   .then(() => {
+    //     this.setState({ showConfirmation: true })
+    //   })
+    //   .catch(err => console.log('error: ', err))
+  }
   forgotPasswordSubmit = () => {
     // const { username, password, confirmationCode } = this.state
     // Auth.forgotPasswordSubmit(username, confirmationCode, password)
     //   .then(
     //     alert('パスワードを変更しました。ログインしてください。'),
     //     window.location.href = "/auth"
-    //     //navigate(from, { replace: true })
     //   )
     //   .catch(err => console.log('error resetting password:', err))
   }
   render() {
     return (
       <div {...css(styles.container)}>
-        <div {...css(styles.formContainer)}>
-          <input
-            onChange={evt => this.onChange('username', evt.target.value)}
-            {...css(styles.input)}
-            placeholder='メールアドレス'  
-          />
-          <input
-            onChange={evt => this.onChange('confirmationCode', evt.target.value)}
-            {...css(styles.input)}
-            placeholder='認証コード'
-          />
-          <input
-            onChange={evt => this.onChange('password', evt.target.value)}
-            {...css(styles.input)}
-            type='password'
-            placeholder='新しいパスワード'
-          />
-          <div {...css(styles.button)} onClick={this.forgotPasswordSubmit}>
-            <p {...css(styles.buttonText)}>パスワードの再設定</p>
-          </div>
-        </div>
+        {
+          !this.state.showConfirmation && (
+            <div {...css(styles.formContainer)}>
+              <input
+                onChange={evt => this.onChange('username', evt.target.value)}
+                {...css(styles.input)}
+                placeholder='メールアドレス'
+                
+              />
+              <div {...css(styles.button)} onClick={this.forgotPassword}>
+                <p {...css(styles.buttonText)}>認証コードを送る</p>
+              </div>
+            </div>
+          )
+        }
+        {
+          this.state.showConfirmation && (
+            <div {...css(styles.formContainer)}>
+              <input
+                onChange={evt => this.onChange('confirmationCode', evt.target.value)}
+                {...css(styles.input)}
+                placeholder='認証コード'
+              />
+              <input
+                onChange={evt => this.onChange('password', evt.target.value)}
+                {...css(styles.input)}
+                type='password'
+                placeholder='新しいパスワード'
+              />
+              <div {...css(styles.button)} onClick={this.forgotPasswordSubmit}>
+                <p {...css(styles.buttonText)}>パスワードの再設定</p>
+              </div>
+            </div>
+          )
+        }
       </div>
     )
   }
