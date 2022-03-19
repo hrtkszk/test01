@@ -1,10 +1,108 @@
-import './App.css';
-import React from 'react';
+import React from 'react'
+import {
+  Routes,
+  Route,
+  // Navigate,
+  BrowserRouter
+} from 'react-router-dom'
+// import UserContext from './UserContext'
+import Header from './Header'
+
+import Authenticator from './Authenticator'
+import Home from './Home'
+import MessageList from './MessageList'
+import Message from './Message'
+import Profile from './Profile'
+import SignUpConfirmation from './SignUpConfirmation'
+import ForgotPasswordConfirmation from './ForgotPasswordConfirmation'
+import ProfileSearch from './ProfileSearch'
+import Boshu from './Boshu'
+import NoMatch from './NoMatch'
+
+function PrivateRoute({ children }) {
+  // const auth = useAuth();
+  // return auth ?  children  : <Navigate to='/auth' />;
+  return children;
+}
+
+// function useAuth() {
+//   return true;
+// }
+
+const App = () => (
+  <BrowserRouter>
+    <Header />
+    <Routes>
+      <Route path='/auth' element={<Authenticator />} />
+      <Route path='/suc' element={<SignUpConfirmation />} />
+      <Route path='/fpc' element={<ForgotPasswordConfirmation />} />
+      <Route path='/' element={<Home />} />
+      <Route path='/profilesearch'
+        element={
+          <PrivateRoute>
+            <ProfileSearch />
+          </PrivateRoute>
+        }
+      />
+      <Route path='/boshu'
+        element={
+          <PrivateRoute>
+            <Boshu />
+          </PrivateRoute>
+        }
+      />
+      <Route path='/messagelist'
+        element={
+          <PrivateRoute>
+            <MessageList />
+          </PrivateRoute>
+        }
+      />
+      <Route path='/message'
+        element={
+          <PrivateRoute>
+            <Message />
+          </PrivateRoute>
+        }
+      />
+      <Route path='/myprofile'
+        element={
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        }
+      />
+      <Route path='*' element={<NoMatch />} />
+    </Routes>
+  </BrowserRouter>
+)
+
+export default App;
+
+
+// import './App.css';
+// import React from 'react';
+// import Router from './Router'
+// class App extends React.Component {
+//   render() {
+//     return (
+//         <div className="App">
+//           <Router />
+//         </div>
+//     );
+//   }
+// }
+// export default App;
+
+
+
+// import './App.css';
+// import React from 'react';
 //import ButtonSend from './ButtonSend';
-import Router from './Router'
+// import Router from './Router'
 // import UserContext from './UserContext'
 
-class App extends React.Component {
+// class App extends React.Component {
   // state = {
   //   currentUser: {},
   //   isLoaded: false
@@ -24,66 +122,22 @@ class App extends React.Component {
   //     this.setState({ currentUser: null, isLoaded: true })
   //   }
   // }
-  render() {
-    return (
+  // render() {
+  //   return (
       // <UserContext.Provider value={{
       //   user: this.state.currentUser,
       //   updateCurrentUser: this.updateCurrentUser,
       //   isLoaded: this.state.isLoaded
       // }}>
-        <div className="App">
-          <Router />
-        </div>
+        // <div className="App">
+        //   <Router />
+        // </div>
       // </UserContext.Provider>
-    );
-  }
-}
-  // state = {
-  //   sendMessage: '',
-  //   pythonout: ''
-  // }
-  // onChange = (key, value) => {
-  //   this.setState({
-  //     [key]: value
-  //   })
-  // }
+//     );
+//   }
+// }
 
-  // sendMsg = () => {
-  //   const requestOptions ={
-  //     method: 'POST',
-  //     headers:{'Content-Type': 'application/json'},
-  //     body: JSON.stringify({"text":this.state.sendMessage})
-  //   }
-  //   fetch("receive_get.php",requestOptions)
-  //   .then(response=> response.json())
-  //   .then(responseJson =>{
-  //     console.log(responseJson)
-  //     this.setState({pythonout:responseJson.pythonout})
-  //     this.setState({sendMessage:""})
-  //   })
-  // }
-  // render() {
-  //   return (
-  //     <div className="App">
-  //       <div className="App">
-  //         <footer className="App-footer">
-  //           <input
-  //             id="sendMessage"
-  //             onChange={evt => this.onChange('sendMessage', evt.target.value)}
-  //             className="input"
-  //             placeholder='メッセージ'
-  //           />
-  //           <ButtonSend
-  //             title="Send"
-  //             onClick={this.sendMsg}
-  //           />
-  //         </footer>
-  //       </div>
-  //       <div className="App-header">
-  //           {this.state.pythonout}
-  //       </div>
-  //     </div>
-  //   )
-  // }
+// export default App;
 
-export default App;
+
+
