@@ -7,7 +7,7 @@ import Container from './Container'
 const Private = () => {
 // class Private extends React.Component {
   const [message, setMessage] = useState();
-  const [receiverID, setReceiverID] = useState();
+  // const [receiverID, setReceiverID] = useState();
   // state = {
   //   message: '',
   //   receiverID: ''
