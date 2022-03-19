@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Container from '../Container'
+import Container from './page/Container'
 
 class Profile extends React.Component {
   render() {

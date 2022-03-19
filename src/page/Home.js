@@ -3,7 +3,7 @@ import React from 'react'
 //import QRCode from 'qrcode.react'
 // import { css } from 'glamor'
 // import UserContext from './UserContext'
-import Container from '../Container'
+import Container from './Container'
 // import Button from './Button'
 import './Message.css';
 import ButtonSend from './ButtonSend';
