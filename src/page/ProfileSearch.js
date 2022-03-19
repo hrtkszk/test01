@@ -12,7 +12,7 @@ const Private = () => {
   //   message: '',
   //   receiverID: ''
   // }
-  sendMsg = () => {
+  const sendMsg = () => {
     console.log("message: " + message);
     // var docClient = new AWS.DynamoDB.DocumentClient();
     // var params = {
