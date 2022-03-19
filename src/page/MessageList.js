@@ -1,6 +1,6 @@
 import React from 'react'
 //import { css } from 'glamor'
-import Container from './page/Container'
+import Container from './Container'
 // import UserContext from './UserContext'
 
 class Private extends React.Component {

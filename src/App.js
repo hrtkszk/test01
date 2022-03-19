@@ -10,7 +10,7 @@ import {
 import Header from './Header'
 import Authenticator from './auth/Authenticator'
 import Home from './page/Home'
-import MessageList from './MessageList'
+import MessageList from './page/MessageList'
 import Message from './page/Message'
 import Profile from './Profile'
 import SignUpConfirmation from './auth/SignUpConfirmation'
