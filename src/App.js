@@ -12,12 +12,12 @@ import Authenticator from './auth/Authenticator'
 import Home from './page/Home'
 import MessageList from './page/MessageList'
 import Message from './page/Message'
-import Profile from './Profile'
+import Profile from './page/Profile'
 import SignUpConfirmation from './auth/SignUpConfirmation'
 import ForgotPasswordConfirmation from './auth/ForgotPasswordConfirmation'
-import ProfileSearch from './ProfileSearch'
+import ProfileSearch from './page/ProfileSearch'
 import Boshu from './page/Boshu'
-import NoMatch from './NoMatch'
+import NoMatch from './page/NoMatch'
 
 function PrivateRoute({ children }) {
   // const auth = useAuth();
