@@ -16,6 +16,9 @@ class Header extends React.Component {
           {
             // isLoaded ? isAuthenticated ? (
               <>
+                <Link to='/' {...css(styles.link)}>
+                  <p {...css(styles.navItem)}>ホーム</p>
+                </Link>
                 <Link to='/profilesearch' {...css(styles.link)}>
                   <p {...css(styles.navItem)}>検索</p>
                 </Link>
@@ -38,7 +41,7 @@ class Header extends React.Component {
               {/* </> */}
             {/* ) : ( */}
               <Link to='/auth' {...css(styles.link)}>
-                <p {...css(styles.navItem)}>テストサイト名</p>
+                <p {...css(styles.navItem)}>サイト名</p>
               </Link>
             {/* ) : null */}
               </>
