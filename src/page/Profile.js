@@ -1,17 +1,11 @@
-// import React from 'react'
-
 import Container from './Container'
 
 const Profile = () => {
-// class Profile extends React.Component {
-  // render() {
-    return (
-      <Container>
-        <h1>My Profile</h1>
-
-      </Container>
-    )
-  // }
+  return (
+    <Container>
+      <h1>My Profile</h1>
+    </Container>
+  )
 }
 
-export default Profile
+export default Profile;
