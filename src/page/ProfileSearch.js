@@ -4,17 +4,26 @@ import { css } from 'glamor'
 import Container from './Container'
 // import UserContext from './UserContext'
 
+let text = "";
+
 const Private = () => {
   const inputRef = useRef();
 // class Private extends React.Component {
-  const [message, setMessage] = useState();
+  // const [message, setMessage] = useState();
   // const [receiverID, setReceiverID] = useState();
   // state = {
   //   message: '',
   //   receiverID: ''
   // }
+
+  const inputValue = e => {
+    // evt => setMessage(evt.target.value)
+    text = e.target.value;
+  };
+
   const sendMsg = () => {
-    console.log("message: " + message);
+    // console.log("message: " + message);
+    text = "";
     inputRef.current.value = "";
     // var docClient = new AWS.DynamoDB.DocumentClient();
     // var params = {
@@ -64,7 +73,8 @@ const Private = () => {
         <div {...css(styles.formContainer)}>
           <input
             ref={inputRef}
-            onChange={evt => setMessage(evt.target.value)}
+            type="text"
+            onChange={inputValue}
             {...css(styles.input)}
             placeholder='メッセージ'
           />
