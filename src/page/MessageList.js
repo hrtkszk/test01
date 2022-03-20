@@ -1,16 +1,19 @@
-import React from 'react'
+import { useState } from 'react';
+// import React from 'react'
 //import { css } from 'glamor'
 import Container from './Container'
 // import UserContext from './UserContext'
 
-class Private extends React.Component {
-  state = {
-    MessageList: []
-  }
+const MessageList = () => {
+  const [messageList, setMessageList] = useState();
+// class Private extends React.Component {
+//   state = {
+//     MessageList: []
+//   }
 
   // static contextType = UserContext
 
-  componentDidMount() {
+  // componentDidMount()
     // const { user, isLoaded } = this.context
     // console.log(this.context)
     // if (isLoaded === false) {
@@ -31,35 +34,33 @@ class Private extends React.Component {
       // })
     // }
     //this.interval = setInterval(()=>this.componentDidMount(), 30000);
-  }
 
-  render() {
-    console.log(this.state.MessageList)
+  // render() {
+  // console.log(this.state.MessageList)
 
-    if (this.state.MessageList === []) {
-      return (
-        <Container>
-          <h1>メッセージリスト</h1>
-          <div className="App">
+  if (messageList === []) {
+    return (
+      <Container>
+        <h1>メッセージリスト</h1>
+        <div className="App">
+        </div>
+      </Container>
+    )
+  } else {
+    return (
+      <Container>
+        <h1>メッセージリスト</h1>
+        <div className="App">
+          <div className="App-header">
+            {/* <ul>
+              {this.state.MessageList.map((Message, i) => {
+                return <li key={Message.sendTo}>{Message.nickname}{Message.age}{Message.latestMessage}{Message.date}</li>;
+              })}
+            </ul> */}
           </div>
-        </Container>
-      )
-    } else {
-      return (
-        <Container>
-          <h1>メッセージリスト</h1>
-          <div className="App">
-            <div className="App-header">
-              {/* <ul>
-                {this.state.MessageList.map((Message, i) => {
-                  return <li key={Message.sendTo}>{Message.nickname}{Message.age}{Message.latestMessage}{Message.date}</li>;
-                })}
-              </ul> */}
-            </div>
-          </div>
-        </Container>
-      )
-    }
+        </div>
+      </Container>
+    )
   }
 }
 
@@ -107,4 +108,4 @@ class Private extends React.Component {
 //   }
 // }
 
-export default Private
+export default MessageList
