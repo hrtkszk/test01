@@ -1,10 +1,8 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 // import React from 'react'
 import { css } from 'glamor'
 import Container from './Container'
 // import UserContext from './UserContext'
-
-let text = "";
 
 const Private = () => {
   const inputRef = useRef();
