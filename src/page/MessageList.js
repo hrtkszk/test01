@@ -40,7 +40,7 @@ const MessageList = () => {
   // render() {
   // console.log(this.state.MessageList)
 
-  if (messageList === []) {
+  if (messageList = "") {
     return (
       <Container>
         <h1>メッセージリスト</h1>
