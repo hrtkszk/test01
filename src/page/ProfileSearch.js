@@ -75,7 +75,10 @@ const Private = () => {
             {...css(styles.input)}
             placeholder='メッセージ'
           />
-          <div {...css(styles.button)} onClick={() => sendMsg()}>
+          <div {...css(styles.button)} onClick={() => {
+            sendMsg()
+            inputRef.current.value = ""
+          }}>
             <p {...css(styles.buttonText)}>送信</p>
           </div>
         </div>
