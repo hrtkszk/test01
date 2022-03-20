@@ -4,6 +4,9 @@ import { css } from 'glamor'
 import Container from './Container'
 // import UserContext from './UserContext'
 
+
+let text = "";
+
 const Private = () => {
   const inputRef = useRef();
 // class Private extends React.Component {
