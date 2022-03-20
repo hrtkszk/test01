@@ -40,11 +40,15 @@ const MessageList = () => {
   // render() {
 
 
-  if (messageList === "test") {
+  if (messageList === "") {
     return (
       <Container>
         <h1>メッセージリスト</h1>
         <div className="App">
+          {() => {
+            setMessageList("test")
+            console.log(messageList)
+          }}
         </div>
       </Container>
     )
@@ -55,7 +59,7 @@ const MessageList = () => {
         <div className="App">
           <div className="App-header">
             {() => {
-              setMessageList("test")
+              setMessageList("test1")
               console.log(messageList)
             }}
             {/* <ul>
