@@ -15,13 +15,8 @@ const Private = () => {
   //   receiverID: ''
   // }
 
-  const inputValue = evt => {
-    setMessage(evt.target.value)
-  };
-
   const sendMsg = () => {
     console.log("message: " + message);
-    inputRef.current.value = "";
     // var docClient = new AWS.DynamoDB.DocumentClient();
     // var params = {
     //     TableName: Chatting001,
@@ -70,8 +65,7 @@ const Private = () => {
         <div {...css(styles.formContainer)}>
           <input
             ref={inputRef}
-            type="text"
-            onChange={inputValue}
+            onChange={evt => setMessage(evt.target.value)}
             {...css(styles.input)}
             placeholder='メッセージ'
           />
