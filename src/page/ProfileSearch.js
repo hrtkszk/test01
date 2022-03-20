@@ -5,9 +5,8 @@ import Container from './Container'
 // import UserContext from './UserContext'
 
 
-let text = "";
-
 const Private = () => {
+  let text = "";
   const inputRef = useRef();
 // class Private extends React.Component {
   // const [message, setMessage] = useState();
