@@ -13,6 +13,8 @@ const MessageList = () => {
 
   // static contextType = UserContext
 
+
+  setMessageList([]);
   // componentDidMount()
     // const { user, isLoaded } = this.context
     // console.log(this.context)
