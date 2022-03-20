@@ -14,7 +14,7 @@ const MessageList = () => {
   // static contextType = UserContext
 
 
-  setMessageList("")
+  setMessageList("test")
   // componentDidMount()
     // const { user, isLoaded } = this.context
     // console.log(this.context)
@@ -40,7 +40,7 @@ const MessageList = () => {
   // render() {
   // console.log(this.state.MessageList)
 
-  if (messageList === "") {
+  if (messageList === "test") {
     return (
       <Container>
         <h1>メッセージリスト</h1>
