@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 // import React from 'react'
 import { css } from 'glamor'
 import Container from './Container'
 // import UserContext from './UserContext'
 
 const Private = () => {
+  const inputRef = useRef();
 // class Private extends React.Component {
   const [message, setMessage] = useState();
   // const [receiverID, setReceiverID] = useState();
@@ -14,6 +15,7 @@ const Private = () => {
   // }
   const sendMsg = () => {
     console.log("message: " + message);
+    inputRef.current.value = "";
     // var docClient = new AWS.DynamoDB.DocumentClient();
     // var params = {
     //     TableName: Chatting001,
@@ -61,6 +63,7 @@ const Private = () => {
       {
         <div {...css(styles.formContainer)}>
           <input
+            ref={inputRef}
             onChange={evt => setMessage(evt.target.value)}
             {...css(styles.input)}
             placeholder='メッセージ'
