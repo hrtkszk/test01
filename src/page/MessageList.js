@@ -38,7 +38,7 @@ const MessageList = () => {
     //this.interval = setInterval(()=>this.componentDidMount(), 30000);
 
   // render() {
-  // console.log(this.state.MessageList)
+
 
   if (messageList === "test") {
     return (
@@ -54,7 +54,10 @@ const MessageList = () => {
         <h1>メッセージリスト</h1>
         <div className="App">
           <div className="App-header">
-          {() => setMessageList("test")}
+            {() => {
+              setMessageList("test")
+              console.log(messageList)
+            }}
             {/* <ul>
               {this.state.MessageList.map((Message, i) => {
                 return <li key={Message.sendTo}>{Message.nickname}{Message.age}{Message.latestMessage}{Message.date}</li>;
