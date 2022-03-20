@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 // import React from 'react'
 import { css } from 'glamor'
 import Container from './Container'
@@ -6,24 +6,21 @@ import Container from './Container'
 
 
 const Private = () => {
-  let text = "";
   const inputRef = useRef();
 // class Private extends React.Component {
-  // const [message, setMessage] = useState();
+  const [message, setMessage] = useState();
   // const [receiverID, setReceiverID] = useState();
   // state = {
   //   message: '',
   //   receiverID: ''
   // }
 
-  const inputValue = e => {
-    // evt => setMessage(evt.target.value)
-    text = e.target.value;
+  const inputValue = evt => {
+    setMessage(evt.target.value)
   };
 
   const sendMsg = () => {
-    // console.log("message: " + message);
-    text = "";
+    console.log("message: " + message);
     inputRef.current.value = "";
     // var docClient = new AWS.DynamoDB.DocumentClient();
     // var params = {
