@@ -22,6 +22,8 @@ const Message = () => {
   // }
   const sendMsg = () => {
     console.log("Messages: " + Messages);
+    inputRef.current.value = "";
+    setMessages("");
     // const { user } = this.context
     // const requestOptions ={
     //   method: 'POST',
@@ -82,10 +84,7 @@ const Message = () => {
               />
               <ButtonSend
                 title="Send"
-                onClick={() => {
-                  sendMsg()
-                  inputRef.current.value = ""
-                }}
+                onClick={() => sendMsg}
               />
           </footer>
         </div>
