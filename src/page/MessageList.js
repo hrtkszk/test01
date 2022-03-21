@@ -59,18 +59,13 @@ const setMessage = () => {
     return (
       <Container>
         <h1>メッセージリスト
-          <button onClick={setMessage}>Change Test</button>
-          {console.log("再描写1")}
-          {console.log(messageList)}
-          {messageList}
         </h1>
         <div className="App">
           <div className="App-header">
-            {() => {
-              setMessageList("test2")
-              console.log("再描写2")
-              console.log(messageList)
-            }}
+            <button onClick={setMessage}>Change Test</button>
+            {console.log("再描写1")}
+            {console.log(messageList)}
+            {messageList}
             {/* <ul>
               {this.state.MessageList.map((Message, i) => {
                 return <li key={Message.sendTo}>{Message.nickname}{Message.age}{Message.latestMessage}{Message.date}</li>;
