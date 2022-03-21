@@ -1,4 +1,5 @@
-import React from 'react'
+import { useState, useRef } from 'react';
+// import React from 'react'
 // import { Auth } from 'aws-amplify'
 //import QRCode from 'qrcode.react'
 // import { css } from 'glamor'
@@ -8,22 +9,27 @@ import Container from './Container'
 import './Message.css';
 import ButtonSend from './ButtonSend';
 
-class Home extends React.Component {
-  state = {
+const Home = () => {
+  const inputRef = useRef();
+  const [Messages, setMessages] = useState([]);
+  const [SendMessage, setSendMessage] = useState("");
+// class Home extends React.Component {
+//   state = {
     // qrCode: '',
     // challengeAnswer: '',
     // showPreferred: false,
-    Messages: [],
-    sendMessage: '',
-    // image:'noImage'
-  }
+  //   Messages: [],
+  //   sendMessage: '',
+  //   // image:'noImage'
+  // }
   // static contextType = UserContext
-  onChange = (key, value) => {
-    //this.props.updateErrorMessage(null)
-    this.setState({
-      [key]: value
-    })
-  }
+  // onChange = (key, value) => {
+  //   //this.props.updateErrorMessage(null)
+  //   this.setState({
+  //     [key]: value
+  //   })
+  // }
+
   // addTTOP = () => {
     // const { user } = this.context
     // Auth.setupTOTP(user).then((code) => {
@@ -43,13 +49,13 @@ class Home extends React.Component {
     // });
   // }
 
-  sendMsg = () => {
-    this.setState({Messages:[]})
+  const sendMsg = () => {
+    // this.setState({Messages:[]})
     // const { user } = this.context
     const requestOptions ={
       method: 'POST',
       headers:{'Content-Type': 'application/json'},
-      body: JSON.stringify({"id":this.state.sendMessage})
+      body: JSON.stringify({"id":SendMessage})
     }
     console.log(requestOptions)
     // console.log(user.username)
@@ -57,14 +63,16 @@ class Home extends React.Component {
     .then((response)=> response.json())
     .then(result =>{
       console.log(result)
-      this.setState({Messages:result.pythonout2})
-      console.log(this.state.Messages)
+      setMessages({Messages:result.pythonout2})
+      console.log(Messages)
+      inputRef.current.value = ""
+      setSendMessage("")
     })
   }
 
-  render() {
+  // render() {
     // const isAuthenticated = this.context.user && this.context.user.username ? true : false
-    if (this.state.Messages === []) {
+    if (Messages === []) {
       return (
         <Container>
         <div className="App">
@@ -72,13 +80,14 @@ class Home extends React.Component {
           <footer className="App-footer">
               <input
                 id="sendMessage"
-                onChange={evt => this.onChange('sendMessage', evt.target.value)}
+                ref={inputRef}
+                onChange={evt => setSendMessage(evt.target.value)}
                 className="input"
                 placeholder='メッセージ'
               />
               <ButtonSend
                 title="Send"
-                onClick={this.sendMsg}
+                onClick={sendMsg}
               />
           </footer>
         </div>
@@ -114,7 +123,7 @@ class Home extends React.Component {
           </Container>
         )
       }
-    }
+    // }
 
   //   <ul>
   //   {this.state.Messages.map((Message, i) => {
