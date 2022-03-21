@@ -1,17 +1,24 @@
-import React from 'react'
+import { useState, useRef } from 'react';
+// import React from 'react'
 import { css } from 'glamor'
 import Container from './Container'
 // import UserContext from './UserContext'
 
-class Private extends React.Component {
-  state = {
-    message: '',
-    receiverID: ''
-  }
+const Boshu = () => {
+  const inputRef = useRef();
+// class Private extends React.Component {
+  const [message, setMessage] = useState("");
+  // state = {
+  //   message: '',
+  //   receiverID: ''
+  // }
 
   // static contextType = UserContext
 
-  sendMsg = () => {
+  const sendMsg = () => {
+    console.log("message: " + message);
+    inputRef.current.value = "";
+    setMessage("");
     // var docClient = new AWS.DynamoDB.DocumentClient();
     // var params = {
     //     TableName: Chatting001,
@@ -42,35 +49,36 @@ class Private extends React.Component {
     // });
   }
 
-  onChange = (key, value) => {
-    this.props.updateErrorMessage(null)
-    this.setState({
-      [key]: value
-    })
-  }
+  // onChange = (key, value) => {
+  //   this.props.updateErrorMessage(null)
+  //   this.setState({
+  //     [key]: value
+  //   })
+  // }
 
-  render() {
-    return (
-      <Container>
-        <h1>メッセージ</h1>
-        <output id="testoutput2"></output>
-        <div {...css(styles.container)}>
-        {
-          <div {...css(styles.formContainer)}>
-            <input
-              onChange={evt => this.onChange('message', evt.target.value)}
-              {...css(styles.input)}
-              placeholder='メッセージ'
-            />
-            <div {...css(styles.button)} onClick={this.sendMsg}>
-              <p {...css(styles.buttonText)}>送信</p>
-            </div>
+  // render() {
+  return (
+    <Container>
+      <h1>メッセージ</h1>
+      <output id="testoutput2"></output>
+      <div {...css(styles.container)}>
+      {
+        <div {...css(styles.formContainer)}>
+          <input
+            ref={inputRef}
+            onChange={evt => setMessage(evt.target.value)}
+            {...css(styles.input)}
+            placeholder='メッセージ'
+          />
+          <div {...css(styles.button)} onClick={sendMsg}>
+            <p {...css(styles.buttonText)}>送信</p>
           </div>
-        }
-      </div>
-      </Container>
-    )
-  }
+        </div>
+      }
+    </div>
+    </Container>
+  )
+  // }
 }
 
 const styles = {
@@ -117,4 +125,4 @@ const styles = {
   }
 }
 
-export default Private
+export default Boshu
