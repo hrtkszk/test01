@@ -69,7 +69,7 @@ const Message = () => {
 
   // render() {
   //   console.log(this.state.Messages)
-    if (Messages === []) {
+    // if (Messages === []) {
       return (
         <div className="App">
           <footer className="App-footer">
@@ -90,36 +90,36 @@ const Message = () => {
           </footer>
         </div>
       )
-    } else {
-        return (
-          <div className="App">
-            <div className="App-header">
-              <ul>
-                {Messages.map((Message, i) => {
-                  return <li key={Message}>{Message}</li>;
-                })}
-              </ul>
-            </div>
-            <div className="App">
-                <footer className="App-footer">
-                    <input
-                      id="sendMessage"
-                      onChange={evt => setMessages(evt.target.value)}
-                      className="input"
-                      placeholder='メッセージ'
-                    />
-                    <ButtonSend
-                      title="Send"
-                      onClick={() => {
-                        sendMsg()
-                        inputRef.current.value = ""
-                      }}
-                    />
-                </footer>
-            </div>
-          </div>
-        )
-      }
+    // } else {
+    //     return (
+    //       <div className="App">
+    //         <div className="App-header">
+    //           <ul>
+    //             {Messages.map((Message, i) => {
+    //               return <li key={Message}>{Message}</li>;
+    //             })}
+    //           </ul>
+    //         </div>
+    //         <div className="App">
+    //             <footer className="App-footer">
+    //                 <input
+    //                   id="sendMessage"
+    //                   onChange={evt => setMessages(evt.target.value)}
+    //                   className="input"
+    //                   placeholder='メッセージ'
+    //                 />
+    //                 <ButtonSend
+    //                   title="Send"
+    //                   onClick={() => {
+    //                     sendMsg()
+    //                     inputRef.current.value = ""
+    //                   }}
+    //                 />
+    //             </footer>
+    //         </div>
+    //       </div>
+    //     )
+      // }
     // }
   }
 
