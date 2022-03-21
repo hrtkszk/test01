@@ -56,7 +56,7 @@ const MessageList = () => {
     return (
       <Container>
         <h1>メッセージリスト</h1>
-        {setMessageList("test1")}
+        {() => setMessageList("test1")}
         {messageList}
         <div className="App">
           <div className="App-header">
@@ -64,7 +64,6 @@ const MessageList = () => {
               setMessageList("test1")
               console.log(messageList)
             }}
-            {messageList}
             {/* <ul>
               {this.state.MessageList.map((Message, i) => {
                 return <li key={Message.sendTo}>{Message.nickname}{Message.age}{Message.latestMessage}{Message.date}</li>;
