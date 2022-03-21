@@ -56,6 +56,8 @@ const MessageList = () => {
     return (
       <Container>
         <h1>メッセージリスト</h1>
+        {setMessageList("test1")}
+        {messageList}
         <div className="App">
           <div className="App-header">
             {() => {
