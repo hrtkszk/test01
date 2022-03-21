@@ -8,7 +8,7 @@ import Container from './Container'
 const ProfileSearch = () => {
   const inputRef = useRef();
 // class Private extends React.Component {
-  const [message, setMessage] = useState();
+  const [message, setMessage] = useState("");
   // const [receiverID, setReceiverID] = useState();
   // state = {
   //   message: '',
@@ -17,6 +17,8 @@ const ProfileSearch = () => {
 
   const sendMsg = () => {
     console.log("message: " + message);
+    inputRef.current.value = "";
+    setMessage("");
     // var docClient = new AWS.DynamoDB.DocumentClient();
     // var params = {
     //     TableName: Chatting001,
@@ -69,10 +71,7 @@ const ProfileSearch = () => {
             {...css(styles.input)}
             placeholder='メッセージ'
           />
-          <div {...css(styles.button)} onClick={() => {
-            sendMsg()
-            inputRef.current.value = ""
-          }}>
+          <div {...css(styles.button)} onClick={sendMsg}>
             <p {...css(styles.buttonText)}>送信</p>
           </div>
         </div>
