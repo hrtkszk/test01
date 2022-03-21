@@ -62,6 +62,7 @@ const MessageList = () => {
               setMessageList("test1")
               console.log(messageList)
             }}
+            {messageList}
             {/* <ul>
               {this.state.MessageList.map((Message, i) => {
                 return <li key={Message.sendTo}>{Message.nickname}{Message.age}{Message.latestMessage}{Message.date}</li>;
