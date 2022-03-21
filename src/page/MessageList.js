@@ -66,10 +66,7 @@ const Counting = (currentCount) => {
         </h1>
         <div className="App">
           <div className="App-header">
-            <button onClick={() => {
-              setMessage()
-              Counting(count)
-            }}>Change Test</button>
+            <button onClick={setMessage(), Counting(count)}>Change Test</button>
             {console.log("再描写1")}
             {console.log(messageList)}
             {console.log(count)}
