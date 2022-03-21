@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'glamor'
 
-function Button({ onClick, title }) {
+function Button(onClick, title) {
   return (
     <div {...css(styles.yellowButton)} onClick={onClick}>
       <p {...css(styles.buttonText)}>{title}</p>
