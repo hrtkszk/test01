@@ -57,11 +57,13 @@ const MessageList = () => {
       <Container>
         <h1>メッセージリスト</h1>
         {() => setMessageList("test1")}
+        {console.log("再描写1")}
         {() => messageList}
         <div className="App">
           <div className="App-header">
             {() => {
               setMessageList("test1")
+              console.log("再描写2")
               console.log(messageList)
             }}
             {/* <ul>
