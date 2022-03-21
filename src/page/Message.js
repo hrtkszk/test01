@@ -1,22 +1,27 @@
+import { useState, useRef } from 'react';
 import './Message.css';
 import React from 'react';
 import ButtonSend from './ButtonSend';
 // import UserContext from './UserContext'
 
-class Message extends React.Component {
-  state = {
-    Messages: [],
-    sendMessage: '',
-    image:'noImage'
-  }
+const Message = () => {
+  const inputRef = useRef();
+  const [Messages, setMessages] = useState([]);
+// class Message extends React.Component {
+//   state = {
+//     Messages: [],
+//     sendMessage: '',
+//     image:'noImage'
+//   }
   // static contextType = UserContext
-  onChange = (key, value) => {
+  // onChange = (key, value) => {
     //this.props.updateErrorMessage(null)
-    this.setState({
-      [key]: value
-    })
-  }
+  //   this.setState({
+  //     [key]: value
+  //   })
+  // }
   sendMsg = () => {
+    console.log("Messages: " + Messages);
     // const { user } = this.context
     // const requestOptions ={
     //   method: 'POST',
@@ -36,7 +41,7 @@ class Message extends React.Component {
 
   }
   
-  componentDidMount() {
+  // componentDidMount() {
     // const { user, isLoaded } = this.context
     // console.log(this.context)
     // if (isLoaded === false) {
@@ -57,26 +62,30 @@ class Message extends React.Component {
       // })
     // }
     //this.interval = setInterval(()=>this.componentDidMount(), 30000);
-  }
-  componentWillUnmount() {
+  // }
+  // componentWillUnmount() {
     //clearInterval(this.interval);
-  }
+  // }
 
-  render() {
-    console.log(this.state.Messages)
-    if (this.state.Messages === []) {
+  // render() {
+  //   console.log(this.state.Messages)
+    if (Messages === []) {
       return (
         <div className="App">
           <footer className="App-footer">
               <input
                 id="sendMessage"
-                onChange={evt => this.onChange('sendMessage', evt.target.value)}
+                ref={inputRef}
+                onChange={evt => setMessages(evt.target.value)}
                 className="input"
                 placeholder='メッセージ'
               />
               <ButtonSend
                 title="Send"
-                onClick={this.sendMsg}
+                onClick={() => {
+                  sendMsg()
+                  inputRef.current.value = ""
+                }}
               />
           </footer>
         </div>
@@ -86,7 +95,7 @@ class Message extends React.Component {
           <div className="App">
             <div className="App-header">
               <ul>
-                {this.state.Messages.map((Message, i) => {
+                {Messages.map((Message, i) => {
                   return <li key={Message.message}>{Message.message}</li>;
                 })}
               </ul>
@@ -95,20 +104,23 @@ class Message extends React.Component {
                 <footer className="App-footer">
                     <input
                       id="sendMessage"
-                      onChange={evt => this.onChange('sendMessage', evt.target.value)}
+                      onChange={evt => setMessages(evt.target.value)}
                       className="input"
                       placeholder='メッセージ'
                     />
                     <ButtonSend
                       title="Send"
-                      onClick={this.sendMsg}
+                      onClick={() => {
+                        sendMsg()
+                        inputRef.current.value = ""
+                      }}
                     />
                 </footer>
             </div>
           </div>
         )
       }
-    }
+    // }
   }
 
 

@@ -5,7 +5,7 @@ import Container from './Container'
 // import UserContext from './UserContext'
 
 
-const Private = () => {
+const ProfileSearch = () => {
   const inputRef = useRef();
 // class Private extends React.Component {
   const [message, setMessage] = useState();
@@ -127,4 +127,4 @@ const styles = {
   }
 }
 
-export default Private
+export default ProfileSearch
