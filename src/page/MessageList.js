@@ -56,7 +56,7 @@ const MessageList = () => {
     return (
       <Container>
         <h1>メッセージリスト
-          {/* {() => setMessageList("test1")} */}
+          {() => setMessageList("test1")}
           {console.log("再描写1")}
           {console.log(messageList)}
           {messageList}
@@ -64,8 +64,8 @@ const MessageList = () => {
         <div className="App">
           <div className="App-header">
             {() => {
-              setMessageList("test1")
-              console.log("再描写3")
+              setMessageList("test2")
+              console.log("再描写2")
               console.log(messageList)
             }}
             {/* <ul>
