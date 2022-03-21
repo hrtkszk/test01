@@ -6,7 +6,7 @@ import ButtonSend from './ButtonSend';
 
 const Message = () => {
   const inputRef = useRef();
-  const [Messages, setMessages] = useState([]);
+  const [Messages, setMessages] = useState("");
 // class Message extends React.Component {
 //   state = {
 //     Messages: [],
@@ -84,7 +84,7 @@ const Message = () => {
               />
               <ButtonSend
                 title="Send"
-                onClick={() => sendMsg}
+                onClick={sendMsg}
               />
           </footer>
         </div>
