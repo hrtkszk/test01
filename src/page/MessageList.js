@@ -58,10 +58,7 @@ const MessageList = () => {
         <h1>メッセージリスト</h1>
         <div className="App">
           <div className="App-header">
-            {() => {
-              // setMessageList("test1")
-              console.log(messageList)
-            }}
+            {() => console.log(messageList)}
             {/* <ul>
               {this.state.MessageList.map((Message, i) => {
                 return <li key={Message.sendTo}>{Message.nickname}{Message.age}{Message.latestMessage}{Message.date}</li>;
