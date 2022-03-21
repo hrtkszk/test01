@@ -7,6 +7,7 @@ import Container from './Container'
 const MessageList = () => {
   const initialMessage = "test"
   const [messageList, setMessageList] = useState(initialMessage);
+  const [count, setCount] = useState(0);
 // class Private extends React.Component {
 //   state = {
 //     MessageList: []
@@ -16,6 +17,9 @@ const MessageList = () => {
 
 const setMessage = () => {
   setMessageList("test1");
+};
+const Counting = (currentCount) => {
+  setCount(currentCount + 1);
 };
 
   // componentDidMount()
@@ -62,10 +66,15 @@ const setMessage = () => {
         </h1>
         <div className="App">
           <div className="App-header">
-            <button onClick={setMessage}>Change Test</button>
+            <button onClick={() => {
+              setMessage
+              Counting(count)
+            }}>Change Test</button>
             {console.log("再描写1")}
             {console.log(messageList)}
+            {console.log(count)}
             {messageList}
+            {count}
             {/* <ul>
               {this.state.MessageList.map((Message, i) => {
                 return <li key={Message.sendTo}>{Message.nickname}{Message.age}{Message.latestMessage}{Message.date}</li>;
