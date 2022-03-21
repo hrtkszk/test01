@@ -4,8 +4,11 @@ import { useState } from 'react';
 import Container from './Container'
 // import UserContext from './UserContext'
 
+const [messageList, setMessageList] = useState();
+setMessageList("test")
+
 const MessageList = () => {
-  const [messageList, setMessageList] = useState();
+  // const [messageList, setMessageList] = useState();
 // class Private extends React.Component {
 //   state = {
 //     MessageList: []
@@ -46,7 +49,7 @@ const MessageList = () => {
         <h1>メッセージリスト</h1>
         <div className="App">
           {() => {
-            setMessageList("test")
+            // setMessageList("test")
             console.log(messageList)
           }}
         </div>
@@ -59,7 +62,7 @@ const MessageList = () => {
         <div className="App">
           <div className="App-header">
             {() => {
-              setMessageList("test1")
+              // setMessageList("test1")
               console.log(messageList)
             }}
             {/* <ul>
