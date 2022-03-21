@@ -5,7 +5,7 @@ import Container from './Container'
 // import UserContext from './UserContext'
 
 const MessageList = () => {
-  initialMessage = "test"
+  const initialMessage = "test"
   const [messageList, setMessageList] = useState(initialMessage);
 // class Private extends React.Component {
 //   state = {
