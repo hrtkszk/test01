@@ -58,7 +58,7 @@ const setMessage = () => {
     return (
       <Container>
         <h1>メッセージリスト
-          {setMessage}
+          <button onClick={setMessage}>Change Test</button>
           {console.log("再描写1")}
           {console.log(messageList)}
           {messageList}
