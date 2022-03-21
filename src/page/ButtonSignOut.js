@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'glamor'
 
-const Button = (onClick, title) => {
+const Button = ({onClick, title}) => {
   return (
     <div {...css(styles.yellowButton)} onClick={onClick}>
       <p {...css(styles.buttonText)}>{title}</p>
