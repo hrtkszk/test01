@@ -63,7 +63,7 @@ const Home = () => {
     .then((response)=> response.json())
     .then(result =>{
       console.log(result)
-      setMessages({Messages:result.pythonout2})
+      setMessages(result.pythonout2)
       console.log(Messages)
       inputRef.current.value = ""
       setSendMessage("")
