@@ -5,7 +5,8 @@ import Container from './Container'
 // import UserContext from './UserContext'
 
 const MessageList = () => {
-  const [messageList, setMessageList] = useState("test");
+  initialMessage = "test"
+  const [messageList, setMessageList] = useState(initialMessage);
 // class Private extends React.Component {
 //   state = {
 //     MessageList: []
@@ -57,7 +58,6 @@ const setMessage = () => {
   // } else {
     return (
       <Container>
-        {setMessage}
         <h1>メッセージリスト
           <button onClick={setMessage}>Change Test</button>
           {console.log("再描写1")}
