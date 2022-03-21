@@ -20,7 +20,7 @@ const Message = () => {
   //     [key]: value
   //   })
   // }
-  sendMsg = () => {
+  const sendMsg = () => {
     console.log("Messages: " + Messages);
     // const { user } = this.context
     // const requestOptions ={
