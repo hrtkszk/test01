@@ -40,19 +40,19 @@ const MessageList = () => {
   // render() {
 
 
-  if (messageList === "") {
-    return (
-      <Container>
-        <h1>メッセージリスト</h1>
-        <div className="App">
-          {() => {
-            setMessageList("test")
-            console.log(messageList)
-          }}
-        </div>
-      </Container>
-    )
-  } else {
+  // if (messageList === "") {
+  //   return (
+  //     <Container>
+  //       <h1>メッセージリスト</h1>
+  //       <div className="App">
+  //         {() => {
+  //           setMessageList("test")
+  //           console.log(messageList)
+  //         }}
+  //       </div>
+  //     </Container>
+  //   )
+  // } else {
     return (
       <Container>
         <h1>メッセージリスト</h1>
@@ -71,7 +71,7 @@ const MessageList = () => {
         </div>
       </Container>
     )
-  }
+  // }
 }
 
 // const styles = {
