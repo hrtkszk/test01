@@ -100,7 +100,7 @@ const Home = () => {
             <h1>Welcome</h1>
             <div className="App-header">
             <ul>
-                {this.state.Messages.map((Message, i) => {
+                {Messages.map((Message, i) => {
                   return <li key={Message.message}>{Message.DateTime}{Message.message}</li>;
                 })}
             </ul>
@@ -109,13 +109,14 @@ const Home = () => {
                 <footer className="App-footer">
                     <input
                       id="sendMessage"
-                      onChange={evt => this.onChange('sendMessage', evt.target.value)}
+                      ref={inputRef}
+                      onChange={evt => setSendMessage(evt.target.value)}
                       className="input"
                       placeholder='メッセージ'
                     />
                     <ButtonSend
                       title="Send"
-                      onClick={this.sendMsg}
+                      onClick={sendMsg}
                     />
                 </footer>
             </div>
