@@ -58,12 +58,13 @@ const MessageList = () => {
         <h1>メッセージリスト</h1>
         {() => setMessageList("test1")}
         {console.log("再描写1")}
+        {() => console.log("再描写2")}
         {() => messageList}
         <div className="App">
           <div className="App-header">
             {() => {
               setMessageList("test1")
-              console.log("再描写2")
+              console.log("再描写3")
               console.log(messageList)
             }}
             {/* <ul>
