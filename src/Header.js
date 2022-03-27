@@ -41,7 +41,7 @@ const Header = () => {
               </Link>
               <ButtonSignOut
                 title="変更"
-                onClick={() => {signOut(), loginInfo.isAuth = false}}
+                onClick={() => signOut(), loginInfo.isAuth = false}
               />
             </>
           ) : (
@@ -51,7 +51,7 @@ const Header = () => {
               </Link>
               <ButtonSignOut
                 title="変更"
-                onClick={() => {signOut(), loginInfo.isAuth = true}}
+                onClick={() => signOut(), loginInfo.isAuth = true}
               />
             </>
           )
