@@ -7,7 +7,7 @@ import ButtonSignOut from './page/ButtonSignOut'
 import { loginContext } from './index';
 
 const Header = () => {
-  const { userInfo } = useContext(loginContext);
+  const { loginInfo } = useContext(loginContext);
 // class Header extends React.Component {
   // static contextType = UserContext
   // render() {
@@ -17,7 +17,7 @@ const Header = () => {
     <div {...css(styles.container)}>
       <div {...css(styles.navContainer)}>
         {
-          userInfo.isAuth ? (
+          loginInfo.isAuth ? (
           // isLoaded ? isAuthenticated ? (
             <>
               <Link to='/' {...css(styles.link)}>

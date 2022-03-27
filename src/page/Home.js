@@ -49,8 +49,9 @@ const Home = () => {
     //     .catch(err => console.log('error: ', err))
     // });
   // }
-  const { userInfo } = useContext(loginContext);
-  console.log(userInfo);
+  const { loginInfo } = useContext(loginContext);
+  console.log(loginInfo);
+  console.log(loginInfo.isAuth);
 
   const sendMsg = () => {
     // this.setState({Messages:[]})
