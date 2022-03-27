@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 // import React from 'react'
 // import { Auth } from 'aws-amplify'
 //import QRCode from 'qrcode.react'
@@ -48,6 +48,8 @@ const Home = () => {
     //     .catch(err => console.log('error: ', err))
     // });
   // }
+  const { fruits } = useContext(FruitContext);
+  console.log(fruits);
 
   const sendMsg = () => {
     // this.setState({Messages:[]})
