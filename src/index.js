@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import registerServiceWorker from './registerServiceWorker';
 
-const fruits = ['Apple', 'Orange', 'Banana'];
+const fruits = {'1':'Apple', '2':'Orange', '3':'Banana'};
 export const FruitContext = createContext();
 
 ReactDOM.render(
