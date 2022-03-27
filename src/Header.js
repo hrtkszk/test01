@@ -6,9 +6,9 @@ import ButtonSignOut from './page/ButtonSignOut'
 // import { Auth } from 'aws-amplify'
 import { loginContext } from './index';
 
-const { loginInfo } = useContext(loginContext);
 
-const Header = () => {  
+const Header = () => {
+  const { loginInfo } = useContext(loginContext);
 // class Header extends React.Component {
   // static contextType = UserContext
   // render() {
@@ -63,6 +63,7 @@ const Header = () => {
   // }
 }
 function signOut() {
+  const { loginInfo } = useContext(loginContext);
   console.log("test Sign out")
   loginInfo.isAuth = true
   // Auth.signOut()
