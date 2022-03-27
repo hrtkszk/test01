@@ -43,7 +43,7 @@ const Header = () => {
               </Link>
               <ButtonSignOut
                 title="変更"
-                onClick={loginInfo.isAuth = false}
+                // onClick={loginInfo.isAuth = false}
               />
             </>
           ) : (
@@ -53,7 +53,7 @@ const Header = () => {
               </Link>
               <ButtonSignOut
                 title="変更"
-                onClick={loginInfo.isAuth = true}
+                // onClick={loginInfo.isAuth = true}
               />
             </>
           )
