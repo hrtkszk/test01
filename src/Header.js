@@ -6,8 +6,9 @@ import ButtonSignOut from './page/ButtonSignOut'
 // import { Auth } from 'aws-amplify'
 import { loginContext } from './index';
 
-const Header = () => {
-  const { loginInfo } = useContext(loginContext);
+const { loginInfo } = useContext(loginContext);
+
+const Header = () => {  
 // class Header extends React.Component {
   // static contextType = UserContext
   // render() {
@@ -39,14 +40,20 @@ const Header = () => {
                 <p {...css(styles.navItem)}>プロフィール</p>
               </Link>
               <ButtonSignOut
-                title="ログオフ"
+                title="変更"
                 onClick={signOut}
               />
             </>
           ) : (
-            <Link to='/' {...css(styles.link)}>
-              <p {...css(styles.navItem)}>サイト名</p>
-            </Link>
+            <>
+              <Link to='/' {...css(styles.link)}>
+                <p {...css(styles.navItem)}>サイト名</p>
+              </Link>
+              <ButtonSignOut
+                title="変更"
+                onClick={signOut}
+              />
+            </>
           )
         }
 
@@ -57,6 +64,7 @@ const Header = () => {
 }
 function signOut() {
   console.log("test Sign out")
+  loginInfo.isAuth = true
   // Auth.signOut()
   //   .then(() => {
   //     //this.props.history.push('/auth')
