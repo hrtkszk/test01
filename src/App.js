@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React from 'react'
 import {
   Routes,
   Route,
@@ -31,11 +31,7 @@ function PrivateRoute({ children }) {
 //   return true;
 // }
 
-const fruits = ['Apple', 'Orange', 'Banana'];
-export const FruitContext = createContext();
-
 const App = () => (
-  <FruitContext.Provider value={{ fruits }}>
   <BrowserRouter>
     <div className="App">
       <Header />
@@ -83,7 +79,6 @@ const App = () => (
       </Routes>
     </div>
   </BrowserRouter>
-  </FruitContext.Provider>
 )
 
 export default App;

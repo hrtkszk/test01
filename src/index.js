@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import registerServiceWorker from './registerServiceWorker';
 
+const fruits = ['Apple', 'Orange', 'Banana'];
+export const FruitContext = createContext();
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <FruitContext.Provider value={{ fruits }}>
+      <App />
+    </FruitContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
