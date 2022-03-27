@@ -8,7 +8,7 @@ import Container from './Container'
 // import Button from './Button'
 import './Message.css';
 import ButtonSend from './ButtonSend';
-import { FruitContext } from '../index';
+import { loginContext } from '../index';
 
 const Home = () => {
   const inputRef = useRef();
@@ -49,8 +49,8 @@ const Home = () => {
     //     .catch(err => console.log('error: ', err))
     // });
   // }
-  const { fruits } = useContext(FruitContext);
-  console.log(fruits);
+  const { userInfo } = useContext(loginContext);
+  console.log(userInfo);
 
   const sendMsg = () => {
     // this.setState({Messages:[]})

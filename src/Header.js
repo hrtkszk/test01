@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom'
 // import UserContext from './UserContext'
 import ButtonSignOut from './page/ButtonSignOut'
 // import { Auth } from 'aws-amplify'
+import { loginContext } from './index';
 
 const Header = () => {
+  const { userInfo } = useContext(loginContext);
 // class Header extends React.Component {
   // static contextType = UserContext
   // render() {
@@ -15,6 +17,7 @@ const Header = () => {
     <div {...css(styles.container)}>
       <div {...css(styles.navContainer)}>
         {
+          userInfo.isAuth ? (
           // isLoaded ? isAuthenticated ? (
             <>
               <Link to='/' {...css(styles.link)}>
@@ -39,13 +42,12 @@ const Header = () => {
                 title="ログオフ"
                 onClick={signOut}
               />
-            {/* </> */}
-          {/* ) : ( */}
-            <Link to='/auth' {...css(styles.link)}>
+            </>
+          ) : (
+            <Link to='/' {...css(styles.link)}>
               <p {...css(styles.navItem)}>サイト名</p>
             </Link>
-          {/* ) : null */}
-            </>
+          )
         }
 
       </div>
