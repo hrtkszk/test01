@@ -11,14 +11,24 @@ const Header = () => {
   const { loginInfo } = useContext(loginContext);
   console.log(loginInfo);
   console.log(loginInfo.isAuth);
-  loginInfo.isAuth = true
-  console.log(loginInfo);
-  console.log(loginInfo.isAuth);
 // class Header extends React.Component {
   // static contextType = UserContext
   // render() {
     // const isAuthenticated = this.context.user && this.context.user.username ? true : false
     // const isLoaded = this.context.isLoaded
+
+  const signOut = () => {
+    if (loginInfo.isAuth) {
+      loginInfo.isAuth = false
+      console.log(loginInfo);
+      console.log(loginInfo.isAuth);
+    } else {
+      loginInfo.isAuth = true
+      console.log(loginInfo);
+      console.log(loginInfo.isAuth);
+    }
+
+  }
   return (
     <div {...css(styles.container)}>
       <div {...css(styles.navContainer)}>
@@ -46,7 +56,7 @@ const Header = () => {
               </Link>
               <ButtonSignOut
                 title="変更"
-                // onClick={loginInfo.isAuth = false}
+                onClick={signOut}
               />
             </>
           ) : (
@@ -56,7 +66,7 @@ const Header = () => {
               </Link>
               <ButtonSignOut
                 title="変更"
-                // onClick={loginInfo.isAuth = true}
+                onClick={signOut}
               />
             </>
           )
