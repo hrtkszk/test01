@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { css } from 'glamor'
 import { Link } from 'react-router-dom'
 // import UserContext from './UserContext'
@@ -11,6 +11,7 @@ const Header = () => {
   const { loginInfo } = useContext(loginContext);
   console.log(loginInfo);
   console.log(loginInfo.isAuth);
+  const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
 // class Header extends React.Component {
   // static contextType = UserContext
   // render() {
@@ -18,14 +19,16 @@ const Header = () => {
     // const isLoaded = this.context.isLoaded
 
   const signOut = () => {
-    if (loginInfo.isAuth) {
+    if (AuthStat) {
       loginInfo.isAuth = false
-      console.log(loginInfo);
-      console.log(loginInfo.isAuth);
+      setAuthStat(loginInfo.isAuth)
+      console.log(loginInfo.isAuth)
+      console.log(AuthStat)
     } else {
       loginInfo.isAuth = true
-      console.log(loginInfo);
-      console.log(loginInfo.isAuth);
+      setAuthStat(loginInfo.isAuth)
+      console.log(loginInfo.isAuth)
+      console.log(AuthStat)
     }
 
   }
@@ -33,7 +36,7 @@ const Header = () => {
     <div {...css(styles.container)}>
       <div {...css(styles.navContainer)}>
         {
-          loginInfo.isAuth ? (
+          AuthStat ? (
           // isLoaded ? isAuthenticated ? (
             <>
               <Link to='/' {...css(styles.link)}>
