@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import registerServiceWorker from './registerServiceWorker';
 
-const fruits = {'user':'', 'isAuth':False};
+const fruits = {'user':'', 'isAuth':false};
 export const FruitContext = createContext();
 
 ReactDOM.render(
