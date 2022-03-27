@@ -41,7 +41,7 @@ const Header = () => {
               </Link>
               <ButtonSignOut
                 title="変更"
-                onClick={signOut}
+                onClick={signOut(), loginInfo.isAuth = false}
               />
             </>
           ) : (
@@ -51,7 +51,7 @@ const Header = () => {
               </Link>
               <ButtonSignOut
                 title="変更"
-                onClick={signOut}
+                onClick={signOut(), loginInfo.isAuth = true}
               />
             </>
           )
@@ -63,9 +63,7 @@ const Header = () => {
   // }
 }
 function signOut() {
-  const { loginInfo } = useContext(loginContext);
   console.log("test Sign out")
-  loginInfo.isAuth = true
   // Auth.signOut()
   //   .then(() => {
   //     //this.props.history.push('/auth')
