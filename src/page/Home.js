@@ -8,6 +8,7 @@ import Container from './Container'
 // import Button from './Button'
 import './Message.css';
 import ButtonSend from './ButtonSend';
+import { FruitContext } from '../App';
 
 const Home = () => {
   const inputRef = useRef();
