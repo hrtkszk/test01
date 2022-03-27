@@ -41,7 +41,7 @@ const Header = () => {
               </Link>
               <ButtonSignOut
                 title="変更"
-                onClick={() => signOut(), loginInfo.isAuth = false}
+                onClick={loginInfo.isAuth = false}
               />
             </>
           ) : (
@@ -51,7 +51,7 @@ const Header = () => {
               </Link>
               <ButtonSignOut
                 title="変更"
-                onClick={() => signOut(), loginInfo.isAuth = true}
+                onClick={loginInfo.isAuth = true}
               />
             </>
           )
@@ -62,15 +62,15 @@ const Header = () => {
   )
   // }
 }
-function signOut() {
-  console.log("test Sign out")
+// function signOut() {
+//   console.log("test Sign out")
   // Auth.signOut()
   //   .then(() => {
   //     //this.props.history.push('/auth')
   //     window.location.href = "/auth"
   //   })
   //   .catch(() => console.log('error signing out...'))
-}
+// }
 
 const styles = {
     title: {
