@@ -54,6 +54,7 @@ const Header = () => {
   // }
 }
 function signOut() {
+  console.log("test Sign out")
   // Auth.signOut()
   //   .then(() => {
   //     //this.props.history.push('/auth')
