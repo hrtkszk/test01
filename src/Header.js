@@ -5,52 +5,53 @@ import { Link } from 'react-router-dom'
 import ButtonSignOut from './page/ButtonSignOut'
 // import { Auth } from 'aws-amplify'
 
-class Header extends React.Component {
+const Header = () => {
+// class Header extends React.Component {
   // static contextType = UserContext
-  render() {
+  // render() {
     // const isAuthenticated = this.context.user && this.context.user.username ? true : false
     // const isLoaded = this.context.isLoaded
-    return (
-      <div {...css(styles.container)}>
-        <div {...css(styles.navContainer)}>
-          {
-            // isLoaded ? isAuthenticated ? (
-              <>
-                <Link to='/' {...css(styles.link)}>
-                  <p {...css(styles.navItem)}>ホーム</p>
-                </Link>
-                <Link to='/profilesearch' {...css(styles.link)}>
-                  <p {...css(styles.navItem)}>検索</p>
-                </Link>
-                <Link to='/boshu' {...css(styles.link)}>
-                  <p {...css(styles.navItem)}>掲示板</p>
-                </Link>
-                <Link to='/messagelist' {...css(styles.link)}>
-                  <p {...css(styles.navItem)}>メッセージリスト</p>
-                </Link>
-                <Link to='/message' {...css(styles.link)}>
-                  <p {...css(styles.navItem)}>メッセージ</p>
-                </Link>
-                <Link to='/myprofile' {...css(styles.link)}>
-                  <p {...css(styles.navItem)}>プロフィール</p>
-                </Link>
-                <ButtonSignOut
-                  title="ログオフ"
-                  onClick={signOut}
-                />
-              {/* </> */}
-            {/* ) : ( */}
-              <Link to='/auth' {...css(styles.link)}>
-                <p {...css(styles.navItem)}>サイト名</p>
+  return (
+    <div {...css(styles.container)}>
+      <div {...css(styles.navContainer)}>
+        {
+          // isLoaded ? isAuthenticated ? (
+            <>
+              <Link to='/' {...css(styles.link)}>
+                <p {...css(styles.navItem)}>ホーム</p>
               </Link>
-            {/* ) : null */}
-              </>
-          }
+              <Link to='/profilesearch' {...css(styles.link)}>
+                <p {...css(styles.navItem)}>検索</p>
+              </Link>
+              <Link to='/boshu' {...css(styles.link)}>
+                <p {...css(styles.navItem)}>掲示板</p>
+              </Link>
+              <Link to='/messagelist' {...css(styles.link)}>
+                <p {...css(styles.navItem)}>メッセージリスト</p>
+              </Link>
+              <Link to='/message' {...css(styles.link)}>
+                <p {...css(styles.navItem)}>メッセージ</p>
+              </Link>
+              <Link to='/myprofile' {...css(styles.link)}>
+                <p {...css(styles.navItem)}>プロフィール</p>
+              </Link>
+              <ButtonSignOut
+                title="ログオフ"
+                onClick={signOut}
+              />
+            {/* </> */}
+          {/* ) : ( */}
+            <Link to='/auth' {...css(styles.link)}>
+              <p {...css(styles.navItem)}>サイト名</p>
+            </Link>
+          {/* ) : null */}
+            </>
+        }
 
-        </div>
       </div>
-    )
-  }
+    </div>
+  )
+  // }
 }
 function signOut() {
   // Auth.signOut()
