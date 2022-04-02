@@ -68,6 +68,9 @@ const Header = () => {
               <Link to='/' {...css(styles.link)}>
                 <p {...css(styles.navItem)}>サイト名</p>
               </Link>
+              <Link to='/myprofile' {...css(styles.link)}>
+                <p {...css(styles.navItem)}>プロフィール</p>
+              </Link>
               <ButtonSignOut
                 title="変更"
                 onClick={signOut}
