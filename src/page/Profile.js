@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
-import ButtonSignOut from './page/ButtonSignOut'
+import ButtonSignOut from './ButtonSignOut'
 import Container from './Container'
-import { loginContext } from './index';
+import { loginContext } from '../index';
 
 const Profile = () => {
   const { loginInfo } = useContext(loginContext);
