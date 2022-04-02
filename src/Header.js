@@ -10,8 +10,7 @@ import { loginContext } from './index';
 const Header = () => {
   const { loginInfo } = useContext(loginContext);
   const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
-  console.log(loginInfo);
-  console.log(loginInfo.isAuth);
+  console.log(loginInfo)
   console.log(AuthStat)
 // class Header extends React.Component {
   // static contextType = UserContext
