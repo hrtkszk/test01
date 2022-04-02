@@ -33,6 +33,7 @@ const App = () => {
 
   const PrivateRoute = ({ children }) => {
     // const auth = useAuth();
+    console.log(loginInfo)
     return loginInfo.isAuth ?  children  : <Navigate to='/auth' />;
     // return children;
   }
