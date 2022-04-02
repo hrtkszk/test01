@@ -9,9 +9,10 @@ import { loginContext } from './index';
 
 const Header = () => {
   const { loginInfo } = useContext(loginContext);
+  const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
   console.log(loginInfo);
   console.log(loginInfo.isAuth);
-  const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
+  console.log(AuthStat)
 // class Header extends React.Component {
   // static contextType = UserContext
   // render() {
@@ -30,8 +31,8 @@ const Header = () => {
       console.log(loginInfo.isAuth)
       console.log(AuthStat)
     }
-
   }
+  
   return (
     <div {...css(styles.container)}>
       <div {...css(styles.navContainer)}>
