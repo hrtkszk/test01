@@ -23,12 +23,12 @@ const Header = () => {
     if (AuthStat) {
       loginInfo.isAuth = false
       setAuthStat(loginInfo.isAuth)
-      console.log(loginInfo.isAuth)
+      console.log(loginInfo)
       console.log(AuthStat)
     } else {
       loginInfo.isAuth = true
       setAuthStat(loginInfo.isAuth)
-      console.log(loginInfo.isAuth)
+      console.log(loginInfo)
       console.log(AuthStat)
     }
   }
