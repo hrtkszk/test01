@@ -57,8 +57,6 @@ const Header = () => {
               </Link>
               <Link to='/myprofile' {...css(styles.link)}>
                 <p {...css(styles.navItem)}>プロフィール</p>
-                {console.log(loginInfo)}
-                {console.log(AuthStat)}
               </Link>
               <ButtonSignOut
                 title="変更"
@@ -72,8 +70,6 @@ const Header = () => {
               </Link>
               <Link to='/myprofile' {...css(styles.link)}>
                 <p {...css(styles.navItem)}>プロフィール</p>
-                {console.log(loginInfo)}
-                {console.log(AuthStat)}
               </Link>
               <ButtonSignOut
                 title="変更"
