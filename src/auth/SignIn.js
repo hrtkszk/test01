@@ -226,10 +226,12 @@ function Layout() {
 // }
 
 // let AuthContext = React.createContext<AuthContextType>(null!);
+let AuthContext = React.createContext()
 
 function AuthProvider({ children }) {
 // function AuthProvider({ children }: { children: React.ReactNode }) {
-  let [user, setUser] = React.useState<any>(null);
+  // let [user, setUser] = React.useState<any>(null);
+  let [user, setUser] = React.useState(null);
 
   let signin = (newUser, callback) => {
   // let signin = (newUser: string, callback: VoidFunction) => {
