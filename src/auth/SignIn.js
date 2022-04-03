@@ -185,6 +185,7 @@ export default function App() {
       <Routes>
         {console.log("after/in Routes")}
         <Route element={<Layout />}>
+          {console.log("after/in Layout")}
           <Route path="/public" element={<PublicPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route
