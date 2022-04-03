@@ -7,12 +7,10 @@ import {
   useNavigate
 } from 'react-router-dom'
 
-const SignIn = () => {
-  const { loginInfo } = useContext(loginContext);
-  const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
-  const [userName, setUserName] = useState("");
-  const [passWord, setPassWord] = useState("");
+const [userName, setUserName] = useState("");
+const [passWord, setPassWord] = useState("");
 
+const SignIn = () => {
   // state = {
   //   username: '',
   //   password: '',
@@ -102,6 +100,8 @@ const SignIn = () => {
 }
 
 function signIn() {
+  const { loginInfo } = useContext(loginContext);
+  const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
   let navigate = useNavigate();
   if (userName === "test" && passWord === "1234") {
     loginInfo.isAuth = true
