@@ -4,7 +4,7 @@ import { css } from 'glamor'
 // import UserContext from './UserContext'
 import { loginContext } from '../index'
 import {
-  Navigate
+  useNavigate
 } from 'react-router-dom'
 
 const SignIn = () => {
@@ -27,17 +27,13 @@ const SignIn = () => {
   //   })
   // }
   const signIn = () => {
+    let navigate = useNavigate();
     if (userName === "test" && passWord === "1234") {
       loginInfo.isAuth = true
       setAuthStat(loginInfo.isAuth)
-      return (
-        <>
-          <Navigate to='/message' />
-          {console.log("Redirected?")}
-          {console.log(AuthStat)}
-          {console.log(loginInfo)}
-        </>
-      )
+      console.log(AuthStat)
+      console.log(loginInfo)
+      navigate("/message")
     } else {
       console.log(AuthStat)
       console.log(loginInfo)
