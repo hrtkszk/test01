@@ -10,6 +10,7 @@ import {
 import Header from './Header'
 
 import Authenticator from './auth/Authenticator'
+import SignIn from './auth/SignIn'
 import SignUpConfirmation from './auth/SignUpConfirmation'
 import ForgotPasswordConfirmation from './auth/ForgotPasswordConfirmation'
 
@@ -44,6 +45,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path='/auth' element={<Authenticator />} />
+          <Route path='/signin' element={<SignIn />} />
           <Route path='/suc' element={<SignUpConfirmation />} />
           <Route path='/fpc' element={<ForgotPasswordConfirmation />} />
           <Route path='/' element={<Home />} />

@@ -1,25 +1,38 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { css } from 'glamor'
 // import { Auth } from 'aws-amplify'
 // import UserContext from './UserContext'
+import { loginContext } from './index'
 
+const SignIn = () => {
+  const { loginInfo } = useContext(loginContext);
+  const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
+  const [userName, setUserName] = useState("");
+  const [passWord, setPassWord] = useState("");
 
-class SignIn extends React.Component {
-  state = {
-    username: '',
-    password: '',
-    showConfirmation: false,
-    user: {},
-    authCode: ''
-  }
+  // state = {
+  //   username: '',
+  //   password: '',
+  //   showConfirmation: false,
+  //   user: {},
+  //   authCode: ''
+  // }
   // static contextType = UserContext
-  onChange = (key, value) => {
-    this.props.updateErrorMessage(null)
-    this.setState({
-      [key]: value
-    })
-  }
-  signIn = () => {
+  // const onChange = (key, value) => {
+  //   this.setState({
+  //     [key]: value
+  //   })
+  // }
+  const signIn = () => {
+    if (userName === "test" && passWord === "1234") {
+      loginInfo.isAuth = true
+      setAuthStat(loginInfo.isAuth)
+      console.log(AuthStat)
+      console.log(loginInfo)
+    } else {
+      console.log(AuthStat)
+      console.log(loginInfo)
+    }
     // const { history } = this.props
     // const { updateCurrentUser } = this.context
     // Auth.signIn(this.state.username, this.state.password)
@@ -37,7 +50,7 @@ class SignIn extends React.Component {
     //     this.props.updateErrorMessage(err.message)
     //   })
   }
-  confirmSignIn = () => {
+  // confirmSignIn = () => {
     // const { history } = this.props
     // Auth.confirmSignIn(this.state.user, this.state.authCode, this.state.user.challengeName)
     //   .then(user => {
@@ -45,53 +58,53 @@ class SignIn extends React.Component {
     //     window.location.href = "/myprofile"
     //   })
     //   .catch(err => console.log('error confirming signing in...: ', err))
-  }
-  render() {
-    return (
-      <div {...css(styles.container)}>
-        {
-          !this.state.showConfirmation && (
-            <>
-            <h1>ログイン</h1>
-            <div {...css(styles.formContainer)}>
+  // }
+
+
+  return (
+    <div {...css(styles.container)}>
+      {/* {
+        !this.state.showConfirmation && (
+          <> */}
+          <h1>ログイン</h1>
+          <div {...css(styles.formContainer)}>
+            
+            <input
+              onChange={evt => setUserName(evt.target.value)}
+              {...css(styles.input)}
+              placeholder='ユーザー名'
               
-              <input
-                onChange={evt => this.onChange('username', evt.target.value)}
-                {...css(styles.input)}
-                placeholder='ユーザー名'
-                
-              />
-              <input
-                type='password'
-                onChange={evt => this.onChange('password', evt.target.value)}
-                {...css(styles.input)}
-                placeholder='パスワード'
-              />
-              <div {...css(styles.button)} onClick={this.signIn}>
-                <p {...css(styles.buttonText)}>ログイン</p>
-              </div>
+            />
+            <input
+              type='password'
+              onChange={evt => setPassWord(evt.target.value)}
+              {...css(styles.input)}
+              placeholder='パスワード'
+            />
+            <div {...css(styles.button)} onClick={signIn}>
+              <p {...css(styles.buttonText)}>ログイン</p>
             </div>
-            </>
-          )
-        }
-        {
-          this.state.showConfirmation && (
-            <div {...css(styles.formContainer)}>
-              <h2 {...css(styles.signInHeader)}>Sign In</h2>
-              <input
-                onChange={evt => this.onChange('authCode', evt.target.value)}
-                {...css(styles.input)}
-                placeholder='認証コード'
-              />
-              <div {...css(styles.button)} onClick={this.confirmSignIn.bind(this)}>
-                <p {...css(styles.buttonText)}>ログイン</p>
-              </div>
+          </div>
+          {/* </>
+        )
+      } */}
+      {/* {
+        this.state.showConfirmation && (
+          <div {...css(styles.formContainer)}>
+            <h2 {...css(styles.signInHeader)}>Sign In</h2>
+            <input
+              onChange={evt => this.onChange('authCode', evt.target.value)}
+              {...css(styles.input)}
+              placeholder='認証コード'
+            />
+            <div {...css(styles.button)} onClick={this.confirmSignIn.bind(this)}>
+              <p {...css(styles.buttonText)}>ログイン</p>
             </div>
-          )
-        }
-      </div>
-    )
-  }
+          </div>
+        )
+      } */}
+    </div>
+  )
 }
 
 const styles = {
