@@ -26,18 +26,7 @@ const SignIn = () => {
   //     [key]: value
   //   })
   // }
-  const signIn = () => {
-    const navigate = useNavigate();
-    if (userName === "test" && passWord === "1234") {
-      loginInfo.isAuth = true
-      setAuthStat(loginInfo.isAuth)
-      console.log(AuthStat)
-      console.log(loginInfo)
-      navigate("/message")
-    } else {
-      console.log(AuthStat)
-      console.log(loginInfo)
-    }
+
     // const { history } = this.props
     // const { updateCurrentUser } = this.context
     // Auth.signIn(this.state.username, this.state.password)
@@ -54,7 +43,7 @@ const SignIn = () => {
     //     console.log('error signing in...: ', err)
     //     this.props.updateErrorMessage(err.message)
     //   })
-  }
+
   // confirmSignIn = () => {
     // const { history } = this.props
     // Auth.confirmSignIn(this.state.user, this.state.authCode, this.state.user.challengeName)
@@ -110,6 +99,20 @@ const SignIn = () => {
       } */}
     </div>
   )
+}
+
+function signIn() {
+  let navigate = useNavigate();
+  if (userName === "test" && passWord === "1234") {
+    loginInfo.isAuth = true
+    setAuthStat(loginInfo.isAuth)
+    console.log(AuthStat)
+    console.log(loginInfo)
+    navigate("/message")
+  } else {
+    console.log(AuthStat)
+    console.log(loginInfo)
+  }
 }
 
 const styles = {
