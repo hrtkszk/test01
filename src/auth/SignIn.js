@@ -9,6 +9,9 @@ import {
 
 const [userName, setUserName] = useState("");
 const [passWord, setPassWord] = useState("");
+const { loginInfo } = useContext(loginContext);
+const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
+let navigate = useNavigate();
 
 const SignIn = () => {
   // state = {
@@ -100,9 +103,7 @@ const SignIn = () => {
 }
 
 function signIn() {
-  const { loginInfo } = useContext(loginContext);
-  const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
-  let navigate = useNavigate();
+
   if (userName === "test" && passWord === "1234") {
     loginInfo.isAuth = true
     setAuthStat(loginInfo.isAuth)
