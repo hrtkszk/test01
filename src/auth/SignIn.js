@@ -30,10 +30,12 @@ const SignIn = () => {
     if (userName === "test" && passWord === "1234") {
       loginInfo.isAuth = true
       setAuthStat(loginInfo.isAuth)
-      console.log(AuthStat)
-      console.log(loginInfo)
       return (
-        <Navigate to='/message' />
+        <>
+          <Navigate to='/message' />
+          {console.log(AuthStat)}
+          {console.log(loginInfo)}
+        </>
       )
     } else {
       console.log(AuthStat)
