@@ -67,7 +67,7 @@ const Header = () => {
               <Link to='/' {...css(styles.link)}>
                 <p {...css(styles.navItem)}>サイト名</p>
               </Link>
-              <Link to='/signin' {...css(styles.link)}>
+              <Link to='/login' {...css(styles.link)}>
                 <p {...css(styles.navItem)}>ログイン</p>
               </Link>
               <ButtonSignOut
