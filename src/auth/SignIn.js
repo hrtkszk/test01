@@ -181,8 +181,9 @@ export default function App() {
   return (
     <AuthProvider>
       <h1>Auth Example</h1>
-
+        {console.log("before Routes")}
       <Routes>
+        {console.log("after/in Routes")}
         <Route element={<Layout />}>
           <Route path="/public" element={<PublicPage />} />
           <Route path="/login" element={<LoginPage />} />
