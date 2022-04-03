@@ -201,6 +201,7 @@ export default function App() {
 }
 
 function Layout() {
+  console.log("at Layout")
   return (
     <div>
       <AuthStatus />
@@ -259,6 +260,7 @@ function useAuth() {
 }
 
 function AuthStatus() {
+  console.log("at AuthStatus")
   let auth = useAuth();
   let navigate = useNavigate();
 
