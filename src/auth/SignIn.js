@@ -33,7 +33,7 @@ const SignIn = () => {
       console.log(AuthStat)
       console.log(loginInfo)
       return (
-        <Navigate to='/' />
+        <Navigate to='/message' />
       )
     } else {
       console.log(AuthStat)
