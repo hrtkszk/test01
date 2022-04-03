@@ -181,11 +181,9 @@ export default function App() {
   return (
     <AuthProvider>
       <h1>Auth Example</h1>
-        {console.log("before Routes")}
       <Routes>
-        {console.log("after/in Routes")}
         <Route element={<Layout />}>
-          {console.log("after/in Layout")}
+          {console.log("after/in Route")}
           <Route path="/public" element={<PublicPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route
@@ -196,6 +194,7 @@ export default function App() {
               </RequireAuth>
             }
           />
+          {console.log("before Route end")}
         </Route>
       </Routes>
     </AuthProvider>
