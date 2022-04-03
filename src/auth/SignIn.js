@@ -27,7 +27,7 @@ const SignIn = () => {
   //   })
   // }
   const signIn = () => {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     if (userName === "test" && passWord === "1234") {
       loginInfo.isAuth = true
       setAuthStat(loginInfo.isAuth)
