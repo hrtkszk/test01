@@ -3,6 +3,9 @@ import { css } from 'glamor'
 // import { Auth } from 'aws-amplify'
 // import UserContext from './UserContext'
 import { loginContext } from '../index'
+import {
+  Navigate
+} from 'react-router-dom'
 
 const SignIn = () => {
   const { loginInfo } = useContext(loginContext);
@@ -29,6 +32,9 @@ const SignIn = () => {
       setAuthStat(loginInfo.isAuth)
       console.log(AuthStat)
       console.log(loginInfo)
+      return (
+        <Navigate to='/' />
+      )
     } else {
       console.log(AuthStat)
       console.log(loginInfo)
