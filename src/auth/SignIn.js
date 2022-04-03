@@ -33,6 +33,7 @@ const SignIn = () => {
       return (
         <>
           <Navigate to='/message' />
+          {console.log("Redirected?")}
           {console.log(AuthStat)}
           {console.log(loginInfo)}
         </>
