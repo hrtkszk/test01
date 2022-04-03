@@ -183,7 +183,6 @@ export default function App() {
       <h1>Auth Example</h1>
       <Routes>
         <Route element={<Layout />}>
-          {console.log("after/in Route")}
           <Route path="/public" element={<PublicPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route
@@ -194,7 +193,6 @@ export default function App() {
               </RequireAuth>
             }
           />
-          {console.log("before Route end")}
         </Route>
       </Routes>
     </AuthProvider>
@@ -202,9 +200,9 @@ export default function App() {
 }
 
 function Layout() {
-  console.log("at Layout")
   return (
     <div>
+      {console.log("in Layout")}
       <AuthStatus />
 
       <ul>
