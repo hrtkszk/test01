@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { css } from 'glamor'
 // import { Auth } from 'aws-amplify'
 // import UserContext from './UserContext'
-import { loginContext } from './index'
+import { loginContext } from '../index'
 
 const SignIn = () => {
   const { loginInfo } = useContext(loginContext);
