@@ -199,7 +199,7 @@ export default function App() {
   );
 }
 
-function Layout() {
+const Layout = () => {
   return (
     <div>
       {console.log("in Layout")}
