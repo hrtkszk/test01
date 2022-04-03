@@ -46,6 +46,7 @@ const App = () => {
       <div className="App">
         <AuthProvider>
           <Header />
+          <AuthStatus />
           <Routes>
             <Route path='/auth' element={<Authenticator />} />
             <Route path='/signin' element={<SignIn />} />
@@ -198,27 +199,27 @@ function AuthProvider({ children }) {
     return React.useContext(AuthContext);
   }
 
-  // function AuthStatus() {
-  //   let auth = useAuth();
-  //   let navigate = useNavigate();
+  function AuthStatus() {
+    let auth = useAuth();
+    let navigate = useNavigate();
   
-  //   if (!auth.user) {
-  //     return <p>You are not logged in.</p>;
-  //   }
+    if (!auth.user) {
+      return <p>You are not logged in.</p>;
+    }
   
-  //   return (
-  //     <p>
-  //       Welcome {auth.user}!{" "}
-  //       <button
-  //         onClick={() => {
-  //           auth.signout(() => navigate("/"));
-  //         }}
-  //       >
-  //         Sign out
-  //       </button>
-  //     </p>
-  //   );
-  // }
+    return (
+      <p>
+        Welcome {auth.user}!{" "}
+        <button
+          onClick={() => {
+            auth.signout(() => navigate("/"));
+          }}
+        >
+          Sign out
+        </button>
+      </p>
+    );
+  }
 
 function RequireAuth({ children }) {
 // function RequireAuth({ children }: { children: JSX.Element }) {
