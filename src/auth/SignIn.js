@@ -182,9 +182,9 @@ export default function App() {
     <AuthProvider>
       <h1>Auth Example</h1>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<PublicPage />} />
-          <Route path="/login" element={<LoginPage />} />
+        <Route path="/layout" element={<Layout />}>
+          <Route path="/layout/" element={<PublicPage />} />
+          <Route path="/layout/login" element={<LoginPage />} />
           <Route
             path="/protected"
             element={
@@ -207,10 +207,10 @@ const Layout = () => {
 
       <ul>
         <li>
-          <Link to="/">Public Page</Link>
+          <Link to="/layout/">Public Page</Link>
         </li>
         <li>
-          <Link to="/protected">Protected Page</Link>
+          <Link to="/layout/protected">Protected Page</Link>
         </li>
       </ul>
 
@@ -272,7 +272,7 @@ function AuthStatus() {
       Welcome {auth.user}!{" "}
       <button
         onClick={() => {
-          auth.signout(() => navigate("/"));
+          auth.signout(() => navigate("/layout/"));
         }}
       >
         Sign out
@@ -302,7 +302,7 @@ function LoginPage() {
   let location = useLocation();
   let auth = useAuth();
 
-  let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/layout/";
 
   function handleSubmit(event) {
   // function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
