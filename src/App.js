@@ -248,6 +248,7 @@ function LoginPage() {
   console.log(location.from)
   console.log(location.pathname)
   console.log(location.state?.from?.pathname)
+  console.log(location.pathname || "/protected")
   console.log(from)
 
   function handleSubmit(event) {
