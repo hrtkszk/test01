@@ -243,6 +243,10 @@ function LoginPage() {
   let auth = useAuth();
   
   let from = location.state?.from?.pathname || "/protected";
+  console.log(location)
+  console.log(location.state)
+  console.log(location.from)
+  console.log(location.pathname)
   console.log(location.state?.from?.pathname)
   console.log(from)
 
