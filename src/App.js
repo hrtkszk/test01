@@ -242,7 +242,7 @@ function LoginPage() {
   let location = useLocation();
   let auth = useAuth();
 
-  let from = location.state?.from?.pathname || "/messagelist";
+  let from = location.state?.from?.pathname || "/";
   console.log(location.state?.from?.pathname)
 
   function handleSubmit(event) {
