@@ -242,8 +242,8 @@ function LoginPage() {
   let location = useLocation();
   let auth = useAuth();
 
-  let from = location.state?.from?.pathname || "/";
-  console.log(location.state?.from?.pathname)
+  let from = location.state?.from?.pathname || "/protected";
+  console.log(from)
 
   function handleSubmit(event) {
   // function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
