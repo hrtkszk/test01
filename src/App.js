@@ -241,8 +241,9 @@ function LoginPage() {
   let navigate = useNavigate();
   let location = useLocation();
   let auth = useAuth();
-
+  
   let from = location.state?.from?.pathname || "/protected";
+  console.log(location.state?.from?.pathname)
   console.log(from)
 
   function handleSubmit(event) {
