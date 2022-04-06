@@ -224,7 +224,7 @@ function AuthProvider({ children }) {
 function RequireAuth({ children }) {
 // function RequireAuth({ children }: { children: JSX.Element }) {
   let auth = useAuth();
-  let location = useLocation();
+  // let location = useLocation();
 
   if (!auth.user) {
     // Redirect them to the /login page, but save the current location they were
