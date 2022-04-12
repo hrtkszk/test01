@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
-import signInOut from './signInOut';
+import SignInOut from './SignInOut';
 
 // export function useAuth() {
 //   return useContext(AuthContext);
@@ -21,7 +21,7 @@ export function AuthStatus() {
       Welcome {AuthInfo.user}!{" "}
       <button
         onClick={() => {
-            signInOut.signout(() => navigate("/"));
+            SignInOut.signout(() => navigate("/"));
         }}
       >
         Sign out

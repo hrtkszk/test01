@@ -5,7 +5,7 @@ import { AuthContext } from './AuthContext';
 
 // export function signInOut(setUser) {
 // export function signInOut() {
-const signInOut = () => {
+const SignInOut = () => {
     const { AuthInfo } = useContext(AuthContext);
     // let signin = (newUser, callback) => {
     //     // let signin = (newUser: string, callback: VoidFunction) => {
@@ -40,4 +40,4 @@ const signInOut = () => {
     return {signin, signout}
 }
 
-export default signInOut
+export default SignInOut
