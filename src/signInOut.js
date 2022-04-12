@@ -4,8 +4,9 @@ import { AuthContext } from './AuthContext';
 
 
 // export function signInOut(setUser) {
-export function signInOut() {
-    let { AuthInfo } = useContext(AuthContext);
+// export function signInOut() {
+const signInOut = () => {
+    const { AuthInfo } = useContext(AuthContext);
     // let signin = (newUser, callback) => {
     //     // let signin = (newUser: string, callback: VoidFunction) => {
     //     return fakeAuthProvider.signin(() => {
@@ -14,7 +15,7 @@ export function signInOut() {
     //     });
     // };
     // let signin = (newUser, callback) => {
-    let signin = (newUser, callback) => {
+    const signin = (newUser, callback) => {
         // let signin = (newUser: string, callback: VoidFunction) => {
         AuthInfo.user = newUser;
         console.log(AuthInfo.user)
@@ -29,12 +30,14 @@ export function signInOut() {
     //         callback();
     //     });
     // };
-    let signout = (callback) => {
+    const signout = (callback) => {
         // let signout = (callback: VoidFunction) => {
         AuthInfo.user = null;
         console.log(AuthInfo.user)
         // isAuthenticated = false;
         setTimeout(callback, 100);
     };
-    return { signin, signout };
+    return {signin, signout}
 }
+
+export default signInOut
