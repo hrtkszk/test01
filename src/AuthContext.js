@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { fakeAuthProvider } from "./auth/auth";
+import React, { useState, createContext } from 'react';
+import { signInOut } from './signInOut';
 
 // import './App.css';
 // import React from 'react';
@@ -54,29 +54,16 @@ import { fakeAuthProvider } from "./auth/auth";
 //   }
 // }
 // export default App;
-export let AuthContext = React.createContext();
+export let AuthContext = createContext();
 export function AuthProvider({ children }) {
   // function AuthProvider({ children }: { children: React.ReactNode }) {
   // let [user, setUser] = React.useState<any>(null);
   let [user, setUser] = useState(null);
 
-  let signin = (newUser, callback) => {
-    // let signin = (newUser: string, callback: VoidFunction) => {
-    return fakeAuthProvider.signin(() => {
-      setUser(newUser);
-      callback();
-    });
-  };
-
-  let signout = (callback) => {
-    // let signout = (callback: VoidFunction) => {
-    return fakeAuthProvider.signout(() => {
-      setUser(null);
-      callback();
-    });
-  };
+  let { signin, signout } = signInOut(setUser);
 
   let value = { user, signin, signout };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
+
