@@ -2,7 +2,7 @@ import React from 'react';
 // import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { AuthContext } from './AuthContext';
-import { signInOut } from './signInOut';
+import signInOut from './signInOut';
 
 // export function useAuth() {
 //   return useContext(AuthContext);
