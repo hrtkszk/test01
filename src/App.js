@@ -1,4 +1,4 @@
-import React, { useContext, useState }  from 'react'
+import React, { useContext }  from 'react'
 import {
   Routes,
   Route,
@@ -25,7 +25,7 @@ import Boshu from './page/Boshu'
 import NoMatch from './page/NoMatch'
 import { loginContext } from './index'
 
-import { fakeAuthProvider } from "./auth/auth";
+import { AuthProvider, AuthContext } from './AuthContext'
 
 // function useAuth() {
 //   return true;
@@ -108,118 +108,31 @@ const App = () => {
 export default App;
 
 
-// import './App.css';
-// import React from 'react';
-// import Router from './Router'
-// class App extends React.Component {
-//   render() {
-//     return (
-//         <div className="App">
-//           <Router />
-//         </div>
-//     );
-//   }
-// }
-// export default App;
+function useAuth() {
+  return React.useContext(AuthContext);
+}
 
+function AuthStatus() {
+  let auth = useAuth();
+  let navigate = useNavigate();
 
-
-// import './App.css';
-// import React from 'react';
-//import ButtonSend from './ButtonSend';
-// import Router from './Router'
-// import UserContext from './UserContext'
-
-// class App extends React.Component {
-  // state = {
-  //   currentUser: {},
-  //   isLoaded: false
-  // }
-  // componentDidMount() {
-  //   this.updateCurrentUser()
-  // }
-  // updateCurrentUser = async (user) => {
-  //   if (user) {
-  //     this.setState({ currentUser: user })
-  //     return
-  //   }
-  //   try {
-  //     //const user = await getCurrentUserSession()
-  //     this.setState({ currentUser: user, isLoaded: true })
-  //   } catch (err) {
-  //     this.setState({ currentUser: null, isLoaded: true })
-  //   }
-  // }
-  // render() {
-  //   return (
-      // <UserContext.Provider value={{
-      //   user: this.state.currentUser,
-      //   updateCurrentUser: this.updateCurrentUser,
-      //   isLoaded: this.state.isLoaded
-      // }}>
-        // <div className="App">
-        //   <Router />
-        // </div>
-      // </UserContext.Provider>
-//     );
-//   }
-// }
-
-// export default App;
-
-let AuthContext = React.createContext()
-
-function AuthProvider({ children }) {
-  // function AuthProvider({ children }: { children: React.ReactNode }) {
-    // let [user, setUser] = React.useState<any>(null);
-    let [user, setUser] = useState(null);
-  
-    let signin = (newUser, callback) => {
-    // let signin = (newUser: string, callback: VoidFunction) => {
-      return fakeAuthProvider.signin(() => {
-        setUser(newUser);
-        callback();
-      });
-    };
-  
-    let signout = (callback) => {
-    // let signout = (callback: VoidFunction) => {
-      return fakeAuthProvider.signout(() => {
-        setUser(null);
-        callback();
-      });
-    };
-  
-    let value = { user, signin, signout };
-  
-    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  if (!auth.user) {
+    return <p>You are not logged in.</p>;
   }
 
-  function useAuth() {
-    return React.useContext(AuthContext);
-  }
-
-  function AuthStatus() {
-    let auth = useAuth();
-    let navigate = useNavigate();
-  
-    if (!auth.user) {
-      return <p>You are not logged in.</p>;
-    }
-  
-    return (
-      <p>
-        Welcome {auth.user}!{" "}
-        <button
-          onClick={() => {
-            auth.signout(() => navigate("/"));
-          }}
-        >
-          Sign out
-        </button>
-      </p>
-    );
-  }
+  return (
+    <p>
+      Welcome {auth.user}!{" "}
+      <button
+        onClick={() => {
+          auth.signout(() => navigate("/"));
+        }}
+      >
+        Sign out
+      </button>
+    </p>
+  );
+}
 
 function RequireAuth({ children }) {
 // function RequireAuth({ children }: { children: JSX.Element }) {
