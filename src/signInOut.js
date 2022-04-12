@@ -1,6 +1,10 @@
+import { useContext } from 'react';
+import { AuthContext } from './AuthContext';
 // import { fakeAuthProvider } from "./auth/auth";
 
-export function signInOut(setUser) {
+let { AuthInfo } = useContext(AuthContext);
+// export function signInOut(setUser) {
+export function signInOut() {
     // let signin = (newUser, callback) => {
     //     // let signin = (newUser: string, callback: VoidFunction) => {
     //     return fakeAuthProvider.signin(() => {
@@ -8,9 +12,11 @@ export function signInOut(setUser) {
     //         callback();
     //     });
     // };
+    // let signin = (newUser, callback) => {
     let signin = (newUser, callback) => {
         // let signin = (newUser: string, callback: VoidFunction) => {
-        setUser(newUser);
+        AuthInfo.user = newUser;
+        console.log(AuthInfo.user)
         // isAuthenticated = true;
         setTimeout(callback, 100); // fake async
     };
@@ -24,7 +30,8 @@ export function signInOut(setUser) {
     // };
     let signout = (callback) => {
         // let signout = (callback: VoidFunction) => {
-        setUser(null);
+        AuthInfo.user = null;
+        console.log(AuthInfo.user)
         // isAuthenticated = false;
         setTimeout(callback, 100);
     };

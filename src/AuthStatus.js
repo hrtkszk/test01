@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from './AuthContext';
+// import { AuthContext } from './AuthContext';
+import { signInOut } from './signInOut';
 
-export function useAuth() {
-  return React.useContext(AuthContext);
-}
+// export function useAuth() {
+//   return useContext(AuthContext);
+// }
+let { AuthInfo } = useContext(AuthContext);
 export function AuthStatus() {
-  let auth = useAuth();
+//   let auth = useAuth();
   let navigate = useNavigate();
 
-  if (!auth.user) {
+  if (!AuthInfo.user) {
     return <p>You are not logged in.</p>;
   }
 
   return (
     <p>
-      Welcome {auth.user}!{" "}
+      Welcome {AuthInfo.user}!{" "}
       <button
         onClick={() => {
-          auth.signout(() => navigate("/"));
+            signInOut.signout(() => navigate("/"));
         }}
       >
         Sign out

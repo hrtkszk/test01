@@ -1,5 +1,8 @@
-import React, { useState, createContext } from 'react';
-import { signInOut } from './signInOut';
+// import React, { useState, createContext } from 'react';
+import React, { createContext } from 'react';
+// import { signInOut } from './signInOut';
+
+
 
 // import './App.css';
 // import React from 'react';
@@ -58,11 +61,12 @@ export let AuthContext = createContext();
 export function AuthProvider({ children }) {
   // function AuthProvider({ children }: { children: React.ReactNode }) {
   // let [user, setUser] = React.useState<any>(null);
-  let [user, setUser] = useState(null);
+//   let [user, setUser] = useState(null);
 
-  let { signin, signout } = signInOut(setUser);
+//   let { signin, signout } = signInOut(setUser);
 
-  let value = { user, signin, signout };
+//   let value = { user, signin, signout };
+  let value = { user };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
