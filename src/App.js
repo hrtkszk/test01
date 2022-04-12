@@ -2,7 +2,6 @@ import React, { useContext }  from 'react'
 import {
   Routes,
   Route,
-  useNavigate,
   // useLocation,
   Navigate,
   BrowserRouter
@@ -28,6 +27,7 @@ import { loginContext } from './index'
 import { AuthProvider } from './AuthContext'
 import { ProtectedPage } from './ProtectedPage'
 import { LoginPage, useAuth } from './LoginPage'
+import { AuthStatus } from './AuthStatus'
 
 // function useAuth() {
 //   return true;
@@ -110,28 +110,6 @@ const App = () => {
 export default App;
 
 
-
-function AuthStatus() {
-  let auth = useAuth();
-  let navigate = useNavigate();
-
-  if (!auth.user) {
-    return <p>You are not logged in.</p>;
-  }
-
-  return (
-    <p>
-      Welcome {auth.user}!{" "}
-      <button
-        onClick={() => {
-          auth.signout(() => navigate("/"));
-        }}
-      >
-        Sign out
-      </button>
-    </p>
-  );
-}
 
 function RequireAuth({ children }) {
 // function RequireAuth({ children }: { children: JSX.Element }) {
