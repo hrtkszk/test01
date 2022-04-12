@@ -27,7 +27,7 @@ import { loginContext } from './index'
 import { AuthProvider } from './AuthContext'
 import { ProtectedPage } from './ProtectedPage'
 import { LoginPage } from './LoginPage'
-import { AuthStatus } from './AuthStatus'
+import AuthStatus from './AuthStatus'
 import { RequireAuth } from './RequireAuth'
 
 // function useAuth() {
