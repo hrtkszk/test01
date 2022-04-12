@@ -11,7 +11,7 @@ export function signInOut(setUser) {
     let signin = (newUser, callback) => {
         // let signin = (newUser: string, callback: VoidFunction) => {
         setUser(newUser);
-        isAuthenticated = true;
+        // isAuthenticated = true;
         setTimeout(callback, 100); // fake async
     };
 
@@ -25,7 +25,7 @@ export function signInOut(setUser) {
     let signout = (callback) => {
         // let signout = (callback: VoidFunction) => {
         setUser(null);
-        isAuthenticated = false;
+        // isAuthenticated = false;
         setTimeout(callback, 100);
     };
     return { signin, signout };
