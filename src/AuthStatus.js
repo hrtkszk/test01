@@ -6,11 +6,11 @@ import SignInOut from './SignInOut';
 // export function useAuth() {
 //   return useContext(AuthContext);
 // }
-
-export function AuthStatus() {
-  let { AuthInfo } = useContext(AuthContext);
+const AuthStatus = () => {
+// export function AuthStatus() {
+  const { AuthInfo } = useContext(AuthContext);
 //   let auth = useAuth();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   if (!AuthInfo.user) {
     return <p>You are not logged in.</p>;
@@ -29,3 +29,5 @@ export function AuthStatus() {
     </p>
   );
 }
+export default AuthStatus
+  
