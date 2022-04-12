@@ -109,9 +109,6 @@ const App = () => {
 export default App;
 
 
-function useAuth() {
-  return React.useContext(AuthContext);
-}
 
 function AuthStatus() {
   let auth = useAuth();
@@ -151,6 +148,11 @@ function RequireAuth({ children }) {
   }
 
   return children;
+}
+
+
+function useAuth() {
+  return React.useContext(AuthContext);
 }
 
 function LoginPage() {
