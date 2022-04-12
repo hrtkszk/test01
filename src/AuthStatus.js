@@ -1,7 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './LoginPage';
+import { AuthContext } from './AuthContext';
 
+export function useAuth() {
+  return React.useContext(AuthContext);
+}
 export function AuthStatus() {
   let auth = useAuth();
   let navigate = useNavigate();

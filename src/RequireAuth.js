@@ -3,8 +3,11 @@ import {
   // useLocation,
   Navigate
 } from 'react-router-dom';
-import { useAuth } from './LoginPage';
+import { AuthContext } from './AuthContext';
 
+export function useAuth() {
+  return React.useContext(AuthContext);
+}
 export function RequireAuth({ children }) {
   // function RequireAuth({ children }: { children: JSX.Element }) {
   let auth = useAuth();
