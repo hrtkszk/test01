@@ -11,7 +11,7 @@ const AuthStatus = () => {
   const { AuthInfo } = useContext(AuthContext);
 //   let auth = useAuth();
   const navigate = useNavigate();
-  console.log(AuthInfo.user)
+  console.log(AuthInfo)
 
   if (!AuthInfo.user) {
     return <p>You are not logged in.</p>;
