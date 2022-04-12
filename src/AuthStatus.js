@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { AuthContext } from './AuthContext';
+import { AuthContext } from './AuthContext';
 import { signInOut } from './signInOut';
 
 // export function useAuth() {
 //   return useContext(AuthContext);
 // }
-let { AuthInfo } = useContext(AuthContext);
+
 export function AuthStatus() {
+  let { AuthInfo } = useContext(AuthContext);
 //   let auth = useAuth();
   let navigate = useNavigate();
 

@@ -2,9 +2,10 @@ import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
 // import { fakeAuthProvider } from "./auth/auth";
 
-let { AuthInfo } = useContext(AuthContext);
+
 // export function signInOut(setUser) {
 export function signInOut() {
+    let { AuthInfo } = useContext(AuthContext);
     // let signin = (newUser, callback) => {
     //     // let signin = (newUser: string, callback: VoidFunction) => {
     //     return fakeAuthProvider.signin(() => {
