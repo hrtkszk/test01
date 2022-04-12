@@ -26,6 +26,7 @@ import NoMatch from './page/NoMatch'
 import { loginContext } from './index'
 
 import { AuthProvider, AuthContext } from './AuthContext'
+import { ProtectedPage } from './ProtectedPage'
 
 // function useAuth() {
 //   return true;
@@ -193,6 +194,3 @@ function LoginPage() {
   );
 }
 
-function ProtectedPage() {
-  return <h3>Protected</h3>;
-}
