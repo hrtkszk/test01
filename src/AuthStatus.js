@@ -22,9 +22,10 @@ const AuthStatus = () => {
     <p>
       Welcome {AuthInfo.user}!{" "}
       <button
-        onClick={() => {
-            SignOut();
-        }}
+        // onClick={() => {
+        //     SignOut(() => navigate("/"));
+        // }}
+        onClick={SignOut()}
       >
         Sign out
       </button>
