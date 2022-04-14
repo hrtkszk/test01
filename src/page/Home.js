@@ -8,7 +8,7 @@ import Container from './Container'
 // import Button from './Button'
 import './Message.css';
 import ButtonSend from './ButtonSend';
-import { loginContext } from '../index';
+import { AuthContext } from '../index';
 
 const Home = () => {
   const inputRef = useRef();
@@ -49,7 +49,7 @@ const Home = () => {
     //     .catch(err => console.log('error: ', err))
     // });
   // }
-  const { loginInfo } = useContext(loginContext);
+  const { loginInfo } = useContext(AuthContext);
   console.log(loginInfo);
   console.log(loginInfo.isAuth);
 

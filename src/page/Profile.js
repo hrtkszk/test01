@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 import ButtonSignOut from './ButtonSignOut'
 import Container from './Container'
-import { loginContext } from '../index';
+import { AuthContext } from '../index';
 
 const Profile = () => {
-  const { loginInfo } = useContext(loginContext);
+  const { loginInfo } = useContext(AuthContext);
   const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
   console.log(loginInfo)
   console.log(AuthStat)
