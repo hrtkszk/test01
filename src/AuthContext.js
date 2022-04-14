@@ -57,6 +57,7 @@ import React, { createContext } from 'react';
 //   }
 // }
 // export default App;
+const value = {'user':'test'};
 export let AuthContext = createContext();
 export function AuthProvider({ children }) {
   // function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -66,7 +67,7 @@ export function AuthProvider({ children }) {
 //   let { signin, signout } = signInOut(setUser);
 
 //   let value = { user, signin, signout };
-  let value = {'user':'test'};
+
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
