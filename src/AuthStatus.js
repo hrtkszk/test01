@@ -23,7 +23,7 @@ const AuthStatus = () => {
       Welcome {AuthInfo.user}!{" "}
       <button
         onClick={() => {
-            SignOut(() => navigate("/"));
+            SignOut();
         }}
       >
         Sign out
