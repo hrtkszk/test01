@@ -66,7 +66,7 @@ export function AuthProvider({ children }) {
 //   let { signin, signout } = signInOut(setUser);
 
 //   let value = { user, signin, signout };
-  let value = { 'user':''};
+  let value = {'user':'test'};
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
