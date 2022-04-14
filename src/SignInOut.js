@@ -17,7 +17,7 @@ export function SignIn (newUser, callback) {
     // isAuthenticated = true;
     setTimeout(callback, 100); // fake async
 };
-const SignOut = (callback) => {
+function SignOut (callback) {
     let AuthInfo = useAuth();
     // let signout = (callback: VoidFunction) => {
     AuthInfo.user = null;
