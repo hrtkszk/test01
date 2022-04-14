@@ -3,22 +3,26 @@ import ButtonSignOut from './ButtonSignOut'
 import Container from './Container'
 import { AuthContext } from '../index';
 
+export function useAuth() {
+  return useContext(AuthContext);
+}
 const Profile = () => {
-  const { loginInfo } = useContext(AuthContext);
-  const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
-  console.log(loginInfo)
+  let AuthInfo = useAuth();
+  // const { AuthInfo } = useContext(AuthContext);
+  const [AuthStat, setAuthStat] = useState(AuthInfo.isAuth);
+  console.log(AuthInfo)
   console.log(AuthStat)
 
   const signOut = () => {
     if (AuthStat) {
-      loginInfo.isAuth = false
-      setAuthStat(loginInfo.isAuth)
-      console.log(loginInfo)
+      AuthInfo.isAuth = false
+      setAuthStat(AuthInfo.isAuth)
+      console.log(AuthInfo)
       console.log(AuthStat)
     } else {
-      loginInfo.isAuth = true
-      setAuthStat(loginInfo.isAuth)
-      console.log(loginInfo)
+      AuthInfo.isAuth = true
+      setAuthStat(AuthInfo.isAuth)
+      console.log(AuthInfo)
       console.log(AuthStat)
     }
   }
