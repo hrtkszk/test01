@@ -1,6 +1,6 @@
 import React from 'react';
 // import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 // import { AuthContext } from './AuthContext';
 import SignIn from './SignInOut';
 
@@ -8,7 +8,7 @@ import SignIn from './SignInOut';
 //   return useContext(AuthContext);
 // }
 export function LoginPage() {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   // let location = useLocation();
   // let auth = useAuth();
 
