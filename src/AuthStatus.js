@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 // import { AuthContext } from './AuthContext';
 import { AuthContext } from './index';
 import SignOut from './SignOut';
@@ -11,7 +11,7 @@ const AuthStatus = () => {
 // export function AuthStatus() {
   // const { AuthInfo } = useContext(AuthContext);
   let AuthInfo = useAuth();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // console.log(AuthInfo)
 
   if (!AuthInfo.user) {
