@@ -2,7 +2,7 @@ import React from 'react';
 // import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { AuthContext } from './AuthContext';
-import SignInOut from './SignInOut';
+import SignIn from './SignInOut';
 
 // export function useAuth() {
 //   return useContext(AuthContext);
@@ -21,7 +21,7 @@ export function LoginPage() {
     let formData = new FormData(event.currentTarget);
     let username = formData.get("username");
     // let username = formData.get("username") as string;
-    SignInOut.signin(username, () => {
+    SignIn(username, () => {
       // Send them back to the page they tried to visit when they were
       // redirected to the login page. Use { replace: true } so we don't create
       // another entry in the history stack for the login page.  This means that
