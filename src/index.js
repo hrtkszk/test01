@@ -10,7 +10,7 @@ export const AuthContext = createContext();
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthContext.Provider value={{ value }}>
+    <AuthContext.Provider value={ value }>
       <App />
     </AuthContext.Provider>
   </React.StrictMode>,
