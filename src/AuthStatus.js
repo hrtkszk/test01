@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { AuthContext } from './AuthContext';
 import { AuthContext } from './index';
-import { SignInOut } from './SignInOut';
+import { SignOut } from './SignInOut';
 
 export function useAuth() {
   return useContext(AuthContext);
@@ -23,7 +23,7 @@ const AuthStatus = () => {
       Welcome {AuthInfo.user}!{" "}
       <button
         onClick={() => {
-            SignInOut.signout(() => navigate("/"));
+            SignOut(() => navigate("/"));
         }}
       >
         Sign out
