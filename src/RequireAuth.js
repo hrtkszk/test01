@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   // useLocation,
   Navigate
 } from 'react-router-dom';
-import { AuthContext } from './AuthContext';
+// import { AuthContext } from './AuthContext';
+import { AuthContext } from './index';
 
 export function useAuth() {
-  return React.useContext(AuthContext);
+  return useContext(AuthContext);
 }
 export function RequireAuth({ children }) {
   // function RequireAuth({ children }: { children: JSX.Element }) {

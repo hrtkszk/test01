@@ -1,5 +1,5 @@
 // import React, { useState, createContext } from 'react';
-import React, { createContext } from 'react';
+// import React, { createContext } from 'react';
 // import { signInOut } from './signInOut';
 
 
@@ -57,9 +57,9 @@ import React, { createContext } from 'react';
 //   }
 // }
 // export default App;
-const value = {'user':'test'};
-export let AuthContext = createContext();
-export function AuthProvider({ children }) {
+// const value = {'user':'test'};
+// export let AuthContext = createContext();
+// export function AuthProvider({ children }) {
   // function AuthProvider({ children }: { children: React.ReactNode }) {
   // let [user, setUser] = React.useState<any>(null);
 //   let [user, setUser] = useState(null);
@@ -69,6 +69,6 @@ export function AuthProvider({ children }) {
 //   let value = { user, signin, signout };
 
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
+//   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+// }
 

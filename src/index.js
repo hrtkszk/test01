@@ -5,14 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import registerServiceWorker from './registerServiceWorker';
 
-const loginInfo = {'user':'', 'isAuth':false};
-export const loginContext = createContext();
+const value = {'user':'', 'isAuth':false};
+export const AuthContext = createContext();
 
 ReactDOM.render(
   <React.StrictMode>
-    <loginContext.Provider value={{ loginInfo }}>
+    <AuthContext.Provider value={{ value }}>
       <App />
-    </loginContext.Provider>
+    </AuthContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

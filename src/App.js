@@ -22,9 +22,9 @@ import Profile from './page/Profile'
 import ProfileSearch from './page/ProfileSearch'
 import Boshu from './page/Boshu'
 import NoMatch from './page/NoMatch'
-import { loginContext } from './index'
+// import { loginContext } from './index'
 
-import { AuthProvider } from './AuthContext'
+// import { AuthProvider } from './AuthContext'
 import { ProtectedPage } from './ProtectedPage'
 import { LoginPage } from './LoginPage'
 import AuthStatus from './AuthStatus'
@@ -35,19 +35,20 @@ import { RequireAuth } from './RequireAuth'
 // }
 
 const App = () => {
-  const { loginInfo } = useContext(loginContext);
+  // const { loginInfo } = useContext(loginContext);
 
   const PrivateRoute = ({ children }) => {
     // const auth = useAuth();
-    console.log(loginInfo)
-    return loginInfo.isAuth ?  children  : <Navigate to='/auth' />;
+    // console.log(loginInfo)
+    return children;
+    // return loginInfo.isAuth ?  children  : <Navigate to='/auth' />;
     // return children;
   }
 
   return (
     <BrowserRouter>
       <div className="App">
-        <AuthProvider>
+        {/* <AuthProvider> */}
           <Header />
           <AuthStatus />
           <Routes>
@@ -102,7 +103,7 @@ const App = () => {
               }
             />
           </Routes>
-        </AuthProvider>
+        {/* </AuthProvider> */}
       </div>
     </BrowserRouter>
   )

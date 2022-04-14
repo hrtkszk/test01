@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from './AuthContext';
+// import { AuthContext } from './AuthContext';
+import { AuthContext } from './index';
 import SignInOut from './SignInOut';
 
 // export function useAuth() {
