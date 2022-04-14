@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import registerServiceWorker from './registerServiceWorker';
 
-const value = {'user':'', 'isAuth':false};
+const value = {'user':'test', 'isAuth':false};
 export const AuthContext = createContext();
 
 ReactDOM.render(
