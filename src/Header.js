@@ -1,42 +1,43 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
+// import React, { useContext, useState } from 'react'
 import { css } from 'glamor'
 import { Link } from 'react-router-dom'
 // import UserContext from './UserContext'
 import ButtonSignOut from './page/ButtonSignOut'
 // import { Auth } from 'aws-amplify'
-import { loginContext } from './index';
+// import { AuthContext } from './index';
 
 
 const Header = () => {
-  const { loginInfo } = useContext(loginContext);
-  const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
-  console.log(loginInfo)
-  console.log(AuthStat)
+  // const { loginInfo } = useContext(AuthContext);
+  // const [AuthStat, setAuthStat] = useState(loginInfo.isAuth);
+  // console.log(loginInfo)
+  // console.log(AuthStat)
 // class Header extends React.Component {
   // static contextType = UserContext
   // render() {
     // const isAuthenticated = this.context.user && this.context.user.username ? true : false
     // const isLoaded = this.context.isLoaded
 
-  const signOut = () => {
-    if (AuthStat) {
-      loginInfo.isAuth = false
-      setAuthStat(loginInfo.isAuth)
-      console.log(loginInfo)
-      console.log(AuthStat)
-    } else {
-      loginInfo.isAuth = true
-      setAuthStat(loginInfo.isAuth)
-      console.log(loginInfo)
-      console.log(AuthStat)
-    }
-  }
+  // const signOut = () => {
+  //   if (AuthStat) {
+  //     loginInfo.isAuth = false
+  //     setAuthStat(loginInfo.isAuth)
+  //     console.log(loginInfo)
+  //     console.log(AuthStat)
+  //   } else {
+  //     loginInfo.isAuth = true
+  //     setAuthStat(loginInfo.isAuth)
+  //     console.log(loginInfo)
+  //     console.log(AuthStat)
+  //   }
+  // }
   
   return (
     <div {...css(styles.container)}>
       <div {...css(styles.navContainer)}>
         {
-          AuthStat ? (
+          // AuthStat ? (
           // isLoaded ? isAuthenticated ? (
             <>
               <Link to='/' {...css(styles.link)}>
@@ -57,25 +58,28 @@ const Header = () => {
               <Link to='/myprofile' {...css(styles.link)}>
                 <p {...css(styles.navItem)}>プロフィール</p>
               </Link>
-              <ButtonSignOut
-                title="変更"
-                onClick={signOut}
-              />
-            </>
-          ) : (
-            <>
-              <Link to='/' {...css(styles.link)}>
-                <p {...css(styles.navItem)}>サイト名</p>
-              </Link>
               <Link to='/login' {...css(styles.link)}>
                 <p {...css(styles.navItem)}>ログイン</p>
               </Link>
               <ButtonSignOut
                 title="変更"
-                onClick={signOut}
+                onClick={null}
               />
             </>
-          )
+        //   ) : (
+        //     <>
+        //       <Link to='/' {...css(styles.link)}>
+        //         <p {...css(styles.navItem)}>サイト名</p>
+        //       </Link>
+        //       <Link to='/login' {...css(styles.link)}>
+        //         <p {...css(styles.navItem)}>ログイン</p>
+        //       </Link>
+        //       <ButtonSignOut
+        //         title="変更"
+        //         onClick={signOut}
+        //       />
+        //     </>
+        //   )
         }
 
       </div>
