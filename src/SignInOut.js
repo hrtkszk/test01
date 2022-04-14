@@ -17,14 +17,15 @@ export const SignIn = (newUser, callback) => {
     // isAuthenticated = true;
     setTimeout(callback, 100); // fake async
 };
-export default SignOut = (callback) => {
+const SignOut = (callback) => {
     let AuthInfo = useAuth();
     // let signout = (callback: VoidFunction) => {
     AuthInfo.user = null;
     console.log(AuthInfo.user)
     // isAuthenticated = false;
     setTimeout(callback, 100);
-};
+}
+export default SignOut
 
 // const SignInOut = () => {
 //     // const { AuthInfo } = useContext(AuthContext);
