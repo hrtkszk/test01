@@ -10,6 +10,10 @@ import './Message.css';
 import ButtonSend from './ButtonSend';
 import { AuthContext } from '../index';
 
+export function useAuth() {
+  return useContext(AuthContext);
+}
+
 const Home = () => {
   const inputRef = useRef();
   const [Messages, setMessages] = useState([]);
@@ -49,9 +53,10 @@ const Home = () => {
     //     .catch(err => console.log('error: ', err))
     // });
   // }
-  const { loginInfo } = useContext(AuthContext);
-  console.log(loginInfo);
-  console.log(loginInfo.isAuth);
+  // const { AuthInfo } = useContext(AuthContext);
+  let AuthInfo = useAuth();
+  console.log(AuthInfo);
+  console.log(AuthInfo.isAuth);
 
   const sendMsg = () => {
     // this.setState({Messages:[]})
