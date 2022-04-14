@@ -1,4 +1,4 @@
-import { useState, useRef, useContext } from 'react';
+import { useState, useRef } from 'react';
 // import React from 'react'
 // import { Auth } from 'aws-amplify'
 //import QRCode from 'qrcode.react'
@@ -8,11 +8,11 @@ import Container from './Container'
 // import Button from './Button'
 import './Message.css';
 import ButtonSend from './ButtonSend';
-import { AuthContext } from '../index';
+// import { AuthContext } from '../index';
 
-export function useAuth() {
-  return useContext(AuthContext);
-}
+// export function useAuth() {
+//   return useContext(AuthContext);
+// }
 
 const Home = () => {
   const inputRef = useRef();
@@ -54,7 +54,7 @@ const Home = () => {
     // });
   // }
   // const { AuthInfo } = useContext(AuthContext);
-  let AuthInfo = useAuth();
+  // let AuthInfo = useAuth();
   // console.log(AuthInfo);
   // console.log(AuthInfo.isAuth);
 
