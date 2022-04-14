@@ -55,8 +55,8 @@ const Home = () => {
   // }
   // const { AuthInfo } = useContext(AuthContext);
   let AuthInfo = useAuth();
-  console.log(AuthInfo);
-  console.log(AuthInfo.isAuth);
+  // console.log(AuthInfo);
+  // console.log(AuthInfo.isAuth);
 
   const sendMsg = () => {
     // this.setState({Messages:[]})

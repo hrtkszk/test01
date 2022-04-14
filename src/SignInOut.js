@@ -9,7 +9,7 @@ export function useAuth() {
 // export function signInOut(setUser) {
 // export function signInOut() {
 
-export const SignIn = (newUser, callback) => {
+export function SignIn (newUser, callback) {
     let AuthInfo = useAuth();
     // let signin = (newUser: string, callback: VoidFunction) => {
     AuthInfo.user = newUser;
