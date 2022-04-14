@@ -9,7 +9,7 @@ export function useAuth() {
 // export function signInOut(setUser) {
 // export function signInOut() {
 
-export function SignIn (newUser, callback) {
+const SignIn = (newUser, callback) => {
     let AuthInfo = useAuth();
     // let signin = (newUser: string, callback: VoidFunction) => {
     AuthInfo.user = newUser;
@@ -17,15 +17,7 @@ export function SignIn (newUser, callback) {
     // isAuthenticated = true;
     setTimeout(callback, 100); // fake async
 };
-function SignOut (callback) {
-    let AuthInfo = useAuth();
-    // let signout = (callback: VoidFunction) => {
-    AuthInfo.user = null;
-    console.log(AuthInfo.user)
-    // isAuthenticated = false;
-    setTimeout(callback, 100);
-}
-export default SignOut
+export default SignIn
 
 // const SignInOut = () => {
 //     // const { AuthInfo } = useContext(AuthContext);
