@@ -2,11 +2,21 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { AuthContext } from './AuthContext';
 import { AuthContext } from './index';
-import SignOut from './SignOut';
+// import SignOut from './SignOut';
 
 export function useAuth() {
   return useContext(AuthContext);
 }
+
+const SignOut = (callback) => {
+  let AuthInfo = useAuth();
+  // let signout = (callback: VoidFunction) => {
+  AuthInfo.user = null;
+  console.log(AuthInfo.user)
+  // isAuthenticated = false;
+  setTimeout(callback, 100);
+}
+
 const AuthStatus = () => {
 // export function AuthStatus() {
   // const { AuthInfo } = useContext(AuthContext);
