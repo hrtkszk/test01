@@ -8,21 +8,20 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-function SignOut (callback) {
-  let AuthInfo = useAuth();
-  // let signout = (callback: VoidFunction) => {
-  AuthInfo.user = null;
-  console.log(AuthInfo.user)
-  // isAuthenticated = false;
-  setTimeout(callback, 100);
-}
-
 const AuthStatus = () => {
 // export function AuthStatus() {
   // const { AuthInfo } = useContext(AuthContext);
   let AuthInfo = useAuth();
   const navigate = useNavigate();
   // console.log(AuthInfo)
+
+  const SignOut = (callback) => {
+    // let signout = (callback: VoidFunction) => {
+    AuthInfo.user = null;
+    console.log(AuthInfo.user)
+    // isAuthenticated = false;
+    setTimeout(callback, 100);
+  }
 
   if (!AuthInfo.user) {
     return <p>You are not logged in.</p>;
