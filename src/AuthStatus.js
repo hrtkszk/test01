@@ -8,7 +8,7 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-const SignOut = (callback) => {
+function SignOut (callback) {
   let AuthInfo = useAuth();
   // let signout = (callback: VoidFunction) => {
   AuthInfo.user = null;
@@ -35,7 +35,7 @@ const AuthStatus = () => {
         // onClick={() => {
         //     SignOut(() => navigate("/"));
         // }}
-        onClick={SignOut(() => navigate("/"))}
+        onClick={() => SignOut(() => navigate("/"))}
       >
         Sign out
       </button>
