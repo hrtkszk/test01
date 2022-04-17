@@ -35,7 +35,7 @@ const AuthStatus = () => {
         // onClick={() => {
         //     SignOut(() => navigate("/"));
         // }}
-        onClick={() => SignOut(() => navigate("/"))}
+        onClick={SignOut(() => navigate("/"))}
       >
         Sign out
       </button>
