@@ -4,14 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './index';
 // import SignOut from './SignOut';
 
-// export function useAuth() {
-//   return useContext(AuthContext);
-// }
+export function useAuth() {
+  return useContext(AuthContext);
+}
 
 const AuthStatus = () => {
 // export function AuthStatus() {
-  const { AuthInfo } = useContext(AuthContext);
-  // let AuthInfo = useAuth();
+  // const { AuthInfo } = useContext(AuthContext);
+  let AuthInfo = useAuth();
   const navigate = useNavigate();
   // console.log(AuthInfo)
 
