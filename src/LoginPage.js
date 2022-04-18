@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { AuthContext } from './AuthContext';
 import { AuthContext } from './index';
-import { SignIn } from './SignIn';
+// import { SignIn } from './SignIn';
 
 // export function useAuth() {
 //   return useContext(AuthContext);
@@ -19,13 +19,13 @@ export function LoginPage() {
   // let location = useLocation();
   // let auth = useAuth();
 
-  // const SignIn = (newUser, callback) => {
-  //   // let signin = (newUser: string, callback: VoidFunction) => {
-  //   AuthInfo.user = newUser;
-  //   console.log(AuthInfo.user)
-  //   // isAuthenticated = true;
-  //   setTimeout(callback, 100); // fake async
-  // }
+  const SignIn = (newUser, callback) => {
+    // let signin = (newUser: string, callback: VoidFunction) => {
+    AuthInfo.user = newUser;
+    console.log(AuthInfo.user)
+    // isAuthenticated = true;
+    setTimeout(callback, 100); // fake async
+  }
   
   let from = "/protected";
   // let from = location.state?.from?.pathname || "/protected";
