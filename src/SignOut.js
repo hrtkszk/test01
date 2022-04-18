@@ -9,7 +9,7 @@ import { AuthContext } from './index';
 // export function signInOut(setUser) {
 // export function signInOut() {
 
-const SignOut = (callback) => {
+function SignOut (callback) {
     const { AuthInfo } = useContext(AuthContext);
     // let AuthInfo = useAuth();
     // let signout = (callback: VoidFunction) => {
