@@ -3,15 +3,15 @@ import { useContext } from 'react';
 import { AuthContext } from './index';
 // import { fakeAuthProvider } from "./auth/auth";
 
-// export function useAuth() {
-//     return useContext(AuthContext);
-// }
+export function useAuth() {
+    return useContext(AuthContext);
+}
 // export function signInOut(setUser) {
 // export function signInOut() {
 
-function SignOut (callback) {
-    const { AuthInfo } = useContext(AuthContext);
-    // let AuthInfo = useAuth();
+const SignOut = (callback) => {
+    // const { AuthInfo } = useContext(AuthContext);
+    let AuthInfo = useAuth();
     // let signout = (callback: VoidFunction) => {
     AuthInfo.user = null;
     console.log(AuthInfo.user)
