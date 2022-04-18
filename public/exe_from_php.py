@@ -7,10 +7,10 @@ import datetime
 
 # データベースへの接続とカーソルの生成
 connection = MySQLdb.connect(
-    host='mysql202.phy.lolipop.lan',
-    user='LAA1415647',
+    host='mysql203.phy.lolipop.lan',
+    user='LAA1419844',
     passwd='1234testTEST',
-    db='LAA1415647-test')
+    db='LAA1419844-test')
 
 # field name込みの場合はこっちを使う
 # cursor = connection.cursor(MySQLdb.cursors.DictCursor)
