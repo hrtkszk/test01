@@ -1,6 +1,6 @@
 // import React from 'react';
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 // import { AuthContext } from './AuthContext';
 import { AuthContext } from './index';
 // import { SignIn } from './SignIn';
@@ -48,16 +48,22 @@ export function LoginPage() {
     // });
   }
 
-  return (
-    <div>
-      <p>You must log in to view the page at {from}</p>
+  if (!AuthInfo.user) {
+    return (
+      <div>
+        <p>You must log in to view the page at {from}</p>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username: <input name="username" type="text" />
-        </label>{" "}
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
+        <form onSubmit={handleSubmit}>
+          <label>
+            Username: <input name="username" type="text" />
+          </label>{" "}
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    );
+  } else {
+    return <Navigate to="/header" replace={true} />;
+  }
+
+
 }
