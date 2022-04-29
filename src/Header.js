@@ -3,9 +3,14 @@ import React from 'react'
 import { css } from 'glamor'
 import { Link } from 'react-router-dom'
 // import UserContext from './UserContext'
-import ButtonSignOut from './page/ButtonSignOut'
+// import ButtonSignOut from './page/ButtonSignOut'
 // import { Auth } from 'aws-amplify'
 // import { AuthContext } from './index';
+import { AuthContext } from './index';
+
+export function useAuth() {
+  return useContext(AuthContext);
+}
 
 
 const Header = () => {
@@ -32,7 +37,9 @@ const Header = () => {
   //     console.log(AuthStat)
   //   }
   // }
-  
+  let AuthInfo = useAuth();
+
+
   return (
     <div {...css(styles.container)}>
       <div {...css(styles.navContainer)}>
@@ -61,10 +68,11 @@ const Header = () => {
               <Link to='/login' {...css(styles.link)}>
                 <p {...css(styles.navItem)}>ログイン</p>
               </Link>
-              <ButtonSignOut
-                title="変更"
-                onClick={null}
-              />
+              <p>
+                {/* // title="変更"
+                // onClick={null} */}
+                Welcome {AuthInfo.user}!
+              </p>
             </>
         //   ) : (
         //     <>
