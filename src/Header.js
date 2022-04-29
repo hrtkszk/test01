@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 // import React, { useContext, useState } from 'react'
 import { css } from 'glamor'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import UserContext from './UserContext'
 // import ButtonSignOut from './page/ButtonSignOut'
 // import { Auth } from 'aws-amplify'
@@ -91,7 +91,7 @@ const Header = () => {
         }
 
       </div>
-      <Outlet />
+      
     </div>
   )
   // }
