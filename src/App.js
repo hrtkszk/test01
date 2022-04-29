@@ -14,7 +14,7 @@ import Header from './Header'
 // import SignIn from './auth/SignIn'
 // import SignUpConfirmation from './auth/SignUpConfirmation'
 // import ForgotPasswordConfirmation from './auth/ForgotPasswordConfirmation'
-// import Home from './page/Home'
+import Home from './page/Home'
 // import MessageList from './page/MessageList'
 // import Message from './page/Message'
 // import Profile from './page/Profile'
@@ -57,12 +57,14 @@ const App = () => {
           <AuthStatus />
           <Routes>
             <Route path="/" element={<LoginPage />} />
-            <Route path="/header" element={<Header />} />
+            <Route path="/header" element={<Header />}>
+              <Route path='/home' element={<Home />} />
+            </Route>
               {/* <Route path='/auth' element={<Authenticator />} />
               <Route path='/signin' element={<SignIn />} />
               <Route path='/suc' element={<SignUpConfirmation />} />
               <Route path='/fpc' element={<ForgotPasswordConfirmation />} />
-              <Route path='/home' element={<Home />} />
+
               <Route path='/profilesearch'
                 element={
                   <PrivateRoute>
