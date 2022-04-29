@@ -49,59 +49,61 @@ const App = () => {
     <BrowserRouter>
       <div className="App">
         {/* <AuthProvider> */}
-          <Header />
+          {/* <Header /> */}
           <AuthStatus />
           <Routes>
-            <Route path='/auth' element={<Authenticator />} />
-            <Route path='/signin' element={<SignIn />} />
-            <Route path='/suc' element={<SignUpConfirmation />} />
-            <Route path='/fpc' element={<ForgotPasswordConfirmation />} />
-            <Route path='/' element={<Home />} />
-            <Route path='/profilesearch'
-              element={
-                <PrivateRoute>
-                  <ProfileSearch />
-                </PrivateRoute>
-              }
-            />
-            <Route path='/boshu'
-              element={
-                <PrivateRoute>
-                  <Boshu />
-                </PrivateRoute>
-              }
-            />
-            <Route path='/messagelist'
-              element={
-                <PrivateRoute>
-                  <MessageList />
-                </PrivateRoute>
-              }
-            />
-            <Route path='/message'
-              element={
-                <PrivateRoute>
-                  <Message />
-                </PrivateRoute>
-              }
-            />
-            <Route path='/myprofile'
-              element={
-                <PrivateRoute>
-                  <Profile />
-                </PrivateRoute>
-              }
-            />
-            <Route path='*' element={<NoMatch />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route
-              path="/protected"
-              element={
-                <RequireAuth>
-                  <ProtectedPage />
-                </RequireAuth>
-              }
-            />
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/header" element={<Header />}>
+              <Route path='/auth' element={<Authenticator />} />
+              <Route path='/signin' element={<SignIn />} />
+              <Route path='/suc' element={<SignUpConfirmation />} />
+              <Route path='/fpc' element={<ForgotPasswordConfirmation />} />
+              <Route path='/home' element={<Home />} />
+              <Route path='/profilesearch'
+                element={
+                  <PrivateRoute>
+                    <ProfileSearch />
+                  </PrivateRoute>
+                }
+              />
+              <Route path='/boshu'
+                element={
+                  <PrivateRoute>
+                    <Boshu />
+                  </PrivateRoute>
+                }
+              />
+              <Route path='/messagelist'
+                element={
+                  <PrivateRoute>
+                    <MessageList />
+                  </PrivateRoute>
+                }
+              />
+              <Route path='/message'
+                element={
+                  <PrivateRoute>
+                    <Message />
+                  </PrivateRoute>
+                }
+              />
+              <Route path='/myprofile'
+                element={
+                  <PrivateRoute>
+                    <Profile />
+                  </PrivateRoute>
+                }
+              />
+              <Route path='*' element={<NoMatch />} />
+              <Route
+                path="/protected"
+                element={
+                  <RequireAuth>
+                    <ProtectedPage />
+                  </RequireAuth>
+                }
+              />
+            </Route>
           </Routes>
         {/* </AuthProvider> */}
       </div>

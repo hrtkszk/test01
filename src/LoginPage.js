@@ -27,7 +27,7 @@ export function LoginPage() {
     setTimeout(callback, 100); // fake async
   }
   
-  let from = "/protected";
+  let from = "/header";
   // let from = location.state?.from?.pathname || "/protected";
   function handleSubmit(event) {
     // function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
