@@ -60,8 +60,7 @@ const App = () => {
             <Route path="/header" element={<Header />}>
               <Route index element={<Home />} />
               {/* <Route path="/home" element={<Home />} /> */}
-            </Route>
-              {/* <Route path='/auth' element={<Authenticator />} />
+              <Route path='/auth' element={<Authenticator />} />
               <Route path='/signin' element={<SignIn />} />
               <Route path='/suc' element={<SignUpConfirmation />} />
               <Route path='/fpc' element={<ForgotPasswordConfirmation />} />
@@ -110,7 +109,7 @@ const App = () => {
                   </RequireAuth>
                 }
               />
-            </Route> */}
+            </Route>
           </Routes>
         {/* </AuthProvider> */}
       </div>
