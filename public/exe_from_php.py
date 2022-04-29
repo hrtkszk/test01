@@ -8,9 +8,9 @@ import datetime
 # データベースへの接続とカーソルの生成
 connection = MySQLdb.connect(
     host='mysql203.phy.lolipop.lan',
-    user='LAA1419844',
+    user='LAA1422834',
     passwd='1234testTEST',
-    db='LAA1419844-test')
+    db='LAA1422834-test')
 
 # field name込みの場合はこっちを使う
 # cursor = connection.cursor(MySQLdb.cursors.DictCursor)
