@@ -58,7 +58,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route path="/header" element={<Header />}>
-              <Route path='/home' element={<Home />} />
+              <Route index element={<Home />} />
             </Route>
               {/* <Route path='/auth' element={<Authenticator />} />
               <Route path='/signin' element={<SignIn />} />
