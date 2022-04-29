@@ -64,7 +64,7 @@ const App = () => {
               <Route path='/signin' element={<SignIn />} />
               <Route path='/suc' element={<SignUpConfirmation />} />
               <Route path='/fpc' element={<ForgotPasswordConfirmation />} />
-
+            </Route>
               <Route path='/profilesearch'
                 element={
                   <PrivateRoute>
@@ -109,7 +109,7 @@ const App = () => {
                   </RequireAuth>
                 }
               />
-            </Route>
+
           </Routes>
         {/* </AuthProvider> */}
       </div>
