@@ -40,9 +40,9 @@ import AuthStatus from './AuthStatus'
 const App = () => {
   // const { loginInfo } = useContext(loginContext);
 
-  // const PrivateRoute = ({ children }) => {
-    // return children;
-  // }  
+  const PrivateRoute = ({ children }) => {
+    return children;
+  }  
     // const auth = useAuth();
     // console.log(loginInfo)
     // return children;
